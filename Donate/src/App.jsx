@@ -34,13 +34,14 @@ function App() {
       <p>
         Every
         <select id="selection" onChange={handleSelectChange}>
-          // IMPORTANT!!! option value is linked to event.target.value of handleSelectChange
+          // IMPORTANT!!! option value is linked to event.target.value of
+          handleSelectChange
           <option value="100">$100</option>
           <option value="20">$20</option>
           <option value="50">$50</option>
           <option value="200">$200</option>
         </select>
-        donated provides {beneficiaries} with meals
+        donated provides {beneficiaries} beneficiaries run with meals
       </p>
     </>
   );
