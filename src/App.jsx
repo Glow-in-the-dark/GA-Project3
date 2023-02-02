@@ -1,9 +1,10 @@
 import React from "react";
+import AboutUsPage from "./comp-aboutUs/AboutUsPage";
 
 function App() {
   return (
     <div>
-      <h2>GA SEI-41</h2>
+      <AboutUsPage />
     </div>
   );
 }
