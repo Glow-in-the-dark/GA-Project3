@@ -1,10 +1,10 @@
 import React from "react";
-import AboutUsPage from "./comp-aboutUs/AboutUsPage";
+import Projects from "./comp-aboutUs/Projects";
 
 function App() {
   return (
     <div>
-      <AboutUsPage />
+      <Projects />
     </div>
   );
 }
