@@ -46,7 +46,7 @@ const accordianDummyContent = [
 
 function CommonComponentExamples() {
   return (
-    <div className="bg-secondary">
+    <div className="bg-secondary h-screen">
       {/* Button */}
       <div className="m-5">
         <p className="text-4xl mb-5">Button:</p>
