@@ -1,5 +1,5 @@
 import React from "react";
-import CommonComponentExamples from "./comp-commons/CommonComponentExamples";
+import CommonComponentExamples from "./comp-commons/examplePage/CommonComponentExamples";
 
 function App() {
   return (

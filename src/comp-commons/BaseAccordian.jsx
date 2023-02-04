@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMinus } from "@fortawesome/free-solid-svg-icons";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
-const BaseAccordian = ({ title, content, border = true }) => {
+const BaseAccordian = ({ contentTitle, content, border = true }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   // Functions to toggle accordian
@@ -16,12 +16,16 @@ const BaseAccordian = ({ title, content, border = true }) => {
   }
 
   return (
-    <div className="w-[650px] text-greyscale1 py-10">
+    <div
+      className={`w-[650px] mx-auto py-10 ${
+        border ? `border-b border-primary` : `border-0`
+      }`}
+    >
       <div className="flex flex-row text-2xl">
         <h3
           className={`flex-grow ${isOpen ? `text-primary` : `text-greyscale1`}`}
         >
-          What You Need To Know
+          {contentTitle}
         </h3>
         <div>
           {isOpen ? (
@@ -31,15 +35,7 @@ const BaseAccordian = ({ title, content, border = true }) => {
           )}
         </div>
       </div>
-      {isOpen ? (
-        <p className="mt-2">
-          We have always been asked - How does Willing Hearts sustain itself? In
-          truth, it is with the generous support from friends, volunteers,
-          donors and sponsors and just about anyone who believes in our cause.
-          We extend our heartfelt gratitude to each one for your generosity and
-          continous support since we started!
-        </p>
-      ) : null}
+      {isOpen ? <p className="mt-2">{content}</p> : null}
     </div>
   );
 };
