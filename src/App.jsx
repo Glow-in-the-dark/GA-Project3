@@ -1,11 +1,7 @@
 import React from "react";
 
 function App() {
-  return (
-    <div>
-      <h2>GA SEI-41</h2>
-    </div>
-  );
+  return <h2>GA SEI-41</h2>;
 }
 
 export default App;
