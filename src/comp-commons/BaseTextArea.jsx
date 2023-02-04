@@ -17,7 +17,7 @@ const BaseTextArea = ({
   return (
     <label>
       {label ?? ""}
-      <input
+      <textarea
         rows={rows}
         id={id}
         value={value}
@@ -25,7 +25,7 @@ const BaseTextArea = ({
         required={required}
         disabled={disabled}
         placeholder={placeholder ?? ""}
-        className={`bg-transparent placeholder:text-greyscale2 py-2 border w-full border-primary focus:outline-none ${
+        className={`bg-transparent placeholder:text-greyscale2 py-2 border-b w-full border-primary focus:outline-none ${
           className ?? ""
         }`}
       />
