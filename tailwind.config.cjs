@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        book: ["Book", "sans-serif"],
-        roman: ["Roman", "sans-serif"],
-        medium: ["Medium", "sans-serif"],
+        book: ["AvenirBook", "sans-serif"],
+        roman: ["AvenirRoman", "sans-serif"],
+        medium: ["AvenirMedium", "sans-serif"],
       },
       colors: {
         primary: "#DB2721",
