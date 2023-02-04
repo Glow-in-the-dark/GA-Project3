@@ -2,6 +2,7 @@ import React from "react";
 import BaseButton from "../BaseButton";
 import Footer from "../Footer";
 import AccordianWrapper from "../AccordianWrapper";
+import ContactForm from "../ContactForm";
 
 // Sample dataset for FAQ (accordian wrapper):
 const accordianDummyContent = [
@@ -77,6 +78,11 @@ function CommonComponentExamples() {
           title="VOLUNTEERS"
           contentDataset={accordianDummyContent}
         />
+      </div>
+      {/* Contact Form */}
+      <div className="mt-16 py-10">
+        <p className="text-4xl mx-5">Contact Form:</p>
+        <ContactForm />
       </div>
     </div>
   );
