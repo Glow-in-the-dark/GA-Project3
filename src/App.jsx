@@ -1,12 +1,13 @@
 import React from "react";
 import BaseButton from "./comp-commons/BaseButton";
+import Footer from "./comp-commons/Footer";
 
 function App() {
   return (
-    <div className="m-16">
+    <div className="bg-secondary">
       {/* Button */}
       <div className="m-5">
-        <p className="text-4xl my-5">Button:</p>
+        <p className="text-4xl mb-5">Button:</p>
         <BaseButton label="Volunteer Now" colour="red" />
         <br />
         <BaseButton label="Find Out More" colour="white" />
@@ -22,6 +23,11 @@ function App() {
         <BaseButton label="Add To Calendar" colour="white" icon="calendar" />
         <br />
         <BaseButton label="Invite Your Friends" colour="white" icon="share" />
+      </div>
+      {/* Footer */}
+      <div className="mt-16">
+        <p className="text-4xl my-5 mx-5">Footer:</p>
+        <Footer />
       </div>
     </div>
   );
