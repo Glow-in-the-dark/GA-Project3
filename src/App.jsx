@@ -1,10 +1,10 @@
 import React from "react";
-import Projects from "./comp-aboutUs/Projects";
+import News from "./comp-aboutUs/News";
 
 function App() {
   return (
     <div>
-      <Projects />
+      <News />
     </div>
   );
 }
