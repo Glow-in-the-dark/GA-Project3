@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  h1 {
+    @apply text-5xl;
+  }
 }
 
 @font-face {
