@@ -1,22 +1,36 @@
-@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-* {
-  box-sizing: border-box;
+@layer base {
+  h1 {
+    @apply text-5xl;
+  }
 }
 
-html {
-  font-family: "Oxygen", sans-serif;
+@font-face {
+  font-family: AvenirBook;
+  src: local("Avenir-Book") url("/fonts/Avenir-Book.otf") format("otf");
 }
 
-body {
-  margin: 0;
-  background-color: whitesmoke;
+@font-face {
+  font-family: AvenirRoman;
+  src: local("Avenir-Roman") url("/fonts/Avenir-Roman.otf") format("otf");
 }
 
-.centered {
-  margin: 3rem auto;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@font-face {
+  font-family: AvenirMedium;
+  src: local("Avenir-Medium") url("/fonts/Avenir-Medium.otf") format("otf");
 }
+
+/* .book {
+  font-family: AvenirBook;
+}
+
+.roman {
+  font-family: AvenirRoman;
+}
+
+.medium {
+  font-family: AvenirMedium;
+} */
