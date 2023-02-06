@@ -8,7 +8,7 @@ const ContactFormConfirmationPage = () => {
       {/* Confirmation message */}
       <section className="w-[1000px] mx-auto text-center flex-grow">
         <img
-          src="../../public/images/smiling-emoji.png"
+          src="../../public/images/common/smiling-emoji.png"
           className="mx-auto mb-5"
         />
         <h1 className="mb-4">THANKS FOR REACHING OUT</h1>

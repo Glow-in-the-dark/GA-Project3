@@ -6,17 +6,19 @@ import FaqPage from "./comp-aboutUs/FaqPage";
 import CommonComponentExamples from "./comp-commons/examplePage/CommonComponentExamples";
 import ContactUsPage from "./comp-contactUs/ContactUsPage";
 import ContactFormConfirmationPage from "./comp-contactUs/ContactFormConfirmationPage";
+import VolunteerMainPage from "./comp-volunteer/VolunteerMainPage";
 
 function App() {
   return (
     <div>
       {/* <AboutUsPage /> */}
-      <ProjectsPage />
+      {/* <ProjectsPage /> */}
       {/* <NewsPage /> */}
-      <FaqPage />
+      {/* <FaqPage /> */}
       {/* <CommonComponentExamples /> */}
       {/* <ContactUsPage /> */}
-      <ContactFormConfirmationPage />
+      {/* <ContactFormConfirmationPage /> */}
+      <VolunteerMainPage />
     </div>
   );
 }

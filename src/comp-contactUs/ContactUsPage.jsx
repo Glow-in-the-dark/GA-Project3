@@ -24,7 +24,7 @@ const ContactUsPage = () => {
         {/* Location section */}
         <section className="text-center space-y-4 mb-24">
           <h1>WE ARE LOCATED AT</h1>
-          <img src="../../public/images/willing-hearts-location-on-map.png" />
+          <img src="../../public/images/contactuspage/willing-hearts-location-on-map.png" />
         </section>
 
         {/* Contact form section */}
