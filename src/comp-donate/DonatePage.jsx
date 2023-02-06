@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./DonatePage.module.css";
 
-
 function DonatePage() {
   const [beneficiaries, setBeneficiaries] = useState(330); // need to use useEffect to change beneficiaries value each time option changes
   const [selection, setSelection] = useState("100");
@@ -52,24 +51,30 @@ function DonatePage() {
       <div className={styles.donationModes}>
         <p>READY TO MAKE A DONATION?</p>
         <p>We offer 4 payment methods</p>
-        <div className="container">
+        <div className={styles.container}>
           <li
             className={`${styles.card} ${styles.QRCode}`}
             onMouseEnter={displayQRCode}
             onMouseLeave={displayPayNowPrompt}
           >
-            <img src="/images/QRCode.png" />
+            <img src="/donateImages/QRCode.png" />
           </li>
           <li className={styles.card}>
             <p>Credit/Debit Card</p>
-            <button>DONATE card</button>
+            <button>Donate</button>
           </li>
           <li className={styles.card} id={styles.givingSG}>
-            <a href="https://www.giving.sg/willing-hearts">DONATE givingSG</a>
+            <a href="https://www.giving.sg/willing-hearts" target="_blank">
+              DONATE givingSG
+            </a>
           </li>
-          <li></li>
+          <li className={styles.card}>
+            <p>Cash/Cheque</p>
+          </li>
         </div>
       </div>
+
+      <input type="date" />
     </>
   );
 }
