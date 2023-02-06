@@ -1,15 +1,19 @@
 import React from "react";
-import News from "./comp-aboutUs/News";
+import AboutUsPage from "./comp-aboutUs/AboutUsPage";
+import ProjectsPage from "./comp-aboutUs/ProjectsPage";
+import NewsPage from "./comp-aboutUs/NewsPage";
+import FaqPage from "./comp-aboutUs/FaqPage";
 import CommonComponentExamples from "./comp-commons/examplePage/CommonComponentExamples";
 import ContactUsPage from "./comp-contactUs/ContactUsPage";
 import ContactFormConfirmationPage from "./comp-contactUs/ContactFormConfirmationPage";
 
-
 function App() {
   return (
     <div>
-      <News />
-      {/* <h1>GA SEI 41</h1> */}
+      {/* <AboutUsPage /> */}
+      <ProjectsPage />
+      {/* <NewsPage /> */}
+      <FaqPage />
       {/* <CommonComponentExamples /> */}
       {/* <ContactUsPage /> */}
       <ContactFormConfirmationPage />
