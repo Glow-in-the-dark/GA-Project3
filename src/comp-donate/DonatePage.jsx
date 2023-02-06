@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./DonatePage.module.css";
 
+
 function DonatePage() {
   const [beneficiaries, setBeneficiaries] = useState(330); // need to use useEffect to change beneficiaries value each time option changes
   const [selection, setSelection] = useState("100");
