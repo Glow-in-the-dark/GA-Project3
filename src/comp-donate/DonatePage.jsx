@@ -29,7 +29,7 @@ function DonatePage() {
         those who are in need. Your <br /> donation ensures that no one goes
         hunrgy and that no one goes without the basic necessities of life.
       </p>
-      <img src="public\donateImages\donationMain.png" />
+      <img src="/donateImages/donationMain.png" />
       <h1>GIVE THE GIFT OF SUPPORT</h1>
       <p>See the impact of your donation</p>
 
@@ -47,6 +47,28 @@ function DonatePage() {
         </select>
         donated provides {beneficiaries} beneficiaries with meals
       </p>
+
+      <div className={styles.donationModes}>
+        <p>READY TO MAKE A DONATION?</p>
+        <p>We offer 4 payment methods</p>
+        <div className="container">
+          <li
+            className={`${styles.card} ${styles.QRCode}`}
+            onMouseEnter={displayQRCode}
+            onMouseLeave={displayPayNowPrompt}
+          >
+            <img src="/images/QRCode.png" />
+          </li>
+          <li className={styles.card}>
+            <p>Credit/Debit Card</p>
+            <button>DONATE card</button>
+          </li>
+          <li className={styles.card} id={styles.givingSG}>
+            <a href="https://www.giving.sg/willing-hearts">DONATE givingSG</a>
+          </li>
+          <li></li>
+        </div>
+      </div>
     </>
   );
 }
