@@ -1,0 +1,23 @@
+.donationModes {
+  width: 83.333%;
+  height: 10.47%;
+  background-color: #faf9f6;
+  text-align: center;
+}
+
+.container {
+  width: 88.83%;
+  height: 53.61%;
+  display: flex;
+  list-style-type: none;
+}
+
+.card {
+  width: 251px;
+  height: 251px;
+  border: solid red;
+}
+
+.QRCode:hover {
+  background-color: black;
+}

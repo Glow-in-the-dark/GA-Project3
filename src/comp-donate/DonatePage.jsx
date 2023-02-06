@@ -29,7 +29,7 @@ function DonatePage() {
         those who are in need. Your <br /> donation ensures that no one goes
         hunrgy and that no one goes without the basic necessities of life.
       </p>
-      <img src="public\images\donationMain.png" />
+      <img src="public\donateImages\donationMain.png" />
       <h1>GIVE THE GIFT OF SUPPORT</h1>
       <p>See the impact of your donation</p>
 
