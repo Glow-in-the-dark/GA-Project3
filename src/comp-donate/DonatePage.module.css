@@ -1,8 +1,9 @@
 .donationModes {
-  width: 83.333%;
-  height: 10.47%;
-  background-color: #faf9f6;
-  text-align: center;
+width: 1200px;
+height: 470px;
+left: calc(50% - 1200px/2);
+top: 1122px;
+background-color: white;
 }
 
 .container {
@@ -20,4 +21,19 @@
 
 .QRCode:hover {
   background-color: black;
+}
+
+.donationDropDown {
+  position: absolute;
+  width: 849px;
+  height: 76px;
+  left: 295px;
+  top: 984px;
+}
+
+.topImage {
+  width: 1200px;
+  height: 392px;
+  left: 123px;
+  top: 398px;
 }

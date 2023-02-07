@@ -22,36 +22,43 @@ function DonatePage() {
   const displayPayNowPrompt = () => {};
 
   return (
-    <>
-      <h1>YOUR DONATION MAKES A DIFFERENCE</h1>
-      <p>
+    <div className="text-center">
+      <h1 className="text-5xl">YOUR DONATION MAKES A DIFFERENCE</h1>
+      <p className="text-lg">
         With your support, we are able to provide meals and support services to
         those who are in need. Your <br /> donation ensures that no one goes
         hunrgy and that no one goes without the basic necessities of life.
       </p>
-      <img src="/donateImages/donationMain.png" />
+      <img
+        src="/donateImages/donationMain.png"
+        className={`mx-auto ${styles.topImage}`}
+      />
+      <br />
       <h1>GIVE THE GIFT OF SUPPORT</h1>
-      <p>See the impact of your donation</p>
-
+      <br />
+      <p className="text-sm">See the impact of your donation</p>
+      <br />
       {/* // very useful! <form action=""></form> the action specifies where the form data is sent, value is a url */}
 
-      <p>
-        Every
-        <select id="selection" onChange={handleSelectChange}>
-          // IMPORTANT!!! option value is linked to event.target.value of
-          handleSelectChange
-          <option value="100">$100</option>
-          <option value="20">$20</option>
-          <option value="50">$50</option>
-          <option value="200">$200</option>
-        </select>
-        donated provides {beneficiaries} beneficiaries with meals
-      </p>
-
-      <div className={styles.donationModes}>
+      <div>
+        <p className="text-2xl">
+          Every
+          <select id="selection" onChange={handleSelectChange}>
+            {/* // IMPORTANT!!! option value is linked to event.target.value of
+            handleSelectChange */}
+            <option value="100">$100</option>
+            <option value="20">$20</option>
+            <option value="50">$50</option>
+            <option value="200">$200</option>
+          </select>
+          donated provides {beneficiaries} beneficiaries with meals
+        </p>
+      </div>
+      <br />
+      <div className={`mx-auto ${styles.donationModes}`}>
         <p>READY TO MAKE A DONATION?</p>
         <p>We offer 4 payment methods</p>
-        <div className={styles.container}>
+        <div className={`mx-auto ${styles.container}`}>
           <li
             className={`${styles.card} ${styles.QRCode}`}
             onMouseEnter={displayQRCode}
@@ -74,8 +81,29 @@ function DonatePage() {
         </div>
       </div>
 
+      <div>
+        <h1 className="text-3xl">PREFER TO DONATE IN KIND?</h1>
+        <p className="text-xl">Here are some recommended list of items</p>
+        <br />
+        <img src="./public/donateImages/ingredients.png" className="mx-auto" />
+        <br />
+        <p className="text-base">
+          You may wish to donate directly to Willing Hearts at
+        </p>
+        <br />
+        <h3 className="text-xl">
+          No.1 Lorong J Telok Kurau Singapore 425792
+        </h3>
+        <h3 className="text-xl">We are open from 4.30 am to 3.00 pm</h3>
+        <br />
+        <p className="text-base">
+          For donations in large quantities of provisions and/or frozen
+          ingredients, please click here
+        </p>
+      </div>
+
       <input type="date" />
-    </>
+    </div>
   );
 }
 
