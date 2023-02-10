@@ -11,14 +11,14 @@ import VolunteerMainPage from "./comp-volunteer/VolunteerMainPage";
 function App() {
   return (
     <div>
-      {/* <AboutUsPage /> */}
+      <AboutUsPage />
       {/* <ProjectsPage /> */}
       {/* <NewsPage /> */}
       {/* <FaqPage /> */}
       {/* <CommonComponentExamples /> */}
       {/* <ContactUsPage /> */}
       {/* <ContactFormConfirmationPage /> */}
-      <VolunteerMainPage />
+      {/* <VolunteerMainPage /> */}
     </div>
   );
 }
