@@ -20,9 +20,9 @@ const NewsPage = () => {
     <div className="bg-secondary text-greyscale1 pt-24">
       {/* Section 1: Headings */}
       <h1 className="text-center mb-8">WE ARE ON THE NEWS</h1>
-      <p className="text-xl text-center mb-14">
+      <h2 className="text-xl text-center mb-14">
         Stay ahead of the curve with our featured news.
-      </p>
+      </h2>
 
       {/* Section 2: News cards */}
       <div className="grid grid-cols-2 w-fit mx-auto space-x-12 space-y-14 mb-12">

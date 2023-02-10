@@ -22,30 +22,30 @@ const AboutUsPage = () => {
       <div className="w-[1000px] mx-auto text-center pb-20">
         <h1>OUR STORY</h1>
         <br />
-        <p>
+        <h2>
           We are Willing hearts and we run a soup kitchen that provides around
           11,000 daily meals, island-wide, 365 <br />
           days a year (even on public holidays). we have a "no questions asked"
           policy, just as you would for your own
           <br /> family. That means that we provide meals to <b>anyone </b>
           who needs it.
-        </p>
+        </h2>
         <br />
-        <p>
+        <h2>
           Our belief is that every deserves access to a warm meal and we are
           committed to serving our community
           <br /> with compassion and respect. That's the mission of Willing
           Hearts when it was founded in 2005. We were
           <br /> awarded IPC (Institution of Public Character) status in 2022.
-        </p>
+        </h2>
         <br />
-        <p>
+        <h2>
           As we are a community-based orgnaisation wholly run by volunteers, we
           hope to establish partnerships with
           <br /> different orgnaisations. These organisations could be
           businesses as well as individual volunteers to support the
           <br /> Willing Hearts soup kitchen and the causes that we champion.
-        </p>
+        </h2>
       </div>
 
       {/* Section 2: Our Journey */}
@@ -67,21 +67,21 @@ const AboutUsPage = () => {
         <div className="flex flex-row space-x-20">
           <div className="w-[535px]">
             <h1 className="mb-6">MISSION</h1>
-            <p className="text-justify">
+            <h2 className="text-justify">
               To provide daily meals and other support services to the
               underpriviledged, the needy and other marginalised members in
               Singapore. We strive to assist and guide them towards
               rehabilitating and reinstating themselves as flourishing members
               of our society.
-            </p>
+            </h2>
           </div>
           <div className="w-[375px]">
             <h1 className="mb-6">VISION</h1>
-            <p className="text-justify">
+            <h2 className="text-justify">
               Improving the lives of the underpriviledged and marginalised by
               providing them with their "daily bread" and to help them become
               thriving members of our society.
-            </p>
+            </h2>
           </div>
         </div>
       </div>

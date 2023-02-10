@@ -13,8 +13,8 @@ function App() {
     <div>
       {/* <AboutUsPage /> */}
       {/* <ProjectsPage /> */}
-      <NewsPage />
-      {/* <FaqPage /> */}
+      {/* <NewsPage /> */}
+      <FaqPage />
       {/* <CommonComponentExamples /> */}
       {/* <ContactUsPage /> */}
       {/* <ContactFormConfirmationPage /> */}

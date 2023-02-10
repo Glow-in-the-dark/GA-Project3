@@ -3,9 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  /* Font size: 48px */
   h1 {
     @apply text-5xl;
   }
+
+  /* Font-size: 20px */
   h2 {
     @apply text-xl;
   }
