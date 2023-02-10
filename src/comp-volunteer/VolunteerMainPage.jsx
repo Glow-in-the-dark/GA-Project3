@@ -20,12 +20,12 @@ const VolunteerMainPage = () => {
             SIMPLE
           </span>
         </h1>
-        <h2 className="mb-6">
+        <h3 className="mb-6">
           Just bring a similing face, two helping hands, a willing heart and the
           question "How can I help
           <br />
           today?" That's all it takes to make a difference in your community.
-        </h2>
+        </h3>
         <BaseButton label="Join Us" colour="red" className="mb-14" />
         <img
           src="public/Images/VolunteerPage/founder-teaching-students.png"
@@ -118,12 +118,12 @@ const VolunteerMainPage = () => {
       {/* section 3 */}
       <section className="text-center py-20">
         <h1 className="mb-10">WE ARE OPEN DAILY!</h1>
-        <h2 className="mb-8">
+        <h3 className="mb-8">
           The Soup Kitchen is open every day, 365 days a year including Weekends
           and Public Holidays.
-        </h2>
+        </h3>
         <div className="w-fit mx-auto text-left">
-          <h2 className="mb-2">These are our volunteer timings:</h2>
+          <h3 className="mb-2">These are our volunteer timings:</h3>
           <ul className="text-xl list-disc list-inside">
             <li>Early Morning (5am - 9am)</li>
             <li>Morning (9am - 1pm)</li>
@@ -188,15 +188,15 @@ const VolunteerMainPage = () => {
             className="rounded-2xl mb-16"
           />
           <h1 className="mb-10">FOR VOLUNTEERING IN GROUPS</h1>
-          <h2 className="mb-10">
+          <h3 className="mb-10">
             Join us for a day or multiple days a week. At Willing Hearts, we
             offer a flexible schedule, so you don't have
             <br />
             to worry about being unable to commit in order to contribute.
-          </h2>
-          <h2 className="mb-5">
+          </h3>
+          <h3 className="mb-5">
             If you are planning to come with a large group, please contact us.
-          </h2>
+          </h3>
           <BaseButton label="Contact Us" colour="red" />
         </section>
       </div>
@@ -214,18 +214,18 @@ const VolunteerMainPage = () => {
           />
           <div className="my-auto">
             <h1 className="mb-10">WE GRANT CIP HOURS!</h1>
-            <h2 className="mb-10">
+            <h3 className="mb-10">
               At Willing Hearts, we recognize the importance of community
               <br />
               involvement and service for our youth. That's why we offer the
               <br /> opportunity for students to earn Community Involvement
               <br />
               Program (CIP) hours by participating in our volunteer program.
-            </h2>
-            <h2 className="mb-5">
+            </h3>
+            <h3 className="mb-5">
               Click <span className="underline">here</span> to download the log
               sheet.
-            </h2>
+            </h3>
             <BaseButton label="Volunteer Now" colour="red" />
           </div>
         </section>

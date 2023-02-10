@@ -1,6 +1,6 @@
 import React from "react";
 
-const Journey = (props) => {
+const JourneyCard = (props) => {
   return (
     <div className="w-[285px] text-center">
       <img src={props.image} className="rounded-2xl mb-3" />
@@ -11,4 +11,4 @@ const Journey = (props) => {
   );
 };
 
-export default Journey;
+export default JourneyCard;

@@ -1,59 +1,97 @@
-import React from "react";
-import OtherProjects from "./Components/OtherProjects";
-import projectsDatase from "../datasets/projects";
+import React, { useState } from "react";
+import ProjectsCard from "./Components/ProjectsCard";
+import projectsDataset from "../datasets/projects";
+import BaseButton from "../comp-commons/BaseButton";
+import Footer from "../comp-commons/Footer";
 
 const ProjectsPage = () => {
-  const disp = projectsDatase.map((project, id) => {
-    return (
-      <>
-        <OtherProjects
-          image={project.image}
-          projectName={project.projectName}
-          projectContent={project.projectContent}
-        />
-      </>
-    );
+  const [projectsToDisplay, setProjectsToDisplay] = useState("ongoing");
+  const ongoingProjects = projectsDataset.filter((item) => {
+    return ["ongoing"].indexOf(item.status) > -1;
+  });
+  const pastProjects = projectsDataset.filter((item) => {
+    return ["past"].indexOf(item.status) > -1;
   });
 
+  // Function to switch to display "ongoing" projects
+  function displayOngoingProjects() {
+    setProjectsToDisplay("ongoing");
+  }
+
+  // Function to switch to display "past" projects
+  function displayPastProjects() {
+    setProjectsToDisplay("past");
+  }
+
   return (
-    <>
-      <h1>PROJECTS</h1>
-      <label>
-        A community of brothers and sisters who lend a helping hand to one
-        another. Read more to find out how you can get involved to help.
-      </label>
+    <div className="bg-secondary text-greyscale1 pt-24">
+      {/* Section 1: Projects */}
+      <section className="w-[1200px] mx-auto mb-24">
+        <div className="text-center  mb-14">
+          <h1>PROJECTS</h1>
+          <br />
+          <h3>
+            A community of brothers and sisters who lend a helping hand to one
+            another. <br />
+            Read more to find out how you can get involved to help.
+          </h3>
+        </div>
 
-      <div className="soupKitchen">
-        <img
-          src="Images/Projects/SoupKitchen.png"
-          className="soupKitchenImage"
-        ></img>
-        <h2 className="soupKitchenHeader">SOUP KITCHEN</h2>
-        <label className="soupKitchenContent">
-          {" "}
-          Soup Kitchen is a volunteer-run orgnaisation that serves daily meals
-          to those in need in the community. We rely on the kindness and
-          generosity of volunteers to prepare and distribute meals. We welcome
-          anyone who wants to make a positive impact in ther community to join
-          us.
-        </label>
-        <br />
-        <button className="soupKitchenButton" onClick={""}>
-          Find Out More
-        </button>
+        <div className="flex flex-row space-x-7">
+          <img src="Images/Projects/SoupKitchen.png" className="rounded-2xl" />
+          <div>
+            <h2 className="mb-2">SOUP KITCHEN</h2>
+            <h3 className="mb-10">
+              Soup Kitchen is a volunteer-run organisation that serves daily
+              meals to those in need in the community. We rely on the kindness
+              and generosity of volunteers to prepare and distribute meals. We
+              welcome anyone who wants to make a positive impact in ther
+              community to join us.
+            </h3>
+            <BaseButton label="Find Out More" colour="transparent" />
+          </div>
+        </div>
+      </section>
+
+      {/* Section 2: Other projects and activities */}
+      <div className="w-[1200px] mx-auto text-center">
+        <h2 className="mb-3">OTHER PROJECTS AND ACTIVITIES</h2>
+        <div className="flex flex-row space-x-20 justify-center mb-9">
+          <button className="text-2xl" onClick={displayOngoingProjects}>
+            ONGOING
+          </button>
+          <button className="text-2xl" onClick={displayPastProjects}>
+            PAST
+          </button>
+        </div>
+        <div className="flex flex-row justify-center space-x-36 mb-20">
+          {projectsToDisplay === "ongoing"
+            ? ongoingProjects.map((project) => {
+                return (
+                  <ProjectsCard
+                    key={project.id}
+                    image={project.image}
+                    projectName={project.projectName}
+                    projectContent={project.projectContent}
+                  />
+                );
+              })
+            : pastProjects.map((project) => {
+                return (
+                  <ProjectsCard
+                    key={project.id}
+                    image={project.image}
+                    projectName={project.projectName}
+                    projectContent={project.projectContent}
+                  />
+                );
+              })}
+        </div>
       </div>
 
-      <div className="others">
-        <h2>OTHER PROJECTS AND ACTIVITIES</h2>
-        <button className="ongoing" onClick={""}>
-          ONGOING
-        </button>
-        <button className="past" onClick={""}>
-          PAST
-        </button>
-        {disp}
-      </div>
-    </>
+      {/* Section 3: Footer */}
+      <Footer />
+    </div>
   );
 };
 
