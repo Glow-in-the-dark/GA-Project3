@@ -1,4 +1,7 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import BaseButton from "../comp-commons/BaseButton";
 import AccordianWrapper from "../comp-commons/AccordianWrapper";
 import Footer from "../comp-commons/Footer";
@@ -12,7 +15,10 @@ const VolunteerMainPage = () => {
         <h1 className="mb-10">
           VOLUNTEERING AT
           <br />
-          WILLING HEARTS IS SIMPLE
+          WILLING HEARTS IS{" "}
+          <span className="bg=[url(public/Images/Common/highlight-circle.png)]">
+            SIMPLE
+          </span>
         </h1>
         <h2 className="mb-6">
           Just bring a similing face, two helping hands, a willing heart and the
@@ -127,7 +133,52 @@ const VolunteerMainPage = () => {
       </section>
 
       {/* section 4 */}
-      <section></section>
+      <div className="bg-white py-20">
+        <section className="flex flex-row justify-center">
+          <FontAwesomeIcon icon={faChevronLeft} className="mr-9 self-center" />
+          <img
+            src="public/Images/VolunteerPage/volunteers-with-cleaning-tools.png"
+            className="rounded-2xl  mr-16"
+          />
+          <div className="self-center">
+            <div className="mb-8 flex flex-row space-x-2">
+              <img
+                src="public/Images/VolunteerPage/open-inverted-commas.png"
+                className="h-[24px]"
+              />
+              <div>
+                <p className="mb-8">
+                  <span className="text-3xl">CISCO SINGAPORE</span>
+                  <br />
+                  <span className="text-2xl">
+                    PAYING IT FORWARD AT WILLING HEARTS
+                  </span>
+                </p>
+                <p className="mb-2">
+                  Volunteering and giving back to the communities where we
+                  <br />
+                  live and work has always been part of our DNA at Cisco.
+                </p>
+                <p className="mb-8">
+                  Cisconians went above and beyond to give back. 135
+                  <br /> volunteers put in the work needed - 405 hours - to
+                  deliver
+                  <br />
+                  cleaned and prepared premises for Willing Hearts as they
+                  <br />
+                  started a fresh chapter.
+                </p>
+                <p className="text-greyscale2">19 August 2022</p>
+              </div>
+              <img
+                src="public/Images/VolunteerPage/close-inverted-commas.png"
+                className="h-[24px] mt-10"
+              />
+            </div>
+          </div>
+          <FontAwesomeIcon icon={faChevronRight} className="ml-9 self-center" />
+        </section>
+      </div>
 
       {/* section 5 */}
       <div className="py-20">
@@ -152,18 +203,31 @@ const VolunteerMainPage = () => {
 
       {/* section 6 */}
       <div className="bg-white py-20">
-        <section className="text-center">
-          <h1 className="mb-10">WE GRANT CIP HOURS!</h1>
-          <h2 className="mb-10">
-            At Willing Hearts, we recognize the importance of community
-            <br />
-            involvement and service for our youth. That's why we offer the
-            <br /> opportunity for students to earn Community Involvement
-            <br />
-            Program (CIP) hours by participating in our volunteer program.
-          </h2>
-          <h2 className="mb-5">Click here to download the log sheet.</h2>
-          <BaseButton label="Volunteer Now" colour="red" />
+        <section className="text-center flex flex-row space-x-6 justify-center">
+          <img
+            src="public/Images/VolunteerPage/student-with-book.png"
+            className="rounded-2xl w-[282px] mt-16"
+          />
+          <img
+            src="public/Images/VolunteerPage/two-students-in-red.png"
+            className="rounded-2xl w-[282px] mb-16"
+          />
+          <div className="my-auto">
+            <h1 className="mb-10">WE GRANT CIP HOURS!</h1>
+            <h2 className="mb-10">
+              At Willing Hearts, we recognize the importance of community
+              <br />
+              involvement and service for our youth. That's why we offer the
+              <br /> opportunity for students to earn Community Involvement
+              <br />
+              Program (CIP) hours by participating in our volunteer program.
+            </h2>
+            <h2 className="mb-5">
+              Click <span className="underline">here</span> to download the log
+              sheet.
+            </h2>
+            <BaseButton label="Volunteer Now" colour="red" />
+          </div>
         </section>
       </div>
 
