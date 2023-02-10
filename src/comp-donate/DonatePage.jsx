@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./DonatePage.module.css";
+import BaseButton from "../comp-commons/BaseButton";
 
 function DonatePage() {
   const [beneficiaries, setBeneficiaries] = useState(330); // need to use useEffect to change beneficiaries value each time option changes
