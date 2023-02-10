@@ -11,9 +11,9 @@ import VolunteerMainPage from "./comp-volunteer/VolunteerMainPage";
 function App() {
   return (
     <div>
-      <AboutUsPage />
+      {/* <AboutUsPage /> */}
       {/* <ProjectsPage /> */}
-      {/* <NewsPage /> */}
+      <NewsPage />
       {/* <FaqPage /> */}
       {/* <CommonComponentExamples /> */}
       {/* <ContactUsPage /> */}

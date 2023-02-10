@@ -4,6 +4,18 @@ import Footer from "../comp-commons/Footer";
 import homeDataset from "../datasets/home";
 
 const AboutUsPage = () => {
+  const disp = homeDataset.map((home) => {
+    return (
+      <Journey
+        key={home.id}
+        image={home.image}
+        homeName={home.homeName}
+        year={home.year}
+        content={home.content}
+      />
+    );
+  });
+
   return (
     <div className="bg-secondary text-greyscale1 pt-24">
       {/* Section 1: Our story */}
@@ -41,17 +53,7 @@ const AboutUsPage = () => {
         <div className="w-[1200px] mx-auto">
           <h1 className="text-center mb-14">Our Journey</h1>
           <div className="grid grid-cols-3 gap-x-0 gap-y-12 justify-items-center">
-            {homeDataset.map((home) => {
-              return (
-                <Journey
-                  key={home.id}
-                  image={home.image}
-                  homeName={home.homeName}
-                  year={home.year}
-                  content={home.content}
-                />
-              );
-            })}
+            {disp}
           </div>
         </div>
       </div>

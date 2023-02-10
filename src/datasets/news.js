@@ -40,7 +40,7 @@ const newsDataset = [
     newsLink:
       "https://www.straitstimes.com/singapore/quiet-abiding-dedication-to-sharing-food-wins-singaporean-the-magsaysay-awards",
     newsContent:
-      "'Queit, abiding dedication' to sharing food wins Willing Hearts founder Tony Tay the Magsaysay awards",
+      "'Quiet, abiding dedication' to sharing food wins Willing Hearts founder Tony Tay the Magsaysay awards",
     newsSource: "Straits Times",
     newsDate: "28 Jul 2017",
   },
