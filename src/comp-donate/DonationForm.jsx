@@ -23,6 +23,12 @@ const DonationForm = () => {
     donationFrequency: donationFrequency,
   });
 
+  const [creditName, setCreditName] = useState("")
+  const [creditNumber, setCreditNumber] = useState(null);
+  const [creditCCV, setCreditCCV] = useState(null);
+  const [creditExpiry, setCreditExpiry] = useState("")
+
+
   const submitParticulars = () => {
     setParticulars({
       particularsName: particularsName,
@@ -62,6 +68,21 @@ const DonationForm = () => {
       setParticularsAddress(inputVal);
     }
   }
+
+    function handleChangeCredit(inputId, inputVal) {
+      if (inputId === "credit-number") {
+        setCreditNumber(inputVal);
+      }
+      if (inputId === "credit-expiry") {
+        setCreditExpiry(inputVal);
+      }
+      if (inputId === "credit-CCV") {
+        setCreditCCV(inputVal);
+      }
+      if (inputId === "credit-name") {
+        setCreditName(inputVal);
+      }
+    }
 
   return (
     <div className="bg-secondary">
@@ -224,12 +245,38 @@ const DonationForm = () => {
               Donate Monthly
             </button> */}
             <div className="flex">
-              <BaseInput placeholder="Credit Card Number" />
-              <BaseInput placeholder="MM/YY" />
-              <BaseInput placeholder="CVV" />
-            </div>
-            <div>
-              <BaseInput placeholder="Name of Cardholder" />
+              <BaseInput
+                type="string"
+                id="credit-number"
+                value={creditNumber}
+                handleChange={handleChangeCredit}
+                required={true}
+                placeholder="Credit Card Number"
+              />
+              <BaseInput
+                type="string"
+                id="credit-expiry"
+                value={creditExpiry}
+                handleChange={handleChangeCredit}
+                required={true}
+                placeholder="MM/YY"
+              />
+              <BaseInput
+                type="string"
+                id="credit-CCV"
+                value={creditCCV}
+                handleChange={handleChangeCredit}
+                required={true}
+                placeholder="CCV"
+              />
+              <BaseInput
+                type="string"
+                id="credit-name"
+                value={creditName}
+                handleChange={handleChangeCredit}
+                required={true}
+                placeholder="Name of Cardholder"
+              />
             </div>
 
             {/* <br />
