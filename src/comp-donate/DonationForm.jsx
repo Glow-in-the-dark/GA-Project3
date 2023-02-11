@@ -64,27 +64,29 @@ const DonationForm = () => {
   }
 
   return (
-    <div>
-      <div className="text-center">
-        <h1 className="text-5xl">
+    <div className="bg-secondary">
+      <div className="text-center mb-10">
+        <h1 className="text-5xl mb-4">
           YOUR SUPPORT CAN <br />
           CHANGE A LIFE
         </h1>
-        <br />
+
         <p className="text-xl">
           Every donation counts, support now. Your contribution can <br /> make
           a world of difference in the lives of those in need.
         </p>
       </div>
-      <br />
-      <div className="w-[996px] mx-auto" style={{ background: "yellow" }}>
-        <h4 className="text-2xl" style={{ position: "relative", left: "63px" }}>
-          1. Select Individual/Corporate
+
+      <div className="w-[996px] mx-auto bg-white py-12 pl-16">
+        <h4 className="text-2xl">
+          <img
+            src="donateImages/number1.png"
+            style={{ display: "inline" }}
+            className="mr-2"
+          />
+          Select Individual/Corporate
         </h4>
-        <p
-          className="text-base"
-          style={{ position: "relative", left: "102px" }}
-        >
+        <p className="text-base mb-7 ml-10">
           We are an IPC registered charity, all monetary donations will be
           entitled to tax relief
         </p>
@@ -92,10 +94,7 @@ const DonationForm = () => {
         {/* submitDonationForm submits the entire donation form */}
         <form onSubmit={submitDonationForm}>
           <div>
-            <div
-              style={{ position: "relative", left: "102px" }}
-              className="flex"
-            >
+            <div className="flex mb-7 ml-10">
               <div onClick={() => setPersonaChoice("Individual")}>
                 <BaseButton label="Individual" />
               </div>
@@ -103,23 +102,19 @@ const DonationForm = () => {
                 <BaseButton label="Corporate" />
               </div>
             </div>
+            <div className="mb-8 ml-10">
+              <input
+                type="checkbox"
+                id="taxDeduct"
+                onClick={() => setTaxDeduction(!taxDeduction)}
+                className="mr-1"
+              />
+              <label htmlFor="taxDeduct">
+                I would like to receive tax relief for this donation
+              </label>
+            </div>
 
-            <br />
-            <input
-              type="checkbox"
-              id="taxDeduct"
-              onClick={() => setTaxDeduction(!taxDeduction)}
-              style={{ position: "relative", left: "102px" }}
-            />
-            <label
-              htmlFor="taxDeduct"
-              style={{ position: "relative", left: "110px" }}
-            >
-              I would like to receive tax relief for this donation
-            </label>
-            <br />
-
-            <div style={{ position: "relative", left: "102px" }}>
+            <div className="ml-10">
               <BaseButton label="Continue" />
             </div>
           </div>
@@ -127,11 +122,13 @@ const DonationForm = () => {
           {/* display taxDeduction form only when checkbox is ticked */}
           {taxDeduction && (
             <div>
-              <h4
-                className="text-2xl"
-                style={{ position: "relative", left: "63px" }}
-              >
-                2. Enter Particulars
+              <h4 className="text-2xl">
+                <img
+                  src="donateImages/number2.png"
+                  style={{ display: "inline" }}
+                  className="mr-2"
+                />
+                Enter Particulars
               </h4>
               <div className="particulars-form">
                 <div>

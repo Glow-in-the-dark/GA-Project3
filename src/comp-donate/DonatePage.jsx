@@ -56,7 +56,7 @@ function DonatePage() {
       </div>
       <br />
       <div className={`mx-auto ${styles.donationModes} bg-white p-12 mb-16`}>
-        <p className="mb-1.5">READY TO MAKE A DONATION?</p>
+        <h1 className="text-3xl mb-1.5">READY TO MAKE A DONATION?</h1>
         <p className="mb-10">We offer 4 payment methods</p>
         <div className={`mx-auto ${styles.container}`}>
           <li
