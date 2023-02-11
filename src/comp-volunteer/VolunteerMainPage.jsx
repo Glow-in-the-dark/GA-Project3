@@ -2,6 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 import BaseButton from "../comp-commons/BaseButton";
 import AccordianWrapper from "../comp-commons/AccordianWrapper";
 import Footer from "../comp-commons/Footer";
@@ -135,48 +137,52 @@ const VolunteerMainPage = () => {
       {/* section 4 */}
       <div className="bg-white py-20">
         <section className="flex flex-row justify-center">
-          <FontAwesomeIcon icon={faChevronLeft} className="mr-9 self-center" />
-          <img
-            src="public/Images/VolunteerPage/volunteers-with-cleaning-tools.png"
-            className="rounded-2xl  mr-16"
-          />
-          <div className="self-center">
-            <div className="mb-8 flex flex-row space-x-2">
-              <img
-                src="public/Images/VolunteerPage/open-inverted-commas.png"
-                className="h-[24px]"
-              />
-              <div>
-                <p className="mb-8">
-                  <span className="text-3xl">CISCO SINGAPORE</span>
-                  <br />
-                  <span className="text-2xl">
-                    PAYING IT FORWARD AT WILLING HEARTS
-                  </span>
-                </p>
-                <p className="mb-2">
-                  Volunteering and giving back to the communities where we
-                  <br />
-                  live and work has always been part of our DNA at Cisco.
-                </p>
-                <p className="mb-8">
-                  Cisconians went above and beyond to give back. 135
-                  <br /> volunteers put in the work needed - 405 hours - to
-                  deliver
-                  <br />
-                  cleaned and prepared premises for Willing Hearts as they
-                  <br />
-                  started a fresh chapter.
-                </p>
-                <p className="text-greyscale2">19 August 2022</p>
-              </div>
-              <img
-                src="public/Images/VolunteerPage/close-inverted-commas.png"
-                className="h-[24px] mt-10"
-              />
+          <Carousel
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}
+            className="w-[1000px]"
+            renderArrowPrev={(clickHandler, hasPrev) => {
+              return (
+                <div
+                  className={`${
+                    hasPrev ? "absolute" : "hidden"
+                  } top-0 bottom-0 left-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                  onClick={clickHandler}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronLeft}
+                    className="mr-9 self-center"
+                  />
+                </div>
+              );
+            }}
+            renderArrowNext={(clickHandler, hasNext) => {
+              return (
+                <div
+                  className={`${
+                    hasNext ? "absolute" : "hidden"
+                  } top-0 bottom-0 right-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                  onClick={clickHandler}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronRight}
+                    className="ml-9 self-center"
+                  />
+                </div>
+              );
+            }}
+          >
+            <div>
+              <img src="public/Images/VolunteerPage/carousel-cisco.png" />
             </div>
-          </div>
-          <FontAwesomeIcon icon={faChevronRight} className="ml-9 self-center" />
+            <div>
+              <img src="public/Images/VolunteerPage/carousel-cisco.png" />
+            </div>
+            <div>
+              <img src="public/Images/VolunteerPage/carousel-cisco.png" />
+            </div>
+          </Carousel>
         </section>
       </div>
 
