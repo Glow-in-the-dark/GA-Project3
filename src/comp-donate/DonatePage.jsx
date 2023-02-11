@@ -23,26 +23,25 @@ function DonatePage() {
   const displayPayNowPrompt = () => {};
 
   return (
-    <div className="text-center">
-      <h1 className="text-5xl">YOUR DONATION MAKES A DIFFERENCE</h1>
-      <p className="text-lg">
+    <div className="text-center bg-secondary">
+      <h1 className="text-5xl m-1.5">YOUR DONATION MAKES A DIFFERENCE</h1>
+      <p className="text-lg mb-12">
         With your support, we are able to provide meals and support services to
         those who are in need. Your <br /> donation ensures that no one goes
         hunrgy and that no one goes without the basic necessities of life.
       </p>
       <img
         src="/donateImages/donationMain.png"
-        className={`mx-auto ${styles.topImage}`}
+        className={`mx-auto ${styles.topImage} mb-16`}
       />
       <br />
       <h1>GIVE THE GIFT OF SUPPORT</h1>
       <br />
-      <p className="text-sm">See the impact of your donation</p>
-      <br />
+      <p className="text-sm mb-9">See the impact of your donation</p>
       {/* // very useful! <form action=""></form> the action specifies where the form data is sent, value is a url */}
 
       <div>
-        <p className="text-2xl">
+        <p className="text-2xl mb-16">
           Every
           <select id="selection" onChange={handleSelectChange}>
             {/* // IMPORTANT!!! option value is linked to event.target.value of
@@ -56,9 +55,9 @@ function DonatePage() {
         </p>
       </div>
       <br />
-      <div className={`mx-auto ${styles.donationModes}`}>
-        <p>READY TO MAKE A DONATION?</p>
-        <p>We offer 4 payment methods</p>
+      <div className={`mx-auto ${styles.donationModes} bg-white p-12 mb-16`}>
+        <p className="mb-1.5">READY TO MAKE A DONATION?</p>
+        <p className="mb-10">We offer 4 payment methods</p>
         <div className={`mx-auto ${styles.container}`}>
           <li
             className={`${styles.card} ${styles.QRCode}`}
@@ -82,28 +81,27 @@ function DonatePage() {
         </div>
       </div>
 
-      <div>
-        <h1 className="text-3xl">PREFER TO DONATE IN KIND?</h1>
-        <p className="text-xl">Here are some recommended list of items</p>
-        <br />
-        <img src="./public/donateImages/ingredients.png" className="mx-auto" />
-        <br />
-        <p className="text-base">
-          You may wish to donate directly to Willing Hearts at
-        </p>
-        <br />
-        <h3 className="text-xl">
-          No.1 Lorong J Telok Kurau Singapore 425792
-        </h3>
-        <h3 className="text-xl">We are open from 4.30 am to 3.00 pm</h3>
-        <br />
-        <p className="text-base">
-          For donations in large quantities of provisions and/or frozen
-          ingredients, please click here
-        </p>
+      <div className={`bg-white ${styles.donateInKind} mx-auto py-12`}>
+        <h1 className="text-3xl mb-2">PREFER TO DONATE IN KIND?</h1>
+        <p className="text-xl mb-4">Here are some recommended list of items</p>
+        <img
+          src="./public/donateImages/ingredients.png"
+          className="mx-auto mb-14"
+        />
+        <div className="">
+          <p className="text-base mb-4">
+            You may wish to donate directly to Willing Hearts at
+          </p>
+          <h3 className="text-xl">
+            No.1 Lorong J Telok Kurau Singapore 425792
+          </h3>
+          <h3 className="text-xl mb-4">We are open from 4.30 am to 3.00 pm</h3>
+          <p className="text-base">
+            For donations in large quantities of provisions and/or frozen
+            ingredients, please click here
+          </p>
+        </div>
       </div>
-
-      <input type="date" />
     </div>
   );
 }

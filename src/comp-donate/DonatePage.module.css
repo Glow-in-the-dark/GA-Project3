@@ -1,9 +1,9 @@
 .donationModes {
-width: 1200px;
-height: 470px;
-left: calc(50% - 1200px/2);
-top: 1122px;
-background-color: white;
+  width: 1200px;
+  height: 470px;
+  left: calc(50% - 1200px / 2);
+  top: 1122px;
+  background-color: white;
 }
 
 .container {
@@ -36,4 +36,11 @@ background-color: white;
   height: 392px;
   left: 123px;
   top: 398px;
+}
+
+.donateInKind {
+  width: 1200px;
+  height: 992px;
+  left: calc(50% - 1200px / 2);
+  top: 1664px;
 }
