@@ -10,7 +10,7 @@ import ThankYouPage from "./comp-donate/ThankYouPage";
 function App() {
   return (
     <div>
-      <ThankYouPage/>
+      <DonatePage/>
       {/* <News /> */}
       {/* <h1>GA SEI 41</h1> */}
       {/* <CommonComponentExamples /> */}
