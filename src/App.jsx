@@ -6,13 +6,12 @@ import ContactUsPage from "./comp-contactUs/ContactUsPage";
 import ContactFormConfirmationPage from "./comp-contactUs/ContactFormConfirmationPage";
 import Homepage from "./comp-homepage/Homepage";
 import AboutUsPage from "./comp-aboutUs/AboutUsPage";
-// import DonatePage from "./comp-donate/DonatePage";
+import DonatePage from "./comp-donate/DonatePage";
 // import VolunteerMainPage from "./comp-volunteer/VolunteerMainPage";
 import Projects from "./comp-aboutUs/Projects";
 import News from "./comp-aboutUs/News";
 import Faq from "./comp-aboutUs/Faq";
 import Dropdown from "./comp-NavBar/Dropdown";
-
 
 function App() {
   return (
@@ -22,7 +21,7 @@ function App() {
         <Route path="/" element={<Navigate replace to="/homepage" />} />
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
-        {/* <Route path="/donate" element={<DonatePage />} /> */}
+        <Route path="/donate" element={<DonatePage />} />
         {/* <Route path="/volunteer" element={<VolunteerMainPage />} /> */}
         <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/projects" element={<Projects />} />
