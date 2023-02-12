@@ -13,6 +13,7 @@ import News from "./comp-aboutUs/News";
 import Faq from "./comp-aboutUs/Faq";
 import Dropdown from "./comp-NavBar/Dropdown";
 
+
 function App() {
   return (
     <div>
