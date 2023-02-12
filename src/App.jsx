@@ -4,6 +4,7 @@ import NavBar from "./comp-NavBar/NavBar";
 import CommonComponentExamples from "./comp-commons/examplePage/CommonComponentExamples";
 import ContactUsPage from "./comp-contactUs/ContactUsPage";
 import ContactFormConfirmationPage from "./comp-contactUs/ContactFormConfirmationPage";
+import Homepage from "./comp-homepage/Homepage";
 import AboutUsPage from "./comp-aboutUs/AboutUsPage";
 // import DonatePage from "./comp-donate/DonatePage";
 // import VolunteerMainPage from "./comp-volunteer/VolunteerMainPage";
@@ -17,7 +18,8 @@ function App() {
     <div>
       <NavBar />
       <Routes>
-        {/* <Route path="/" element={<Navigate replace to="/page-one" />} /> */}
+        <Route path="/" element={<Navigate replace to="/homepage" />} />
+        <Route path="/homepage" element={<Homepage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
         {/* <Route path="/donate" element={<DonatePage />} /> */}
         {/* <Route path="/volunteer" element={<VolunteerMainPage />} /> */}
