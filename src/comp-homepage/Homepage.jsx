@@ -10,30 +10,30 @@ import Footer from "../comp-commons/Footer";
 
 const Homepage = () => {
   return (
-    <div> hello </div>
-    // <div className="bg-secondary text-greyscale1 pt-24">
-    //   {/* section 1 */}
-    //   <section className="w-[1000px] mx-auto text-center pb-20">
-    //     <h1 className="mb-10">
-    //       VOLUNTEERING AT
-    //       <br />
-    //       WILLING HEARTS IS{" "}
-    //       <span className="bg=[url(public/Images/Common/highlight-circle.png)]">
-    //         SIMPLE
-    //       </span>
-    //     </h1>
-    //     <h3 className="mb-6">
-    //       Just bring a similing face, two helping hands, a willing heart and the
-    //       question "How can I help
-    //       <br />
-    //       today?" That's all it takes to make a difference in your community.
-    //     </h3>
-    //     <BaseButton label="Join Us" colour="red" className="mb-14" />
-    //     <img
-    //       src="public/Images/VolunteerPage/founder-teaching-students.png"
-    //       className="rounded-2xl"
-    //     />
-    //   </section>
+    <div className="bg-secondary text-greyscale1 pt-24">
+      {/* section 1 */}
+      <section className="w-[1000px] mx-auto text-center pb-20">
+        <h1 className="mb-10">
+          VOLUNTEERING AT
+          <br />
+          WILLING HEARTS IS{" "}
+          <span className="bg=[url(public/Images/Common/highlight-circle.png)]">
+            SIMPLE
+          </span>
+        </h1>
+        <h3 className="mb-6">
+          Just bring a similing face, two helping hands, a willing heart and the
+          question "How can I help
+          <br />
+          today?" That's all it takes to make a difference in your community.
+        </h3>
+        <BaseButton label="Join Us" colour="red" className="mb-14" />
+        <img
+          src="public/Images/VolunteerPage/founder-teaching-students.png"
+          className="rounded-2xl"
+        />
+      </section>
+    </div>
 
     //   {/* section 2 */}
     //   <div className="bg-white py-20">
