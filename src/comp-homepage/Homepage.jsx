@@ -91,8 +91,12 @@ const Homepage = () => {
             might need a helping hand.
           </h3>
           <div className="flex mx-auto justify-center">
-            <BaseButton className="mr-3" label="Volunteer" colour="red" />
-            <BaseButton className="ml-3" label="Donate" colour="white" />
+            <a href="/volunteer">
+              <BaseButton className="mr-3" label="Volunteer" colour="red" />
+            </a>
+            <a href="/donate">
+              <BaseButton className="ml-3" label="Donate" colour="white" />
+            </a>
           </div>
           <br />
           <img
