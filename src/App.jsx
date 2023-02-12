@@ -19,8 +19,8 @@ function App() {
       {/* <CommonComponentExamples /> */}
       {/* <ContactUsPage /> */}
       {/* <ContactFormConfirmationPage /> */}
-      <VolunteerMainPage />
-      {/* <LoginPage /> */}
+      {/* <VolunteerMainPage /> */}
+      <LoginPage />
     </div>
   );
 }
