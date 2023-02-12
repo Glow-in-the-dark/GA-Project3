@@ -5,9 +5,9 @@ import { faSquareInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col">
       <img
-        src="../../public/images/footer-stroke.png"
+        src="../../public/images/common/footer-stroke.png"
         className="w-11/12 mx-auto"
       />
       <div className="flex flex-row">

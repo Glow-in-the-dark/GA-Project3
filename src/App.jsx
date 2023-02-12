@@ -7,10 +7,10 @@ import ContactFormConfirmationPage from "./comp-contactUs/ContactFormConfirmatio
 import Homepage from "./comp-homepage/Homepage";
 import AboutUsPage from "./comp-aboutUs/AboutUsPage";
 import DonatePage from "./comp-donate/DonatePage";
-// import VolunteerMainPage from "./comp-volunteer/VolunteerMainPage";
-import Projects from "./comp-aboutUs/Projects";
-import News from "./comp-aboutUs/News";
-import Faq from "./comp-aboutUs/Faq";
+import VolunteerMainPage from "./comp-volunteer/VolunteerMainPage";
+import ProjectsPage from "./comp-aboutUs/ProjectsPage";
+import NewsPage from "./comp-aboutUs/NewsPage";
+import FaqPage from "./comp-aboutUs/FaqPage";
 import Dropdown from "./comp-NavBar/Dropdown";
 
 function App() {
@@ -22,13 +22,15 @@ function App() {
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/donate" element={<DonatePage />} />
-        {/* <Route path="/volunteer" element={<VolunteerMainPage />} /> */}
+        <Route path="/volunteer" element={<VolunteerMainPage />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/news" element={<News />} />
-        <Route path="/faq" element={<Faq />} />
-        {/* <CommonComponentExamples />
-        <ContactFormConfirmationPage /> */}
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/faq" element={<FaqPage />} />
+        <Route
+          path="/contact-us/confirmation-page"
+          element={<ContactFormConfirmationPage />}
+        />
       </Routes>
     </div>
   );
