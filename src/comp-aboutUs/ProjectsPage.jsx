@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import ProjectsCard from "./Components/ProjectsCard";
 import projectsDataset from "../datasets/projects";
 import BaseButton from "../comp-commons/BaseButton";
@@ -48,7 +49,9 @@ const ProjectsPage = () => {
               welcome anyone who wants to make a positive impact in ther
               community to join us.
             </h3>
-            <BaseButton label="Find Out More" colour="transparent" />
+            <Link to="/volunteer">
+              <BaseButton label="Find Out More" colour="transparent" />
+            </Link>
           </div>
         </div>
       </section>

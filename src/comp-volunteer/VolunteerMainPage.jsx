@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -203,7 +204,9 @@ const VolunteerMainPage = () => {
           <h3 className="mb-5">
             If you are planning to come with a large group, please contact us.
           </h3>
-          <BaseButton label="Contact Us" colour="red" />
+          <Link to="/contact-us">
+            <BaseButton label="Contact Us" colour="red" />
+          </Link>
         </section>
       </div>
 

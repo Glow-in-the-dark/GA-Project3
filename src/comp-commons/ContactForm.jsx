@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import BaseInput from "./BaseInput";
 import BaseTextArea from "./BaseTextArea";
 import BaseButton from "./BaseButton";
@@ -8,6 +9,8 @@ import { faEnvelopeOpen } from "@fortawesome/free-solid-svg-icons";
 import { faHouse } from "@fortawesome/free-solid-svg-icons";
 
 const ContactForm = () => {
+  const navigate = useNavigate();
+
   // States
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -30,6 +33,7 @@ const ContactForm = () => {
   // Function to handle submit
   function handleSubmit(e) {
     e.preventDefault();
+    navigate("/contact-us/confirmation-page");
   }
 
   return (
@@ -37,7 +41,7 @@ const ContactForm = () => {
       {/* Form section */}
       <div className="flex flex-row space-x-14">
         {/* User input section */}
-        <form className="w-[590px] space-y-9">
+        <form className="w-[590px] space-y-9" onSubmit={handleSubmit}>
           <BaseInput
             type="string"
             id="name"

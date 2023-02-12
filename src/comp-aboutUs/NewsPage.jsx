@@ -25,7 +25,7 @@ const NewsPage = () => {
       </h3>
 
       {/* Section 2: News cards */}
-      <div className="grid grid-cols-2 w-fit mx-auto space-x-12 space-y-14 mb-12">
+      <div className="grid grid-cols-2 w-fit mx-auto gap-x-12 gap-y-14 mb-12">
         {disp}
       </div>
 

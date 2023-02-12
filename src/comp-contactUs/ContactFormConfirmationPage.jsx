@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import BaseButton from "../comp-commons/BaseButton";
 import Footer from "../comp-commons/Footer";
 
@@ -18,7 +19,9 @@ const ContactFormConfirmationPage = () => {
           <br /> If you require urgent assistance, kindly contact our hotline at
           +65 6476 5822.
         </p>
-        <BaseButton label="Back To Home" colour="transparent" />
+        <Link to="/">
+          <BaseButton label="Back To Home" colour="transparent" />
+        </Link>
       </section>
 
       {/* Footer */}
