@@ -12,239 +12,262 @@ const Homepage = () => {
   return (
     <div className="bg-secondary text-greyscale1 pt-24">
       {/* section 1 */}
-      <section className="w-[1000px] mx-auto text-center pb-20">
-        <h1 className="mb-10">
-          VOLUNTEERING AT
-          <br />
-          WILLING HEARTS IS{" "}
-          <span className="bg=[url(public/Images/Common/highlight-circle.png)]">
-            SIMPLE
-          </span>
-        </h1>
-        <h3 className="mb-6">
-          Just bring a similing face, two helping hands, a willing heart and the
-          question "How can I help
-          <br />
-          today?" That's all it takes to make a difference in your community.
-        </h3>
-        <BaseButton label="Join Us" colour="red" className="mb-14" />
+      <section className="text-center flex flex-row space-x-6 justify-center">
         <img
-          src="public/Images/VolunteerPage/founder-teaching-students.png"
-          className="rounded-2xl"
+          src="public/Images/Homepage/Soup_kitchen.png"
+          className="rounded-2xl w-[384px] mb-32 ml-5 mr-3"
         />
+        <img
+          src="public/Images/Homepage/Offering_help.png"
+          className="rounded-2xl w-[279px] h-[422px] mt-36"
+        />
+        <div className="my-auto">
+          <h1 className="mb-10 ml-16 ">
+            WE PROVIDE
+            <br />
+            WARM MEALS TO
+            <br />
+            ANYONE IN NEED
+          </h1>
+          <h3 className="mb-10 ml-16">
+            We have a "no question asked" policy,
+            <br />
+            just as you would for your own family.
+          </h3>
+        </div>
       </section>
+
+      {/* section 2 */}
+      <div className="bg-white py-16">
+        <section className="w-[1200px] mx-auto text-center">
+          <div className="flex flex-row space-x-20 mx-auto mb-14">
+            <div className="w-[370px]">
+              <img
+                src="public/Images/Homepage/Cartoon_Meals.png"
+                className="mx-auto mb-6 mt-6"
+              />
+              <p className="text-2xl mb-4">11,000</p>
+              <p className="">Meals A Day</p>
+            </div>
+            <div className="w-[370px]">
+              <img
+                src="public/Images/Homepage/Cartoon_Beneficiaries.png"
+                className="mx-auto mb-6 mt-2"
+              />
+              <p className="text-2xl mb-4">6,000</p>
+              <p className="">Beneficiaries</p>
+            </div>
+            <div className="w-[370px]">
+              <img
+                src="public/Images/Homepage/Cartoon_Locations.png"
+                className="mx-auto mb-6 mt-2"
+              />
+              <p className="text-2xl mb-4">70</p>
+              <p className="">Locations Islandwide</p>
+            </div>
+            <div className="w-[370px]">
+              <img
+                src="public/Images/Homepage/Cartoon_hearts.png"
+                className="mx-auto mb-6"
+              />
+              <p className="text-2xl mb-4">365</p>
+              <p className="">Days, We Are Open!</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* section 3 */}
+      <div className="py-20">
+        <section className="w-[1000px] mx-auto text-center">
+          <h1 className="mb-10">
+            WE ARE A <br /> COMMUNITY-BASED ORGANISATION
+          </h1>
+          <h3 className="mb-10">
+            We wouldn't be here today without the help of our family,
+            neighbours, and everyone in the community.
+            <br />
+            We believe in looking out for each other, you'll never know when you
+            might need a helping hand.
+          </h3>
+          <div className="flex mx-auto justify-center">
+            <BaseButton className="mr-3" label="Volunteer" colour="red" />
+            <BaseButton className="ml-3" label="Donate" colour="white" />
+          </div>
+          <br />
+          <img
+            src="public/Images/Homepage/community_volunteer.png"
+            className="rounded-2xl mb-16"
+          />
+        </section>
+      </div>
+
+      {/* section 4 */}
+      <div className="bg-white py-20">
+        <section className="w-[1000px] mx-auto text-center">
+          <h1 className="mb-10">
+            MAKING A DIFFERENCE <br /> IS A COLLECTIVE EFFORT
+          </h1>
+          <h3 className="mb-10">
+            Established in 2005, out mission has remained unchanged: to provide
+            meals to those in need. We are proud
+            <br />
+            to have received the IPC (Institution of Public Character) status in
+            2022, recognising our commitment to
+            <br />
+            serving our community.
+          </h3>
+          <Carousel
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}
+            className="w-[1000px]"
+            renderArrowPrev={(clickHandler, hasPrev) => {
+              return (
+                <div
+                  className={`${
+                    hasPrev ? "absolute" : "hidden"
+                  } top-0 bottom-0 left-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                  onClick={clickHandler}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronLeft}
+                    className="mr-9 self-center"
+                  />
+                </div>
+              );
+            }}
+            renderArrowNext={(clickHandler, hasNext) => {
+              return (
+                <div
+                  className={`${
+                    hasNext ? "absolute" : "hidden"
+                  } top-0 bottom-0 right-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                  onClick={clickHandler}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronRight}
+                    className="ml-9 self-center"
+                  />
+                </div>
+              );
+            }}
+          >
+            <div>
+              <img src="public/Images/Homepage/GroupLogos.png" />
+            </div>
+            <div>
+              <img src="public/Images/Homepage/GroupLogos.png" />
+            </div>
+            <div>
+              <img src="public/Images/Homepage/GroupLogos.png" />
+            </div>
+          </Carousel>
+        </section>
+      </div>
+
+      {/* section 5 */}
+      <div className=" py-20">
+        <section className="flex flex-row justify-center">
+          <Carousel
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}
+            className="w-[1000px]"
+            renderArrowPrev={(clickHandler, hasPrev) => {
+              return (
+                <div
+                  className={`${
+                    hasPrev ? "absolute" : "hidden"
+                  } top-0 bottom-0 left-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                  onClick={clickHandler}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronLeft}
+                    className="mr-9 self-center"
+                  />
+                </div>
+              );
+            }}
+            renderArrowNext={(clickHandler, hasNext) => {
+              return (
+                <div
+                  className={`${
+                    hasNext ? "absolute" : "hidden"
+                  } top-0 bottom-0 right-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                  onClick={clickHandler}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronRight}
+                    className="ml-9 self-center"
+                  />
+                </div>
+              );
+            }}
+          >
+            <div>
+              <img src="public/Images/Homepage/volunteer-carousell.png" />
+            </div>
+            <div>
+              <img src="public/Images/Homepage/volunteer-carousell.png" />
+            </div>
+            <div>
+              <img src="public/Images/Homepage/volunteer-carousell.png" />
+            </div>
+          </Carousel>
+        </section>
+      </div>
+
+      {/* section 6*/}
+      <div className="bg-white py-16">
+        <section className="w-[1200px] mx-auto text-center">
+          <h1 className="mb-4">OTHER PROJECTS</h1>
+          <div className="flex flex-row space-x-20 mx-auto mb-14">
+            <div className="w-[370px]">
+              <img
+                src="public/Images/Homepage/training_kitchen.png"
+                className="mx-auto mb-6 mt-6"
+              />
+              <p className="text-2xl mb-4">TRAINING KITCHEN</p>
+              <p className="">
+                An initiative to carry out training kitchens open for those who
+                want to learn how to cook for themselves. $780 raised of $10,000
+              </p>
+              <img
+                src="public/Images/Homepage/bar_img.png"
+                className="mx-auto mb-6 mt-6"
+              />
+            </div>
+            <div className="w-[370px]">
+              <img
+                src="public/Images/Homepage/Book.png"
+                className="mx-auto mb-6 mt-2"
+              />
+              <p className="text-2xl mb-4">COMMEMORATIVE BOOK</p>
+              <p className="">
+                Commemorative Book Support Soup Kitchen operations by purchasing
+                the exclusive commemorative cookbook from 11 renowned chefs.
+              </p>
+            </div>
+            <div className="w-[370px]">
+              <img
+                src="public/Images/Homepage/dental.png"
+                className="mx-auto mb-6 mt-2"
+              />
+              <p className="text-2xl mb-4">GREENLIFE DENTAL CLINIC</p>
+              <p className="">
+                Greenlife Dental Clinic The official dental partner of Willing
+                Hearts to take care of the beneficiaries and anyone who needs
+                subsidised dental care.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
-
-    //   {/* section 2 */}
-    //   <div className="bg-white py-20">
-    //     <section className="w-[1200px] mx-auto text-center">
-    //       <h1 className="mb-4">VOLUNTEER ROLES</h1>
-    //       <p className="mb-16">
-    //         There will always be someone who needs a helping hand at the soup
-    //         kitchen. Someone will grab you along the way,
-    //         <br />
-    //         asking for help.
-    //       </p>
-    //       <div className="flex flex-row space-x-20 mx-auto mb-14">
-    //         <div className="w-[370px]">
-    //           <img
-    //             src="public/Images/VolunteerPage/cartoon-ingredients.png"
-    //             className="mx-auto mb-6"
-    //           />
-    //           <p className="text-2xl mb-4">PREPERATION OF INGREDIENTS</p>
-    //           <p className="">
-    //             This involves chopping vegetables, prepping
-    //             <br />
-    //             meat, opening bottles and packets of sauces,
-    //             <br />
-    //             cooking the food, and other tasks for the
-    //             <br />
-    //             meals to be ready and deliverd on time.
-    //           </p>
-    //         </div>
-    //         <div className="w-[370px]">
-    //           <img
-    //             src="public/Images/VolunteerPage/cartoon-ingredients.png"
-    //             className="mx-auto mb-6"
-    //           />
-    //           <p className="text-2xl mb-4">CLEANING & WASHING</p>
-    //           <p className="">
-    //             Often the most overlooked part of the
-    //             <br />
-    //             whole process. Used trays, covers,
-    //             <br />
-    //             baskets, cooking utensils, pots and pans
-    //             <br />
-    //             all need washing.
-    //           </p>
-    //         </div>
-    //         <div className="w-[370px]">
-    //           <img
-    //             src="public/Images/VolunteerPage/cartoon-ingredients.png"
-    //             className="mx-auto mb-6"
-    //           />
-    //           <p className="text-2xl mb-4">PACKING LUNCH BOXES</p>
-    //           <p className="">
-    //             This is a relatively simple task: line up
-    //             <br />
-    //             food containers, scoop portions of rice
-    //             <br />
-    //             along with other dishes of the day, cover
-    //             <br />
-    //             the containers and put them into the
-    //             <br />
-    //             delivery basket.
-    //           </p>
-    //         </div>
-    //       </div>
-    //       <hr />
-    //       <div className="w-[370px] mx-auto mt-14">
-    //         <img
-    //           src="public/Images/VolunteerPage/cartoon-ingredients.png"
-    //           className="mx-auto mb-6"
-    //         />
-    //         <p className="text-2xl mb-4">DRIVER</p>
-    //         <p className="">
-    //           Food distribution is crucial for Willing
-    //           <br />
-    //           Hearts to provide their daily meal service
-    //           <br />
-    //           and ensure that beneficiaries have food to
-    //           <br />
-    //           eat throughout the year.
-    //         </p>
-    //       </div>
-    //     </section>
-    //   </div>
-
-    //   {/* section 3 */}
-    //   <section className="text-center py-20">
-    //     <h1 className="mb-10">WE ARE OPEN DAILY!</h1>
-    //     <h3 className="mb-8">
-    //       The Soup Kitchen is open every day, 365 days a year including Weekends
-    //       and Public Holidays.
-    //     </h3>
-    //     <div className="w-fit mx-auto text-left">
-    //       <h3 className="mb-2">These are our volunteer timings:</h3>
-    //       <ul className="text-xl list-disc list-inside">
-    //         <li>Early Morning (5am - 9am)</li>
-    //         <li>Morning (9am - 1pm)</li>
-    //         <li>Afternoon (1pm - 5pm)</li>
-    //       </ul>
-    //     </div>
-    //   </section>
-
-    //   {/* section 4
-    //   <div className="bg-white py-20">
-    //     <section className="flex flex-row justify-center">
-    //       <Carousel
-    //         showStatus={false}
-    //         showThumbs={false}
-    //         showIndicators={false}
-    //         className="w-[1000px]"
-    //         renderArrowPrev={(clickHandler, hasPrev) => {
-    //           return (
-    //             <div
-    //               className={`${
-    //                 hasPrev ? "absolute" : "hidden"
-    //               } top-0 bottom-0 left-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
-    //               onClick={clickHandler}
-    //             >
-    //               <FontAwesomeIcon
-    //                 icon={faChevronLeft}
-    //                 className="mr-9 self-center"
-    //               />
-    //             </div>
-    //           );
-    //         }}
-    //         renderArrowNext={(clickHandler, hasNext) => {
-    //           return (
-    //             <div
-    //               className={`${
-    //                 hasNext ? "absolute" : "hidden"
-    //               } top-0 bottom-0 right-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
-    //               onClick={clickHandler}
-    //             >
-    //               <FontAwesomeIcon
-    //                 icon={faChevronRight}
-    //                 className="ml-9 self-center"
-    //               />
-    //             </div>
-    //           );
-    //         }}
-    //       >
-    //         <div>
-    //           <img src="public/Images/VolunteerPage/carousel-cisco.png" />
-    //         </div>
-    //         <div>
-    //           <img src="public/Images/VolunteerPage/carousel-cisco.png" />
-    //         </div>
-    //         <div>
-    //           <img src="public/Images/VolunteerPage/carousel-cisco.png" />
-    //         </div>
-    //       </Carousel>
-    //     </section>
-    //   </div> */}
-
-    //   {/* section 5 */}
-    //   <div className="py-20">
-    //     <section className="w-[1000px] mx-auto text-center">
-    //       <img
-    //         src="public/Images/VolunteerPage/large-group-of-volunteers.png"
-    //         className="rounded-2xl mb-16"
-    //       />
-    //       <h1 className="mb-10">FOR VOLUNTEERING IN GROUPS</h1>
-    //       <h3 className="mb-10">
-    //         Join us for a day or multiple days a week. At Willing Hearts, we
-    //         offer a flexible schedule, so you don't have
-    //         <br />
-    //         to worry about being unable to commit in order to contribute.
-    //       </h3>
-    //       <h3 className="mb-5">
-    //         If you are planning to come with a large group, please contact us.
-    //       </h3>
-    //       <BaseButton label="Contact Us" colour="red" />
-    //     </section>
-    //   </div>
-
-    //   {/* section 6 */}
-    //   <div className="bg-white py-20">
-    //     <section className="text-center flex flex-row space-x-6 justify-center">
-    //       <img
-    //         src="public/Images/VolunteerPage/student-with-book.png"
-    //         className="rounded-2xl w-[282px] mt-16"
-    //       />
-    //       <img
-    //         src="public/Images/VolunteerPage/two-students-in-red.png"
-    //         className="rounded-2xl w-[282px] mb-16"
-    //       />
-    //       <div className="my-auto">
-    //         <h1 className="mb-10">WE GRANT CIP HOURS!</h1>
-    //         <h3 className="mb-10">
-    //           At Willing Hearts, we recognize the importance of community
-    //           <br />
-    //           involvement and service for our youth. That's why we offer the
-    //           <br /> opportunity for students to earn Community Involvement
-    //           <br />
-    //           Program (CIP) hours by participating in our volunteer program.
-    //         </h3>
-    //         <h3 className="mb-5">
-    //           Click <span className="underline">here</span> to download the log
-    //           sheet.
-    //         </h3>
-    //         <BaseButton label="Volunteer Now" colour="red" />
-    //       </div>
-    //     </section>
-    //   </div>
-
-    //   {/* section 7 */}
-    //   <section className="py-20">
-    //     <AccordianWrapper title="FAQ" contentDataset={volunteerMainFaq} />
-    //   </section>
-
-    //   {/* Footer */}
-    //   <Footer />
-    // </div>
   );
 };
 
