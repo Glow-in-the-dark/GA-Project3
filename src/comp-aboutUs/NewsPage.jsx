@@ -1,7 +1,7 @@
 import React from "react";
 import NewsCard from "./Components/NewsCard";
 import Footer from "../comp-commons/Footer";
-import newsDataset from "../datasets/news";
+import newsDataset from "../comp-volunteer/datasets/news";
 
 const NewsPage = () => {
   const disp = newsDataset.map((news) => {

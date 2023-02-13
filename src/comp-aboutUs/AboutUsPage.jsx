@@ -1,7 +1,7 @@
 import React from "react";
 import JourneyCard from "./Components/JourneyCard";
 import Footer from "../comp-commons/Footer";
-import homeDataset from "../datasets/home";
+import homeDataset from "../comp-volunteer/datasets/home";
 
 const AboutUsPage = () => {
   const disp = homeDataset.map((home) => {

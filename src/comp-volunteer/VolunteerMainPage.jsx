@@ -8,7 +8,7 @@ import { Carousel } from "react-responsive-carousel";
 import BaseButton from "../comp-commons/BaseButton";
 import AccordianWrapper from "../comp-commons/AccordianWrapper";
 import Footer from "../comp-commons/Footer";
-import volunteerMainFaq from "../datasets/volunteerMainFaq";
+import volunteerMainFaq from "./datasets/volunteerMainFaq";
 
 const VolunteerMainPage = () => {
   return (
