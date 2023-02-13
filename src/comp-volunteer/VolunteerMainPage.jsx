@@ -175,13 +175,13 @@ const VolunteerMainPage = () => {
             }}
           >
             <div>
-              <img src="public/Images/VolunteerPage/carousel-cisco.png" />
+              <img src="/Images/VolunteerPage/carousel-cisco.png" />
             </div>
             <div>
-              <img src="public/Images/VolunteerPage/carousel-cisco.png" />
+              <img src="/Images/VolunteerPage/carousel-cisco.png" />
             </div>
             <div>
-              <img src="public/Images/VolunteerPage/carousel-cisco.png" />
+              <img src="/Images/VolunteerPage/carousel-cisco.png" />
             </div>
           </Carousel>
         </section>
@@ -191,7 +191,7 @@ const VolunteerMainPage = () => {
       <div className="py-20">
         <section className="w-[1000px] mx-auto text-center">
           <img
-            src="public/Images/VolunteerPage/large-group-of-volunteers.png"
+            src="/Images/VolunteerPage/large-group-of-volunteers.png"
             className="rounded-2xl mb-16"
           />
           <h1 className="mb-10">FOR VOLUNTEERING IN GROUPS</h1>
@@ -214,11 +214,11 @@ const VolunteerMainPage = () => {
       <div className="bg-white py-20">
         <section className="text-center flex flex-row space-x-6 justify-center">
           <img
-            src="public/Images/VolunteerPage/student-with-book.png"
+            src="/Images/VolunteerPage/student-with-book.png"
             className="rounded-2xl w-[282px] mt-16"
           />
           <img
-            src="public/Images/VolunteerPage/two-students-in-red.png"
+            src="/Images/VolunteerPage/two-students-in-red.png"
             className="rounded-2xl w-[282px] mb-16"
           />
           <div className="my-auto">
