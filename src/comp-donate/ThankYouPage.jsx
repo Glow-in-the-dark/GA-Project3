@@ -1,4 +1,6 @@
 import React from "react";
+import Footer from "../comp-commons/Footer";
+import { NavLink } from "react-router-dom";
 
 const ThankYouPage = () => {
   return (
@@ -13,8 +15,11 @@ const ThankYouPage = () => {
           appreciate it. You will <br />
           receive an email with details of your donation
         </p>
-        <button className="text-xl">Back to Home</button>
+        <NavLink to="/" className="text-xl">
+          Back to Home
+        </NavLink>
       </div>
+      <Footer />
     </>
   );
 };

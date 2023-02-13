@@ -1,6 +1,8 @@
 import React, { useState, useRef } from "react";
 import BaseButton from "../comp-commons/BaseButton";
 import BaseInput from "../comp-commons/BaseInput";
+import Footer from "../comp-commons/Footer";
+import { NavLink } from "react-router-dom";
 
 const DonationForm = () => {
   const [taxDeduction, setTaxDeduction] = useState(false);
@@ -356,11 +358,14 @@ const DonationForm = () => {
               </div>
             </div>
             <div className="mb-8 ml-10">
-              <BaseButton type="submit" label="Donate" colour="red" />
+              <NavLink to="/thankyou">
+                <BaseButton type="submit" label="Donate" colour="red" />
+              </NavLink>
             </div>
           </section>
         </div>
       </form>
+      <Footer />
     </>
   );
 };
