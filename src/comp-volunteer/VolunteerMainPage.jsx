@@ -31,7 +31,7 @@ const VolunteerMainPage = () => {
         </h3>
         <BaseButton label="Join Us" colour="red" className="mb-14" />
         <img
-          src="public/Images/VolunteerPage/founder-teaching-students.png"
+          src="/Images/VolunteerPage/founder-teaching-students.png"
           className="rounded-2xl"
         />
       </section>
@@ -49,7 +49,7 @@ const VolunteerMainPage = () => {
           <div className="flex flex-row space-x-20 mx-auto mb-14">
             <div className="w-[370px]">
               <img
-                src="public/Images/VolunteerPage/cartoon-ingredients.png"
+                src="/Images/VolunteerPage/cartoon-ingredients.png"
                 className="mx-auto mb-6"
               />
               <p className="text-2xl mb-4">PREPERATION OF INGREDIENTS</p>
@@ -65,7 +65,7 @@ const VolunteerMainPage = () => {
             </div>
             <div className="w-[370px]">
               <img
-                src="public/Images/VolunteerPage/cartoon-ingredients.png"
+                src="/Images/VolunteerPage/cartoon-pots-and-pans.png"
                 className="mx-auto mb-6"
               />
               <p className="text-2xl mb-4">CLEANING & WASHING</p>
@@ -81,7 +81,7 @@ const VolunteerMainPage = () => {
             </div>
             <div className="w-[370px]">
               <img
-                src="public/Images/VolunteerPage/cartoon-ingredients.png"
+                src="/Images/VolunteerPage/cartoon-bowl.png"
                 className="mx-auto mb-6"
               />
               <p className="text-2xl mb-4">PACKING LUNCH BOXES</p>
@@ -101,7 +101,7 @@ const VolunteerMainPage = () => {
           <hr />
           <div className="w-[370px] mx-auto mt-14">
             <img
-              src="public/Images/VolunteerPage/cartoon-ingredients.png"
+              src="/Images/VolunteerPage/cartoon-car.png"
               className="mx-auto mb-6"
             />
             <p className="text-2xl mb-4">DRIVER</p>
