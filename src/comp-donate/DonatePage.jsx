@@ -51,6 +51,7 @@ function DonatePage() {
         <br />
         {/* // very useful! <form action=""></form> the action specifies where the form data is sent, value is a url */}
 
+        
         <div className="mb-16 text-primary">
           <p className="text-2xl">
             Every
