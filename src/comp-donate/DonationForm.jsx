@@ -313,7 +313,7 @@ const DonationForm = () => {
               </div>
             </div>
             <div className="mb-8 ml-10">
-              <div className="flex ">
+              <div className="flex space-x-5">
                 <BaseInput
                   type="string"
                   id="credit-number"
@@ -321,6 +321,7 @@ const DonationForm = () => {
                   handleChange={handleChangeCredit}
                   required={true}
                   placeholder="Credit Card Number"
+                  className=""
                 />
                 <BaseInput
                   type="string"
@@ -329,6 +330,7 @@ const DonationForm = () => {
                   handleChange={handleChangeCredit}
                   required={true}
                   placeholder="MM/YY"
+                  className=""
                 />
                 <BaseInput
                   type="string"
@@ -337,6 +339,7 @@ const DonationForm = () => {
                   handleChange={handleChangeCredit}
                   required={true}
                   placeholder="CCV"
+                  className="w-1/3"
                 />
               </div>
 
@@ -348,6 +351,7 @@ const DonationForm = () => {
                   handleChange={handleChangeCredit}
                   required={true}
                   placeholder="Name of Cardholder"
+                  className="w-3/4"
                 />
               </div>
             </div>
