@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react";
 import styles from "./DonatePage.module.css";
 import BaseButton from "../comp-commons/BaseButton";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
 
 function DonatePage() {
   const [beneficiaries, setBeneficiaries] = useState(330); // need to use useEffect to change beneficiaries value each time option changes
@@ -138,7 +143,55 @@ function DonatePage() {
           </p>
         </div>
       </div>
-      
+      <div className=" py-20">
+        <h1>WHAT OTHERS <br /> SAY</h1>
+        <br />
+        <section className="flex flex-row justify-center">
+          <Carousel
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}
+            className="w-[1000px]"
+            renderArrowPrev={(clickHandler, hasPrev) => {
+              return (
+                <div
+                  className={`${
+                    hasPrev ? "absolute" : "hidden"
+                  } top-0 bottom-0 left-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                  onClick={clickHandler}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronLeft}
+                    className="mr-9 self-center"
+                  />
+                </div>
+              );
+            }}
+            renderArrowNext={(clickHandler, hasNext) => {
+              return (
+                <div
+                  className={`${
+                    hasNext ? "absolute" : "hidden"
+                  } top-0 bottom-0 right-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                  onClick={clickHandler}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronRight}
+                    className="ml-9 self-center"
+                  />
+                </div>
+              );
+            }}
+          >
+            <div>
+              <img src="./donateImages/reviews.png" />
+            </div>
+            <div>
+              <img src="./donateImages/reviews2.png" />
+            </div>
+          </Carousel>
+        </section>
+      </div>
 
       {/* <div class="py-4">
         <div class="shadow-lg group container  rounded-md bg-white  max-w-sm flex justify-center items-center  mx-auto content-div">
