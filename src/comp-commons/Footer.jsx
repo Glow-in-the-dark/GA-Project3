@@ -56,8 +56,22 @@ const Footer = () => {
         </div>
         {/* Icons */}
         <div className="flex flex-row text-[42px] text-primary space-x-4 mr-28 mb-24 items-end">
-          <FontAwesomeIcon icon={faSquareFacebook} />
-          <FontAwesomeIcon icon={faSquareInstagram} />
+          <Link
+            to={{
+              pathname: "https://www.facebook.com/WillingHeartsSingapore/",
+            }}
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faSquareFacebook} />
+          </Link>
+          <Link
+            to={{
+              pathname: "https://www.instagram.com/willingheartssg/?hl=en",
+            }}
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faSquareInstagram} />
+          </Link>
         </div>
       </div>
       {/* Red border */}
