@@ -1,6 +1,7 @@
 import React from "react";
 import CalendarDisp from "./CalendarDisp";
 import NumOfPax from "./NumOfPax";
+import VolunteerForm from "./VolunteerForm";
 
 const Volunteer = () => {
   return (
@@ -22,6 +23,9 @@ const Volunteer = () => {
       <div>
         <CalendarDisp />;
         <NumOfPax />
+      </div>
+      <div>
+        <VolunteerForm />
       </div>
     </>
   );
