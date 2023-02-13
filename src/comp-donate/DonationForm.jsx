@@ -9,7 +9,7 @@ const DonationForm = () => {
   const [donationFrequency, setDonationFrequency] = useState(null);
   const [particulars, setParticulars] = useState({});
 
-  const [anonymous, setAnonymous] = useState(false)
+  const [anonymous, setAnonymous] = useState(false);
   const [particularsName, setParticularsName] = useState("");
   const [particularsNRIC, setParticularsNRIC] = useState("");
   const [particularsMobile, setParticularsMobile] = useState("");
@@ -66,12 +66,53 @@ const DonationForm = () => {
     }
   }
 
+  ///////////////////////////////////////////////////////////////
+
+  // Functions to format credit card inputs
+  // Function that removes any non-digits from string
+  function clearNumber(value = "") {
+    return value.replace(/\D+/g, "");
+  }
+
+  // Function to format credit card number input field
+  function formatCreditCardNumber(value) {
+    // If no value, return it
+    if (!value) {
+      return value;
+    }
+    // Remove non-digits
+    const clearValue = clearNumber(value);
+
+    // Splits into sections of 4
+    let nextValue;
+    nextValue = `${clearValue.slice(0, 4)} ${clearValue.slice(
+      4,
+      8
+    )} ${clearValue.slice(8, 12)} ${clearValue.slice(12, 16)}`;
+    return nextValue.trim();
+  }
+
+  // Function to format credit card expiration date input field
+  function formatExpirationDate(value) {
+    // Remove non-digits
+    const clearValue = clearNumber(value);
+
+    // Split and include forward slash
+    if (clearValue.length >= 3) {
+      return `${clearValue.slice(0, 2)}/${clearValue.slice(2, 4)}`;
+    }
+
+    return clearValue;
+  }
+
+  ///////////////////////////////////////////////////////////////
+
   function handleChangeCredit(inputId, inputVal) {
     if (inputId === "credit-number") {
-      setCreditNumber(inputVal);
+      setCreditNumber(formatCreditCardNumber(inputVal));
     }
     if (inputId === "credit-expiry") {
-      setCreditExpiry(inputVal);
+      setCreditExpiry(formatExpirationDate(inputVal));
     }
     if (inputId === "credit-CCV") {
       setCreditCCV(inputVal);
