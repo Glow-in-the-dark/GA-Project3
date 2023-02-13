@@ -4,8 +4,8 @@ import { NavLink } from "react-router-dom";
 
 const ThankYouPage = () => {
   return (
-    <>
-      <div className="text-center bg-secondary">
+    <div className="bg-secondary">
+      <div className="text-center">
         <img src="./donateImages/thankyou.png" className="mx-auto mb-8" />
         <h1 className="text-5xl mb-8">
           THANK YOU FOR YOUR GENEROSITY AND SUPPORT
@@ -15,12 +15,14 @@ const ThankYouPage = () => {
           appreciate it. You will <br />
           receive an email with details of your donation
         </p>
-        <NavLink to="/" className="text-xl">
-          Back to Home
-        </NavLink>
+        <div className="mb-36">
+          <NavLink to="/" className="text-xl ">
+            Back to Home
+          </NavLink>
+        </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import BaseButton from "../comp-commons/BaseButton";
 import BaseInput from "../comp-commons/BaseInput";
+import BaseTextArea from "../comp-commons/BaseTextArea";
 import Footer from "../comp-commons/Footer";
 import { NavLink } from "react-router-dom";
 
@@ -8,6 +9,7 @@ const DonationForm = () => {
   const [taxDeduction, setTaxDeduction] = useState(false);
   const [personaChoice, setPersonaChoice] = useState("persona");
   const [donationAmount, setDonationAmount] = useState(0);
+  const [customAmount, setCustomAmount] = useState("$")
   const [donationFrequency, setDonationFrequency] = useState(null);
   const [particulars, setParticulars] = useState({});
 
@@ -124,6 +126,10 @@ const DonationForm = () => {
     }
   }
 
+  const handleCustomAmount = (e) => {
+    setCustomAmount(e.target.value)
+  }
+
   const submitDonationForm = (e) => {
     e.preventDefault();
     setData({
@@ -142,10 +148,10 @@ const DonationForm = () => {
   };
 
   return (
-    <>
+    <div className="bg-secondary">
       {/* submitDonationForm submits the entire donation form */}
-      <form onSubmit={submitDonationForm}>
-        <div className="bg-secondary">
+      <form onSubmit={submitDonationForm} className="mb-24">
+        <div>
           <div className="text-center mb-10">
             <h1 className="text-5xl mb-4">
               YOUR SUPPORT CAN <br />
@@ -175,10 +181,10 @@ const DonationForm = () => {
             <div>
               <div className="flex mb-7 ml-10">
                 <div onClick={() => setPersonaChoice("Individual")}>
-                  <BaseButton label="Individual" />
+                  <BaseButton label="Individual" className="border-primary" />
                 </div>
                 <div onClick={() => setPersonaChoice("Corporate")}>
-                  <BaseButton label="Corporate" />
+                  <BaseButton label="Corporate" className="border-primary" />
                 </div>
               </div>
               <div className="mb-8 ml-10">
@@ -194,7 +200,7 @@ const DonationForm = () => {
               </div>
 
               <div className="ml-10">
-                <BaseButton label="Continue" />
+                <BaseButton label="Continue" colour="red" />
               </div>
             </div>
           </section>
@@ -231,6 +237,7 @@ const DonationForm = () => {
                     handleChange={handleChange}
                     required={true}
                     placeholder="Name*"
+                    className="w-80"
                   />
                   <BaseInput
                     type="string"
@@ -239,6 +246,7 @@ const DonationForm = () => {
                     handleChange={handleChange}
                     required={true}
                     placeholder="NRIC/FIN Number"
+                    className="w-80 ml-24"
                   />
                 </div>
                 <div style={{ display: "flex" }}>
@@ -249,6 +257,7 @@ const DonationForm = () => {
                     handleChange={handleChange}
                     required={true}
                     placeholder="Mobile Number*"
+                    className="w-80 mt-9"
                   />
                   <BaseInput
                     type="string"
@@ -257,6 +266,7 @@ const DonationForm = () => {
                     handleChange={handleChange}
                     required={true}
                     placeholder="Email Address*"
+                    className="w-80 ml-24 mt-9"
                   />
                 </div>
                 <div style={{ display: "flex" }} className="mb-9">
@@ -267,6 +277,7 @@ const DonationForm = () => {
                     handleChange={handleChange}
                     required={true}
                     placeholder="Address"
+                    className="w-740 mt-9"
                   />
                 </div>
                 <div onClick={submitParticulars}>
@@ -291,27 +302,32 @@ const DonationForm = () => {
             </p>
             <div className="flex flex-row mb-8 ml-10">
               <div onClick={() => setDonationAmount(10)} className="mr-3.5">
-                <BaseButton label="$10" />
+                <BaseButton label="$10" className="border-primary" />
               </div>
               <div onClick={() => setDonationAmount(50)} className="mr-3.5">
-                <BaseButton label="$50" />
+                <BaseButton label="$50" className="border-primary" />
               </div>
               <div onClick={() => setDonationAmount(100)} className="mr-3.5">
-                <BaseButton label="$100" />
+                <BaseButton label="$100" className="border-primary" />
               </div>
               <div onClick={() => setDonationAmount(200)} className="mr-3.5">
-                <BaseButton label="$200" />
+                <BaseButton label="$200" className="border-primary" />
               </div>
               <div>
-                <BaseInput label="" />
+                <input
+                  type="text"
+                  className="border border-primary h-10 px-5 rounded-md"
+                  value={customAmount}
+                  onChange={handleCustomAmount}
+                />
               </div>
             </div>
             <div className="flex mb-8 ml-10">
               <div onClick={() => setDonationFrequency("Donate Once")}>
-                <BaseButton label="Donate Once" />
+                <BaseButton label="Donate Once" className="border-primary" />
               </div>
               <div onClick={() => setDonationFrequency("Donate Monthly")}>
-                <BaseButton label="Donate Monthly" />
+                <BaseButton label="Donate Monthly" className="border-primary" />
               </div>
             </div>
             <div className="mb-8 ml-10">
@@ -323,7 +339,7 @@ const DonationForm = () => {
                   handleChange={handleChangeCredit}
                   required={true}
                   placeholder="Credit Card Number"
-                  className=""
+                  className="w-80"
                 />
                 <BaseInput
                   type="string"
@@ -332,7 +348,7 @@ const DonationForm = () => {
                   handleChange={handleChangeCredit}
                   required={true}
                   placeholder="MM/YY"
-                  className=""
+                  className="w-24 ml-11"
                 />
                 <BaseInput
                   type="string"
@@ -341,7 +357,7 @@ const DonationForm = () => {
                   handleChange={handleChangeCredit}
                   required={true}
                   placeholder="CCV"
-                  className="w-1/3"
+                  className="w-24 ml-11"
                 />
               </div>
 
@@ -353,7 +369,7 @@ const DonationForm = () => {
                   handleChange={handleChangeCredit}
                   required={true}
                   placeholder="Name of Cardholder"
-                  className="w-3/4"
+                  className="w-641 mt-9"
                 />
               </div>
             </div>
@@ -366,7 +382,7 @@ const DonationForm = () => {
         </div>
       </form>
       <Footer />
-    </>
+    </div>
   );
 };
 

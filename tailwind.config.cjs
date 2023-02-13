@@ -16,6 +16,11 @@ module.exports = {
         greyscale3: "#FFFFFF",
         selection: "#DB272133",
       },
+      width: {
+        740: "740px",
+        641: "641px"
+
+      }
     },
   },
   plugins: [],
