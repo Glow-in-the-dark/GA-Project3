@@ -26,9 +26,11 @@ const NavBar = () => {
   return (
     <header>
       <nav className="navbar">
-        <img className="mr-5" src="/Images/NavBar/WillingHearts_logo.png" />
         <Link to="/">
-          <div className="navbar-logo-text">WILLING HEARTS</div>
+          <div className="flex">
+            <img className="mr-5" src="/Images/NavBar/WillingHearts_logo.png" />
+            <div className="mt-7 navbar-logo-text">WILLING HEARTS</div>
+          </div>
         </Link>
 
         <ul className="nav-items">

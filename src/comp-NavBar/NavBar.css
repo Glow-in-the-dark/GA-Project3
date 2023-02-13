@@ -55,5 +55,5 @@
 .navbar a.active {
   color: #db2721;
   padding-bottom: 0.25rem;
-  border-bottom: 2px solid #db2721;
+  /* border-bottom: 2px solid #db2721; */
 }
