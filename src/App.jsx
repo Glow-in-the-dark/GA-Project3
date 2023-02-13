@@ -14,7 +14,6 @@ import NewsPage from "./comp-aboutUs/NewsPage";
 import FaqPage from "./comp-aboutUs/FaqPage";
 import LoginPage from "./comp-login/LoginPage";
 import ThankYouPage from "./comp-donate/ThankYouPage";
-import Dropdown from "./comp-NavBar/Dropdown";
 
 function App() {
   return (
