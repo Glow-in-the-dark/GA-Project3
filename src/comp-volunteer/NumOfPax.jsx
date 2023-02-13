@@ -82,8 +82,10 @@ const NumOfPax = (props) => {
           />
         </form>
       </div>
-      {dispCorpForm && <CorpForm />}
-      {dispIndividualForm && <VolunteerForm />}
+      {dispCorpForm && <CorpForm date={props.date} timeSlot={props.timeSlot} />}
+      {dispIndividualForm && (
+        <VolunteerForm date={props.date} timeSlot={props.timeSlot} />
+      )}
     </div>
   );
 };

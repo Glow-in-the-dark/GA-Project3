@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import BaseInput from "../comp-commons/BaseInput";
 import BaseButton from "../comp-commons/BaseButton";
 
-const VolunteerForm = () => {
+const VolunteerForm = (props) => {
   const navigate = useNavigate();
 
   // States
@@ -43,7 +43,11 @@ const VolunteerForm = () => {
   // Function to handle submit
   function handleSubmit(e) {
     e.preventDefault();
-    navigate("/volunteer/volunteer-confirmation");
+    navigate("/volunteer/volunteer-confirmation", {
+      date: props.date,
+      timeSlot: props.timeSlot,
+    });
+    console.log(props.date);
   }
 
   return (

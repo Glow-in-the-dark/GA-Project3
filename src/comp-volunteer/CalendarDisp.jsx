@@ -35,7 +35,7 @@ const CalendarDisp = () => {
           Can't find a suitable time slow? Find other ways to contribute here.
         </label>
       </p>
-      <NumOfPax date={date} showTime={showTime} />
+      <NumOfPax date={date} timeSlot={timeSlot} />
     </div>
   );
 };

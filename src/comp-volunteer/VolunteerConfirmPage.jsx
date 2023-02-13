@@ -2,7 +2,12 @@ import React from "react";
 import BaseButton from "../comp-commons/BaseButton";
 import { Link, NavLink } from "react-router-dom";
 
-const VolunteerConfirmPage = (props) => {
+const VolunteerConfirmPage = (req, res) => {
+  // let test = { date, timeSlot };
+  // test = req.params;
+
+  // console.log(req.params.date);
+
   return (
     <>
       <div>
