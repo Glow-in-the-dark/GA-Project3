@@ -178,10 +178,16 @@ const DonationForm = () => {
             <div>
               <div className="flex mb-7 ml-10">
                 <div onClick={() => setPersonaChoice("Individual")}>
-                  <BaseButton label="Individual" className="border-primary" />
+                  <BaseButton
+                    label="Individual"
+                    className="border-primary text-primary"
+                  />
                 </div>
                 <div onClick={() => setPersonaChoice("Corporate")}>
-                  <BaseButton label="Corporate" className="border-primary" />
+                  <BaseButton
+                    label="Corporate"
+                    className="border-primary text-primary"
+                  />
                 </div>
               </div>
               <div className="mb-8 ml-10">
