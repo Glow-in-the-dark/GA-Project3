@@ -1,4 +1,6 @@
 import React from "react";
+import BaseButton from "../comp-commons/BaseButton";
+import { Link, NavLink } from "react-router-dom";
 
 const VolunteerConfirmPage = (props) => {
   return (
@@ -15,6 +17,23 @@ const VolunteerConfirmPage = (props) => {
         </label>
         <br />
         <label>Lets make a difference together!</label>
+        <div>
+          <BaseButton
+            type="submit"
+            label="Add To Calendar"
+            colour="transparent"
+            className="mt-8"
+          />
+          <BaseButton
+            type="submit"
+            label="Invite Your Friends"
+            colour="transparent"
+            className="mt-8"
+          />
+        </div>
+        <Link to="/donate">
+          <p>Back to Home</p>
+        </Link>
       </div>
     </>
   );

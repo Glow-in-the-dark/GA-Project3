@@ -29,7 +29,9 @@ const VolunteerMainPage = () => {
           <br />
           today?" That's all it takes to make a difference in your community.
         </h3>
-        <BaseButton label="Join Us" colour="red" className="mb-14" />
+        <Link to="/volunteer/volunteer-form">
+          <BaseButton label="Join Us" colour="red" className="mb-14" />
+        </Link>
         <img
           src="public/Images/VolunteerPage/founder-teaching-students.png"
           className="rounded-2xl"

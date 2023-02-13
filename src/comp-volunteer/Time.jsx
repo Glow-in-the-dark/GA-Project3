@@ -5,7 +5,13 @@ import Times from "./Times";
 import React from "react";
 
 const Time = (props) => {
-  return <div>{props.showTime ? <Times date={props.date} /> : null}</div>;
+  return (
+    <div>
+      {props.showTime ? (
+        <Times date={props.date} setTimeSlot={props.setTimeSlot} />
+      ) : null}
+    </div>
+  );
 };
 
 export default Time;

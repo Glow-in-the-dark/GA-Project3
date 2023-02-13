@@ -14,11 +14,12 @@ import FaqPage from "./comp-aboutUs/FaqPage";
 import LoginPage from "./comp-login/LoginPage";
 import Dropdown from "./comp-NavBar/Dropdown";
 import Volunteer from "./comp-volunteer/Volunteer";
+import VolunteerConfirmPage from "./comp-volunteer/VolunteerConfirmPage";
 
 function App() {
   return (
     <div>
-      {/* <NavBar />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Navigate replace to="/homepage" />} />
         <Route path="/homepage" element={<Homepage />} />
@@ -34,9 +35,12 @@ function App() {
           path="/contact-us/confirmation-page"
           element={<ContactFormConfirmationPage />}
         />
-      </Routes> */}
-
-      <Volunteer />
+        <Route
+          path="/volunteer/volunteer-confirmation"
+          element={<VolunteerConfirmPage />}
+        />
+        <Route path="/volunteer/volunteer-form" element={<Volunteer />} />
+      </Routes>
     </div>
   );
 }

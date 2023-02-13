@@ -7,9 +7,12 @@ const Times = (props) => {
   const [event, setEvent] = useState(null);
   const [info, setInfo] = useState(false);
 
+  // console.log(props.date)
+
   const displayInfo = (e) => {
     setInfo(true);
     setEvent(e.target.innerText);
+    props.setTimeSlot(e.target.innerText);
   };
 
   return (

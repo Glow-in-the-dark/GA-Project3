@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import BaseInput from "../comp-commons/BaseInput";
-import BaseButton from "../comp-commons/BaseButton";
+import BaseInput from "../../comp-commons/BaseInput";
+import BaseButton from "../../comp-commons/BaseButton";
+import StaffRegistration from "./StaffRegistration";
 
-const VolunteerForm = () => {
+const CorpForm = () => {
   const navigate = useNavigate();
 
   // States
@@ -16,6 +17,7 @@ const VolunteerForm = () => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [organisation, setOrgnaisation] = useState("");
   const [occupation, setOccupation] = useState("");
+  const [dispStaffRegistration, setDispStaffRegistration] = useState(false);
 
   // Function to handle changes in user input
   function handleChange(inputId, inputVal) {
@@ -43,7 +45,8 @@ const VolunteerForm = () => {
   // Function to handle submit
   function handleSubmit(e) {
     e.preventDefault();
-    navigate("/volunteer/volunteer-confirmation");
+    // navigate("/volunteer/volunteer-confirmation");
+    setDispStaffRegistration(true);
   }
 
   return (
@@ -52,7 +55,7 @@ const VolunteerForm = () => {
       <div className="flex flex-row space-x-14">
         {/* User input section */}
         <form className="w-[590px] space-y-9" onSubmit={handleSubmit}>
-          <h1>Enter Particulars</h1>
+          <h1>Enter Particulars(Person-In-Charge)</h1>
           <BaseInput
             type="string"
             id="name"
@@ -137,8 +140,9 @@ const VolunteerForm = () => {
           />
         </form>
       </div>
+      {dispStaffRegistration && <StaffRegistration />}
     </div>
   );
 };
 
-export default VolunteerForm;
+export default CorpForm;
