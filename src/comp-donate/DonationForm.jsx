@@ -8,12 +8,12 @@ import { NavLink } from "react-router-dom";
 const DonationForm = () => {
   const [taxDeduction, setTaxDeduction] = useState(false);
   const [personaChoice, setPersonaChoice] = useState("persona");
-  const [donationAmount, setDonationAmount] = useState(0);
-  const [customAmount, setCustomAmount] = useState("$")
+  const [donationAmount, setDonationAmount] = useState("$");
   const [donationFrequency, setDonationFrequency] = useState(null);
   const [particulars, setParticulars] = useState({});
 
   const [anonymous, setAnonymous] = useState(false);
+  const [salutaion, setSalutation] = useState("")
   const [particularsName, setParticularsName] = useState("");
   const [particularsNRIC, setParticularsNRIC] = useState("");
   const [particularsMobile, setParticularsMobile] = useState("");
@@ -22,6 +22,7 @@ const DonationForm = () => {
 
   const [data, setData] = useState({
     anonymous: anonymous,
+    salutaion: salutaion,
     persona: personaChoice,
     taxDeduction: taxDeduction,
     particulars: particulars,
@@ -124,10 +125,6 @@ const DonationForm = () => {
     if (inputId === "credit-name") {
       setCreditName(inputVal);
     }
-  }
-
-  const handleCustomAmount = (e) => {
-    setCustomAmount(e.target.value)
   }
 
   const submitDonationForm = (e) => {
@@ -300,34 +297,89 @@ const DonationForm = () => {
             <p className="text-base mb-7 ml-10">
               All transactions are secured and encrypted
             </p>
-            <div className="flex flex-row mb-8 ml-10">
+            <div>
+              <p className="ml-10 mb-0.5" style={{ color: "rgb(138,138,138)" }}>
+                Salutation
+              </p>
+              <button
+                type="text"
+                className="border border-primary py-0 px-2 rounded-md ml-10 text-primary"
+                value={salutaion}
+                onClick={() => setSalutation("Mr")}
+              >
+                Mr
+              </button>
+              <button
+                type="text"
+                className="border border-primary py-0 px-2 rounded-md text-primary"
+                value={salutaion}
+                onClick={() => setSalutation("Mrs")}
+              >
+                Mrs
+              </button>
+              <button
+                type="text"
+                className="border border-primary py-0 px-2 rounded-md text-primary"
+                value={salutaion}
+                onClick={() => setSalutation("Miss")}
+              >
+                Miss
+              </button>
+              <button
+                type="text"
+                className="border border-primary py-0 px-2 rounded-md text-primary"
+                value={salutaion}
+                onClick={() => setSalutation("Ms")}
+              >
+                Ms
+              </button>
+            </div>
+            <div className="flex flex-row mb-8 ml-10 mt-8">
               <div onClick={() => setDonationAmount(10)} className="mr-3.5">
-                <BaseButton label="$10" className="border-primary" />
+                <BaseButton
+                  label="$10"
+                  className="border-primary text-primary"
+                />
               </div>
               <div onClick={() => setDonationAmount(50)} className="mr-3.5">
-                <BaseButton label="$50" className="border-primary" />
+                <BaseButton
+                  label="$50"
+                  className="border-primary text-primary"
+                />
               </div>
               <div onClick={() => setDonationAmount(100)} className="mr-3.5">
-                <BaseButton label="$100" className="border-primary" />
+                <BaseButton
+                  label="$100"
+                  className="border-primary text-primary"
+                />
               </div>
               <div onClick={() => setDonationAmount(200)} className="mr-3.5">
-                <BaseButton label="$200" className="border-primary" />
+                <BaseButton
+                  label="$200"
+                  className="border-primary text-primary"
+                />
               </div>
               <div>
                 <input
                   type="text"
-                  className="border border-primary h-10 px-5 rounded-md"
-                  value={customAmount}
-                  onChange={handleCustomAmount}
+                  className="border border-primary h-10 px-5 rounded-md text-primary"
+                  value={donationAmount}
+                  onChange={(e) => setDonationAmount(e.target.value)}
                 />
               </div>
             </div>
             <div className="flex mb-8 ml-10">
               <div onClick={() => setDonationFrequency("Donate Once")}>
-                <BaseButton label="Donate Once" className="border-primary" />
+                <BaseButton
+                  label="Donate Once"
+                  className="border-primary text-primary"
+                />
               </div>
               <div onClick={() => setDonationFrequency("Donate Monthly")}>
-                <BaseButton label="Donate Monthly" className="border-primary" />
+                <BaseButton
+                  label="Donate Monthly"
+                  className="border-primary text-primary"
+                />
               </div>
             </div>
             <div className="mb-8 ml-10">
@@ -374,9 +426,7 @@ const DonationForm = () => {
               </div>
             </div>
             <div className="mb-8 ml-10">
-              <NavLink to="/thankyou">
-                <BaseButton type="submit" label="Donate" colour="red" />
-              </NavLink>
+              <BaseButton type="submit" label="Donate" colour="red" />
             </div>
           </section>
         </div>
