@@ -7,11 +7,13 @@ import ContactFormConfirmationPage from "./comp-contactUs/ContactFormConfirmatio
 import Homepage from "./comp-homepage/Homepage";
 import AboutUsPage from "./comp-aboutUs/AboutUsPage";
 import DonatePage from "./comp-donate/DonatePage";
+import DonationForm from "./comp-donate/DonationForm";
 import VolunteerMainPage from "./comp-volunteer/VolunteerMainPage";
 import ProjectsPage from "./comp-aboutUs/ProjectsPage";
 import NewsPage from "./comp-aboutUs/NewsPage";
 import FaqPage from "./comp-aboutUs/FaqPage";
 import LoginPage from "./comp-login/LoginPage";
+import ThankYouPage from "./comp-donate/ThankYouPage";
 import Dropdown from "./comp-NavBar/Dropdown";
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Route path="/homepage" element={<Homepage />} />
         <Route path="/about-us" element={<AboutUsPage />} />
         <Route path="/donate" element={<DonatePage />} />
+        <Route path="/donateForm" element={<DonationForm />} />
+        <Route path="/thankyou" element={<ThankYouPage />} />
         <Route path="/volunteer" element={<VolunteerMainPage />} />
         <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
