@@ -26,7 +26,7 @@ const NavBar = () => {
   return (
     <header>
       <nav className="navbar">
-        <img className="mr-5" src="/images/NavBar/WillingHearts_logo.png" />
+        <img className="mr-5" src="/Images/NavBar/WillingHearts_logo.png" />
         <Link to="/">
           <div className="navbar-logo-text">WILLING HEARTS</div>
         </Link>
@@ -75,7 +75,7 @@ const NavBar = () => {
               to="/login"
               // className={(navData) => (navData.isActive ? styles.active : "")}
             >
-              <img src="/images/NavBar/person.png" />
+              <img src="/Images/NavBar/person.png" />
             </NavLink>
           </li>
         </ul>
