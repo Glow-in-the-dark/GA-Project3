@@ -11,6 +11,7 @@ import VolunteerMainPage from "./comp-volunteer/VolunteerMainPage";
 import ProjectsPage from "./comp-aboutUs/ProjectsPage";
 import NewsPage from "./comp-aboutUs/NewsPage";
 import FaqPage from "./comp-aboutUs/FaqPage";
+import LoginPage from "./comp-login/LoginPage";
 import Dropdown from "./comp-NavBar/Dropdown";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/contact-us" element={<ContactUsPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
         <Route path="/news" element={<NewsPage />} />
+        <Route path="/login" element={<LoginPage />} />
         <Route path="/faq" element={<FaqPage />} />
         <Route
           path="/contact-us/confirmation-page"

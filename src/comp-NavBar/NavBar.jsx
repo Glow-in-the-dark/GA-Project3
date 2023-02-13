@@ -26,12 +26,18 @@ const NavBar = () => {
   return (
     <header>
       <nav className="navbar">
-        <img src="/images/NavBar/WillingHearts_logo.png" />
-        <Link to="/" className="navbar-logo-text">
-          <div>WILLING HEARTS</div>
+        <img className="mr-5" src="/images/NavBar/WillingHearts_logo.png" />
+        <Link to="/">
+          <div className="navbar-logo-text">WILLING HEARTS</div>
         </Link>
+
         <ul className="nav-items">
-          <li onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
+          <div className="w-[600px]"></div>
+          <li
+            className="noWrap grey"
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+          >
             <NavLink
               to="/about-us"
               // className={(navData) => (navData.isActive ? styles.active : "")}
@@ -40,7 +46,7 @@ const NavBar = () => {
             </NavLink>
             {dropdown && <Dropdown />}
           </li>
-          <li>
+          <li className="grey">
             <NavLink
               to="/donate"
               // className={(navData) => (navData.isActive ? styles.active : "")}
@@ -48,7 +54,7 @@ const NavBar = () => {
               DONATE
             </NavLink>
           </li>
-          <li>
+          <li className="grey">
             <NavLink
               to="/volunteer"
               // className={(navData) => (navData.isActive ? styles.active : "")}
@@ -56,12 +62,20 @@ const NavBar = () => {
               VOLUNTEER
             </NavLink>
           </li>
-          <li>
+          <li className="noWrap grey">
             <NavLink
               to="/contact-us"
               // className={(navData) => (navData.isActive ? styles.active : "")}
             >
               CONTACT US
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to="/login"
+              // className={(navData) => (navData.isActive ? styles.active : "")}
+            >
+              <img src="/images/NavBar/person.png" />
             </NavLink>
           </li>
         </ul>
