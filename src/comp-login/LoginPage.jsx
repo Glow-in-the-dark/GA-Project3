@@ -55,10 +55,10 @@ const LoginPage = () => {
         console.log(responseDataReturned);
         const accessToken = responseDataReturned.access;
         const refreshToken = responseDataReturned.refresh;
-        console.log(accessToken);
-        console.log(refreshToken);
-        localStorage.setItem("accessTk", accessToken);
-        localStorage.setItem("refreshTk", refreshToken);
+        // console.log(accessToken);
+        // console.log(refreshToken);
+        // localStorage.setItem("accessTk", accessToken);
+        // localStorage.setItem("refreshTk", refreshToken);
       });
     } else {
       console.log(`Error, password is < ${pwMinimalLength} characters`);

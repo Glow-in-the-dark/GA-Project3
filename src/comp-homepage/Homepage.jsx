@@ -8,6 +8,8 @@ import BaseButton from "../comp-commons/BaseButton";
 import AccordianWrapper from "../comp-commons/AccordianWrapper";
 import Footer from "../comp-commons/Footer";
 import { Link } from "react-router-dom";
+import otherProjectsDataset from "./datasets/otherProjsDataset";
+import OtherProjsCard from "./Components/OtherProjsCard";
 
 const Homepage = () => {
   return (
@@ -39,37 +41,37 @@ const Homepage = () => {
       </section>
 
       {/* section 2 */}
-      <div className="bg-white py-16">
+      <div className="bg-white py-14">
         <section className="w-[1200px] mx-auto text-center">
-          <div className="flex flex-row space-x-20 mx-auto mb-14">
+          <div className="flex flex-row space-x-20 mx-auto mb-5">
             <div className="w-[370px]">
               <img
-                src="public/Images/Homepage/Cartoon_Meals.png"
-                className="mx-auto mb-6 mt-6"
+                src="public/Images/Homepage/Cartoon_Meals1.png"
+                className="mx-auto mb-2 mt-6"
               />
-              <p className="text-2xl mb-4">11,000</p>
+              <h1 className="text-2xl mb-4">11,000</h1>
               <p className="">Meals A Day</p>
             </div>
             <div className="w-[370px]">
               <img
-                src="public/Images/Homepage/Cartoon_Beneficiaries.png"
-                className="mx-auto mb-6 mt-2"
+                src="public/Images/Homepage/Cartoon_Beneficiaries1.png"
+                className="mx-auto mb-2 mt-2"
               />
               <p className="text-2xl mb-4">6,000</p>
               <p className="">Beneficiaries</p>
             </div>
             <div className="w-[370px]">
               <img
-                src="public/Images/Homepage/Cartoon_Locations.png"
-                className="mx-auto mb-6 mt-2"
+                src="public/Images/Homepage/Cartoon_Locations1.png"
+                className="mx-auto  mt-2"
               />
               <p className="text-2xl mb-4">70</p>
               <p className="">Locations Islandwide</p>
             </div>
             <div className="w-[370px]">
               <img
-                src="public/Images/Homepage/Cartoon_hearts.png"
-                className="mx-auto mb-6"
+                src="public/Images/Homepage/Cartoon_hearts1.png"
+                className="mx-auto "
               />
               <p className="text-2xl mb-4">365</p>
               <p className="">Days, We Are Open!</p>
@@ -214,7 +216,16 @@ const Homepage = () => {
               <img src="public/Images/Homepage/volunteer-carousell.png" />
             </div>
             <div>
-              <img src="public/Images/Homepage/volunteer-carousell.png" />
+              {/* <div className="flex">
+                <img
+                  className="object-scale-down h-98 w-96 rounded-lg overflow-hidden"
+                  src="public/Images/Homepage/uniBoy.png"
+                />
+                <div>
+                  "VOLUNTEERING AT WILLING HEARTS WAS AN INCREADIBLY FUFILLING
+                  EXPERIENCE"
+                </div>
+              </div> */}
             </div>
             <div>
               <img src="public/Images/Homepage/volunteer-carousell.png" />
@@ -226,6 +237,21 @@ const Homepage = () => {
       {/* section 6*/}
       <div className="bg-white py-16">
         <section className="w-[1200px] mx-auto text-center">
+          <h1 className="mb-10">OTHER PROJECTS</h1>
+          <div className="flex flex-row justify-center space-x-36 mb-20">
+            {otherProjectsDataset.map((project) => {
+              return (
+                <OtherProjsCard
+                  key={project.id}
+                  image={project.image}
+                  projectName={project.projectName}
+                  projectContent={project.projectContent}
+                />
+              );
+            })}
+          </div>
+        </section>
+        {/* <section className="w-[1200px] mx-auto text-center">
           <h1 className="mb-4">OTHER PROJECTS</h1>
           <div className="flex flex-row space-x-20 mx-auto mb-14">
             <div className="w-[370px]">
@@ -238,10 +264,6 @@ const Homepage = () => {
                 An initiative to carry out training kitchens open for those who
                 want to learn how to cook for themselves. $780 raised of $10,000
               </p>
-              <img
-                src="public/Images/Homepage/bar_img.png"
-                className="mx-auto mb-6 mt-6"
-              />
             </div>
             <div className="w-[370px]">
               <img
@@ -267,7 +289,7 @@ const Homepage = () => {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
       </div>
 
       {/* Footer */}
