@@ -242,7 +242,7 @@ const DonationForm = () => {
                     value={particularsName}
                     handleChange={handleChange}
                     placeholder="Name*"
-                    className="w-[355px]"
+                    className="w-80"
                   />
                   <BaseInput
                     type="string"
@@ -250,7 +250,7 @@ const DonationForm = () => {
                     value={particularsNRIC}
                     handleChange={handleChange}
                     placeholder="NRIC/FIN Number"
-                    className="w-[355px] ml-24"
+                    className="w-80 ml-24"
                   />
                 </div>
                 <div style={{ display: "flex" }}>
@@ -260,7 +260,7 @@ const DonationForm = () => {
                     value={particularsMobile}
                     handleChange={handleChange}
                     placeholder="Mobile Number*"
-                    className="w-[355px] mt-9"
+                    className="w-80 mt-9"
                   />
                   <BaseInput
                     type="string"
@@ -268,7 +268,7 @@ const DonationForm = () => {
                     value={particularsEmail}
                     handleChange={handleChange}
                     placeholder="Email Address*"
-                    className="w-[355px] ml-24 mt-9"
+                    className="w-80 ml-24 mt-9"
                   />
                 </div>
                 <div style={{ display: "flex" }} className="mb-9">
@@ -278,7 +278,7 @@ const DonationForm = () => {
                     value={particularsAddress}
                     handleChange={handleChange}
                     placeholder="Address"
-                    className="w-[810px] mt-9"
+                    className="w-740 mt-9"
                   />
                 </div>
                 <div onClick={submitParticulars}>
@@ -396,16 +396,15 @@ const DonationForm = () => {
                   value={creditNumber}
                   handleChange={handleChangeCredit}
                   placeholder="Credit Card Number"
-                  className="w-[330px]"
+                  className="w-80"
                 />
-
                 <BaseInput
                   type="string"
                   id="credit-expiry"
                   value={creditExpiry}
                   handleChange={handleChangeCredit}
                   placeholder="MM/YY"
-                  className="w-[106px] ml-[20px]"
+                  className="w-24 ml-11"
                 />
                 <BaseInput
                   type="string"
@@ -413,7 +412,7 @@ const DonationForm = () => {
                   value={creditCCV}
                   handleChange={handleChangeCredit}
                   placeholder="CCV"
-                  className="w-[106px] ml-[20px]"
+                  className="w-24 ml-11"
                 />
               </div>
 
@@ -424,7 +423,7 @@ const DonationForm = () => {
                   value={creditName}
                   handleChange={handleChangeCredit}
                   placeholder="Name of Cardholder"
-                  className="w-[624px] mt-9"
+                  className="w-641 mt-9"
                 />
               </div>
             </div>
@@ -432,7 +431,7 @@ const DonationForm = () => {
               <NavLink to="/thankyou">
                 <BaseButton type="submit" label="Donate" colour="red" />
               </NavLink>
-              <BaseButton type="submit" label="Test" colour="red" />
+              <BaseButton type="submit" label="Test-Donate" colour="red" />
             </div>
           </section>
         </div>
