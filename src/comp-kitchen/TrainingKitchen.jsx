@@ -6,6 +6,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from "react-responsive-carousel";
 import BaseButton from "../comp-commons/BaseButton";
 import { NavLink } from "react-router-dom";
+import Footer from "../comp-commons/Footer";
 
 const TrainingKitchen = () => {
   return (
@@ -225,43 +226,38 @@ const TrainingKitchen = () => {
         </div>
       </section>
       {/* /////////////////////// HOW CAN YOU HELP? /////////////////////////////// */}
-      <section className="bg-white py-24">
+      <section className="bg-secondary py-24">
         <div className="flex justify-center">
           <h1>
             HOW CAN
-            <br /> OFFER
+            <br /> YOU HELP?
           </h1>
           <div className="ml-28">
             <div className="mb-14 text-justify w-[894px] ">
               <p className="text-2xl">
-                The training kitchen will be run by a team of trained staff and
-                volunteers. A detailed budget and financial plan will be
-                established to ensure sustainability of the organisation.
-                Regualr evaluations will be conducted to measure the
-                effectiveness of the training kitchen and make necessary
-                adjustments.
+                We are seeking support from community organisations, businesses,
+                and individuals to help bring this important project to
+                fruition.
               </p>
               <br />
               <br />
-              <div>
-                <li className="text-2xl">
-                  Hands-on training in the culinary arts, including kitchen
-                  safety, food preparation,{" "}
-                  <span className="text-white">Qll</span> and cooking
-                  techniques.
-                </li>
-                <li className="text-2xl">
-                  Access to basic necessities such as clothing and hygiene
-                  items.
-                </li>
-                <li className="text-2xl">
-                  Referral services to other community resources as needed.
-                </li>
-              </div>
+              <ul className="list-none flex justify-center space-x-20">
+                <img
+                  src="./kitchenImages/left-sink.png"
+                  alt=""
+                  className="rounded-2xl"
+                />
+                <img
+                  src="./kitchenImages/right-sink.png"
+                  alt=""
+                  className="rounded-2xl"
+                />
+              </ul>
             </div>
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };
