@@ -6,13 +6,6 @@
   align-items: center;
 }
 
-.navbar-logo-text {
-  color: #db2721;
-  text-decoration: none;
-  font-size: 1.5rem;
-  font-weight: 800;
-}
-
 .nav-items {
   display: flex;
   list-style: none;
@@ -22,18 +15,11 @@
   margin-right: 2rem;
 }
 
-.navbar nav {
-  height: 100%;
-}
-
-.navbar ul {
-  height: 6rem;
-  list-style: none;
-  display: flex;
-  padding: 0;
-  margin: 0;
-  align-items: center;
-  justify-content: center;
+.navbar-logo-text {
+  color: #db2721;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: 800;
 }
 
 .navbar li {
@@ -54,6 +40,5 @@
 .navbar a:active,
 .navbar a.active {
   color: #db2721;
-  padding-bottom: 0.25rem;
-  border-bottom: 2px solid #db2721;
+  /* border-bottom: 2px solid #db2721; */
 }

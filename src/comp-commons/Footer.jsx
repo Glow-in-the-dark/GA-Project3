@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSquareFacebook } from "@fortawesome/free-brands-svg-icons";
 import { faSquareInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -17,7 +18,9 @@ const Footer = () => {
           <div>
             <h4 className="text-primary font-bold">Get to Know Us</h4>
             <div className="flex flex-col space-y-4 mt-4">
-              <p>About Us</p>
+              <Link to="/about-us">
+                <p>About Us</p>
+              </Link>
               <p>Financial Statements</p>
               <p>Terms of Use</p>
               <p>Privacy Policy</p>
@@ -27,24 +30,48 @@ const Footer = () => {
           <div>
             <h4 className="text-primary font-bold">Connect With Us</h4>
             <div className="flex flex-col space-y-4 mt-4">
-              <p>FAQ</p>
-              <p>Contact Us</p>
+              <Link to="/faq">
+                <p>FAQ</p>
+              </Link>
+              <Link to="/contact-us">
+                <p>Contact Us</p>
+              </Link>
             </div>
           </div>
           {/* Get Involved */}
           <div>
             <h4 className="text-primary font-bold">Get Involved</h4>
             <div className="flex flex-col space-y-4 mt-4">
-              <p>Volunteer</p>
-              <p>Donate</p>
-              <p>Projects</p>
+              <Link to="/volunteer">
+                <p>Volunteer</p>
+              </Link>
+              <Link to="/donate">
+                <p>Donate</p>
+              </Link>
+              <Link to="/projects">
+                <p>Projects</p>
+              </Link>
             </div>
           </div>
         </div>
         {/* Icons */}
         <div className="flex flex-row text-[42px] text-primary space-x-4 mr-28 mb-24 items-end">
-          <FontAwesomeIcon icon={faSquareFacebook} />
-          <FontAwesomeIcon icon={faSquareInstagram} />
+          <Link
+            to={{
+              pathname: "https://www.facebook.com/WillingHeartsSingapore/",
+            }}
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faSquareFacebook} />
+          </Link>
+          <Link
+            to={{
+              pathname: "https://www.instagram.com/willingheartssg/?hl=en",
+            }}
+            target="_blank"
+          >
+            <FontAwesomeIcon icon={faSquareInstagram} />
+          </Link>
         </div>
       </div>
       {/* Red border */}

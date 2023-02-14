@@ -1,8 +1,8 @@
 import React from "react";
 import AccordianWrapper from "../comp-commons/AccordianWrapper";
 import Footer from "../comp-commons/Footer";
-import volunteerMainFaq from "../datasets/volunteerMainFaq";
-import donationsFaq from "../datasets/donationsFaq";
+import volunteerMainFaq from "../comp-volunteer/datasets/volunteerMainFaq";
+import donationsFaq from "../comp-volunteer/datasets/donationsFaq";
 
 const FaqPage = () => {
   return (

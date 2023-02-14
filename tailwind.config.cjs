@@ -4,9 +4,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        book: ["AvenirBook", "sans-serif"],
-        roman: ["AvenirRoman", "sans-serif"],
-        medium: ["AvenirMedium", "sans-serif"],
+        book: ["NsLight", "sans-serif"],
+        roman: ["NsSemiBold", "sans-serif"],
+        medium: ["NsRegular", "sans-serif"],
       },
       colors: {
         primary: "#DB2721",
@@ -16,7 +16,22 @@ module.exports = {
         greyscale3: "#FFFFFF",
         selection: "#DB272133",
       },
+      width: {
+        740: "740px",
+        641: "641px"
+
+      }
     },
   },
-  plugins: [],
+  plugins: [require("daisyui")],
+  daisyui: {
+    styled: false,
+    themes: true,
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: "",
+    darkTheme: "dark",
+  },
 };

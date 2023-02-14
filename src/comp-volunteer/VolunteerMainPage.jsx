@@ -8,7 +8,7 @@ import { Carousel } from "react-responsive-carousel";
 import BaseButton from "../comp-commons/BaseButton";
 import AccordianWrapper from "../comp-commons/AccordianWrapper";
 import Footer from "../comp-commons/Footer";
-import volunteerMainFaq from "../datasets/volunteerMainFaq";
+import volunteerMainFaq from "./datasets/volunteerMainFaq";
 
 const VolunteerMainPage = () => {
   return (
@@ -33,7 +33,7 @@ const VolunteerMainPage = () => {
           <BaseButton label="Join Us" colour="red" className="mb-14" />
         </Link>
         <img
-          src="public/Images/VolunteerPage/founder-teaching-students.png"
+          src="/Images/VolunteerPage/founder-teaching-students.png"
           className="rounded-2xl"
         />
       </section>
@@ -51,7 +51,7 @@ const VolunteerMainPage = () => {
           <div className="flex flex-row space-x-20 mx-auto mb-14">
             <div className="w-[370px]">
               <img
-                src="public/Images/VolunteerPage/cartoon-ingredients.png"
+                src="/Images/VolunteerPage/cartoon-ingredients.png"
                 className="mx-auto mb-6"
               />
               <p className="text-2xl mb-4">PREPERATION OF INGREDIENTS</p>
@@ -67,7 +67,7 @@ const VolunteerMainPage = () => {
             </div>
             <div className="w-[370px]">
               <img
-                src="public/Images/VolunteerPage/cartoon-ingredients.png"
+                src="/Images/VolunteerPage/cartoon-pots-and-pans.png"
                 className="mx-auto mb-6"
               />
               <p className="text-2xl mb-4">CLEANING & WASHING</p>
@@ -83,7 +83,7 @@ const VolunteerMainPage = () => {
             </div>
             <div className="w-[370px]">
               <img
-                src="public/Images/VolunteerPage/cartoon-ingredients.png"
+                src="/Images/VolunteerPage/cartoon-bowl.png"
                 className="mx-auto mb-6"
               />
               <p className="text-2xl mb-4">PACKING LUNCH BOXES</p>
@@ -103,7 +103,7 @@ const VolunteerMainPage = () => {
           <hr />
           <div className="w-[370px] mx-auto mt-14">
             <img
-              src="public/Images/VolunteerPage/cartoon-ingredients.png"
+              src="/Images/VolunteerPage/cartoon-car.png"
               className="mx-auto mb-6"
             />
             <p className="text-2xl mb-4">DRIVER</p>
@@ -177,13 +177,13 @@ const VolunteerMainPage = () => {
             }}
           >
             <div>
-              <img src="public/Images/VolunteerPage/carousel-cisco.png" />
+              <img src="/Images/VolunteerPage/carousel-cisco.png" />
             </div>
             <div>
-              <img src="public/Images/VolunteerPage/carousel-cisco.png" />
+              <img src="/Images/VolunteerPage/carousel-cisco.png" />
             </div>
             <div>
-              <img src="public/Images/VolunteerPage/carousel-cisco.png" />
+              <img src="/Images/VolunteerPage/carousel-cisco.png" />
             </div>
           </Carousel>
         </section>
@@ -193,7 +193,7 @@ const VolunteerMainPage = () => {
       <div className="py-20">
         <section className="w-[1000px] mx-auto text-center">
           <img
-            src="public/Images/VolunteerPage/large-group-of-volunteers.png"
+            src="/Images/VolunteerPage/large-group-of-volunteers.png"
             className="rounded-2xl mb-16"
           />
           <h1 className="mb-10">FOR VOLUNTEERING IN GROUPS</h1>
@@ -216,11 +216,11 @@ const VolunteerMainPage = () => {
       <div className="bg-white py-20">
         <section className="text-center flex flex-row space-x-6 justify-center">
           <img
-            src="public/Images/VolunteerPage/student-with-book.png"
+            src="/Images/VolunteerPage/student-with-book.png"
             className="rounded-2xl w-[282px] mt-16"
           />
           <img
-            src="public/Images/VolunteerPage/two-students-in-red.png"
+            src="/Images/VolunteerPage/two-students-in-red.png"
             className="rounded-2xl w-[282px] mb-16"
           />
           <div className="my-auto">

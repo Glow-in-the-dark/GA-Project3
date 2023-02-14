@@ -7,6 +7,7 @@ import { Carousel } from "react-responsive-carousel";
 import BaseButton from "../comp-commons/BaseButton";
 import AccordianWrapper from "../comp-commons/AccordianWrapper";
 import Footer from "../comp-commons/Footer";
+import { Link } from "react-router-dom";
 
 const Homepage = () => {
   return (
@@ -91,12 +92,12 @@ const Homepage = () => {
             might need a helping hand.
           </h3>
           <div className="flex mx-auto justify-center">
-            {/* <Link to="/volunteer"> */}
-            <BaseButton className="mr-3" label="Volunteer" colour="red" />
-            {/* </Link> */}
-            {/* <Link to="/donate"> */}
-            <BaseButton className="ml-3" label="Donate" colour="white" />
-            {/* </Link> */}
+            <Link to="/volunteer">
+              <BaseButton className="mr-3" label="Volunteer" colour="red" />
+            </Link>
+            <Link to="/donate">
+              <BaseButton className="ml-3" label="Donate" colour="white" />
+            </Link>
           </div>
           <br />
           <img
