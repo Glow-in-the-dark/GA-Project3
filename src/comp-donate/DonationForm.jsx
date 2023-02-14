@@ -1,7 +1,6 @@
 import React, { useState, useRef } from "react";
 import BaseButton from "../comp-commons/BaseButton";
 import BaseInput from "../comp-commons/BaseInput";
-import BaseTextArea from "../comp-commons/BaseTextArea";
 import Footer from "../comp-commons/Footer";
 import { NavLink } from "react-router-dom";
 
@@ -13,7 +12,7 @@ const DonationForm = () => {
   const [particulars, setParticulars] = useState({});
 
   const [anonymous, setAnonymous] = useState(false);
-  const [salutaion, setSalutation] = useState("")
+  const [salutaion, setSalutation] = useState("");
   const [particularsName, setParticularsName] = useState("");
   const [particularsNRIC, setParticularsNRIC] = useState("");
   const [particularsMobile, setParticularsMobile] = useState("");
@@ -161,6 +160,8 @@ const DonationForm = () => {
             </p>
           </div>
 
+          {/* ///////////////////SELECT PERSONA//////////////////////////// */}
+
           <section className="w-[996px] mx-auto bg-white py-12 pl-16 rounded-2xl">
             <h4 className="text-2xl">
               <img
@@ -209,6 +210,8 @@ const DonationForm = () => {
           </section>
           <br />
 
+          {/* ///////////////////PARTICULARS FOR TAX RELIEF//////////////////////////// */}
+
           {/* display taxDeduction form only when checkbox is ticked */}
           {taxDeduction && (
             <section className="w-[996px] mx-auto bg-white py-12 pl-16 rounded-2xl">
@@ -239,6 +242,7 @@ const DonationForm = () => {
                     value={particularsName}
                     handleChange={handleChange}
                     required={true}
+                    disabled={true}
                     placeholder="Name*"
                     className="w-80"
                   />
@@ -248,6 +252,7 @@ const DonationForm = () => {
                     value={particularsNRIC}
                     handleChange={handleChange}
                     required={true}
+                    disabled={true}
                     placeholder="NRIC/FIN Number"
                     className="w-80 ml-24"
                   />
@@ -259,6 +264,7 @@ const DonationForm = () => {
                     value={particularsMobile}
                     handleChange={handleChange}
                     required={true}
+                    disabled={true}
                     placeholder="Mobile Number*"
                     className="w-80 mt-9"
                   />
@@ -268,6 +274,7 @@ const DonationForm = () => {
                     value={particularsEmail}
                     handleChange={handleChange}
                     required={true}
+                    disabled={true}
                     placeholder="Email Address*"
                     className="w-80 ml-24 mt-9"
                   />
@@ -279,6 +286,7 @@ const DonationForm = () => {
                     value={particularsAddress}
                     handleChange={handleChange}
                     required={true}
+                    disabled={true}
                     placeholder="Address"
                     className="w-740 mt-9"
                   />
@@ -290,6 +298,8 @@ const DonationForm = () => {
             </section>
           )}
           <br />
+
+          {/* /////////////////// CREDIT CARD DETAILS //////////////////////////// */}
 
           <section className="w-[996px] mx-auto bg-white py-12 pl-16 rounded-2xl">
             <h4 className="text-2xl">
@@ -309,7 +319,7 @@ const DonationForm = () => {
               </p>
               <button
                 type="text"
-                className="border border-primary py-0 px-2 rounded-md ml-10 text-primary"
+                className="border border-primary py-0 px-2 rounded-md ml-10 text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
                 value={salutaion}
                 onClick={() => setSalutation("Mr")}
               >
@@ -317,7 +327,7 @@ const DonationForm = () => {
               </button>
               <button
                 type="text"
-                className="border border-primary py-0 px-2 rounded-md text-primary"
+                className="border border-primary py-0 px-2 rounded-md text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
                 value={salutaion}
                 onClick={() => setSalutation("Mrs")}
               >
@@ -325,7 +335,7 @@ const DonationForm = () => {
               </button>
               <button
                 type="text"
-                className="border border-primary py-0 px-2 rounded-md text-primary"
+                className="border border-primary py-0 px-2 rounded-md text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
                 value={salutaion}
                 onClick={() => setSalutation("Miss")}
               >
@@ -333,7 +343,7 @@ const DonationForm = () => {
               </button>
               <button
                 type="text"
-                className="border border-primary py-0 px-2 rounded-md text-primary"
+                className="border border-primary py-0 px-2 rounded-md text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
                 value={salutaion}
                 onClick={() => setSalutation("Ms")}
               >
@@ -396,6 +406,7 @@ const DonationForm = () => {
                   value={creditNumber}
                   handleChange={handleChangeCredit}
                   required={true}
+                  disabled={true}
                   placeholder="Credit Card Number"
                   className="w-80"
                 />
@@ -405,6 +416,7 @@ const DonationForm = () => {
                   value={creditExpiry}
                   handleChange={handleChangeCredit}
                   required={true}
+                  disabled={true}
                   placeholder="MM/YY"
                   className="w-24 ml-11"
                 />
@@ -414,6 +426,7 @@ const DonationForm = () => {
                   value={creditCCV}
                   handleChange={handleChangeCredit}
                   required={true}
+                  disabled={true}
                   placeholder="CCV"
                   className="w-24 ml-11"
                 />
@@ -426,13 +439,16 @@ const DonationForm = () => {
                   value={creditName}
                   handleChange={handleChangeCredit}
                   required={true}
+                  disabled={true}
                   placeholder="Name of Cardholder"
                   className="w-641 mt-9"
                 />
               </div>
             </div>
             <div className="mb-8 ml-10">
-              <BaseButton type="submit" label="Donate" colour="red" />
+              <NavLink to="/thankyou">
+                <BaseButton type="submit" label="Donate" colour="red" />
+              </NavLink>
             </div>
           </section>
         </div>
