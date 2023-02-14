@@ -66,7 +66,7 @@ const Footer = () => {
           </Link>
           <Link
             to={{
-              pathname: "https://www.instagram.com/willingheartssg/?hl=en",
+              pathname: "https://www.instagram.com/willingheartssg/",
             }}
             target="_blank"
           >
