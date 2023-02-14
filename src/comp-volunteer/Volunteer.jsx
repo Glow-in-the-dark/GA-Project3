@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import CalendarDisp from "./CalendarDisp";
 
 const Volunteer = () => {
+  const [role, setRole] = useState("");
+
+  const getRole = (inputId) => {
+    if (inputId === soup) {
+      setRole("soupkitchen");
+    } else if (inputId === driver) {
+      setRole("driver");
+    }
+  };
   return (
     <>
       <div>
@@ -15,12 +24,17 @@ const Volunteer = () => {
         <h1>Select Volunteer Role</h1>
         <label>*Driver Volunteer must have vehicle of their own</label>
         <br />
-        <button>Soup Kitchen Volunteer</button>
-        <button>Driver Volunteer</button>
+        <button id="soup" onClick={getRole}>
+          Soup Kitchen Volunteer
+        </button>
+        <button id="driver" onClick={getRole}>
+          Driver Volunteer
+        </button>
       </div>
       <div>
         <CalendarDisp />;
       </div>
+      {console.log(role)}
     </>
   );
 };

@@ -16,6 +16,7 @@ const VolunteerForm = (props) => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [organisation, setOrgnaisation] = useState("");
   const [occupation, setOccupation] = useState("");
+
   // const [details, setDetails] = useState([]);
 
   // Function to handle changes in user input
@@ -47,17 +48,16 @@ const VolunteerForm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    //  await setDetails({
-    //     name: name,
-    //     mobile_number: mobileNumber,
-    //     email: email,
-    //     password: password,
-    //     gender: gender,
-    //     date_of_birth: dateOfBirth,
-    //     organisation: organisation,
-    //     occupation: occupation,
-    //   });
-    // console.log(details);
+    const modifiedDate = props.date.toISOString().split("T")[0];
+
+    const volunteerDeets = {
+      date: modifiedDate,
+      role: props.role,
+      timing: props.timeSlot,
+      email: email,
+      qty: props.qty,
+    };
+
     const details = {
       name: name,
       mobile_number: mobileNumber,
@@ -78,7 +78,9 @@ const VolunteerForm = (props) => {
         },
         body: JSON.stringify(details),
       }
-    ).then().catch(alert("Wrong"));
+    )
+      .then()
+      .catch(alert("Wrong"));
 
     // navigate("/volunteer/volunteer-confirmation", {
     //   date: props.date,
@@ -202,6 +204,8 @@ const VolunteerForm = (props) => {
           />
         </form>
       </div>
+      {console.log(props.date.toISOString().split("T")[0])}
+      {console.log(props.timeSlot)}
     </div>
   );
 };
