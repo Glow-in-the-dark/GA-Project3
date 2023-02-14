@@ -1,4 +1,11 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel";
+import BaseButton from "../comp-commons/BaseButton";
+import { NavLink } from "react-router-dom";
 
 const TrainingKitchen = () => {
   return (
@@ -133,6 +140,95 @@ const TrainingKitchen = () => {
         <div className="flex justify-center">
           <h1>
             WHAT WE
+            <br /> OFFER
+          </h1>
+          <div className="ml-28">
+            <div className="mb-14 text-justify w-[894px] ">
+              <p className="text-2xl">
+                The training kitchen will be run by a team of trained staff and
+                volunteers. A detailed budget and financial plan will be
+                established to ensure sustainability of the organisation.
+                Regualr evaluations will be conducted to measure the
+                effectiveness of the training kitchen and make necessary
+                adjustments.
+              </p>
+              <br />
+              <br />
+              <div>
+                <li className="text-2xl">
+                  Hands-on training in the culinary arts, including kitchen
+                  safety, food preparation,{" "}
+                  <span className="text-white">Qll</span> and cooking
+                  techniques.
+                </li>
+                <li className="text-2xl">
+                  Access to basic necessities such as clothing and hygiene
+                  items.
+                </li>
+                <li className="text-2xl">
+                  Referral services to other community resources as needed.
+                </li>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-row justify-center">
+          <Carousel
+            showStatus={false}
+            showThumbs={false}
+            showIndicators={false}
+            className="w-[1000px]"
+            renderArrowPrev={(clickHandler, hasPrev) => {
+              return (
+                <div
+                  className={`${
+                    hasPrev ? "absolute" : "hidden"
+                  } top-0 bottom-0 left-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                  onClick={clickHandler}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronLeft}
+                    className="mr-9 self-center"
+                  />
+                </div>
+              );
+            }}
+            renderArrowNext={(clickHandler, hasNext) => {
+              return (
+                <div
+                  className={`${
+                    hasNext ? "absolute" : "hidden"
+                  } top-0 bottom-0 right-0 flex justify-center items-center p-3 opacity-30 hover:opacity-100 cursor-pointer z-20`}
+                  onClick={clickHandler}
+                >
+                  <FontAwesomeIcon
+                    icon={faChevronRight}
+                    className="ml-9 self-center"
+                  />
+                </div>
+              );
+            }}
+          >
+            <div>
+              <img src="./kitchenImages/kitchen-carousel.png" />
+              <NavLink to="/volunteer" className="relative bottom-32 left-36">
+                <BaseButton label="Volunteer Now" colour="red" />
+              </NavLink>
+            </div>
+            <div>
+              <img src="./kitchenImages/kitchen-carousel.png" />
+              <NavLink to="/volunteer" className="relative bottom-32 left-36">
+                <BaseButton label="Volunteer Now" colour="red" />
+              </NavLink>
+            </div>
+          </Carousel>
+        </div>
+      </section>
+      {/* /////////////////////// HOW CAN YOU HELP? /////////////////////////////// */}
+      <section className="bg-white py-24">
+        <div className="flex justify-center">
+          <h1>
+            HOW CAN
             <br /> OFFER
           </h1>
           <div className="ml-28">
