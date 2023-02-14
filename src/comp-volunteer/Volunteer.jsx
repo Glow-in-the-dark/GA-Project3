@@ -5,9 +5,9 @@ const Volunteer = () => {
   const [role, setRole] = useState("");
 
   const getRole = (e) => {
-    if (e.target.id === soup) {
+    if (e.target.id === "soup") {
       setRole("soupkitchen");
-    } else if (inputId === driver) {
+    } else if (e.target.id === "driver") {
       setRole("driver");
     }
   };
