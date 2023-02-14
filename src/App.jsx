@@ -36,6 +36,11 @@ function App() {
           path="/contact-us/confirmation-page"
           element={<ContactFormConfirmationPage />}
         />
+        <Route
+          path="/volunteer/volunteer-confirmation"
+          element={<VolunteerConfirmPage />}
+        />
+        <Route path="/volunteer/volunteer-form" element={<Volunteer />} />
       </Routes>
     </div>
   );
