@@ -6,7 +6,7 @@ const TrainingKitchen = () => {
       {/* //////////////////////////// TOP ///////////////////////// */}
       <div className="text-center">
         <h1 className="mb-7">PROJECT: TRAINING KITCHEN</h1>
-        <p className="">
+        <p className="text-xl">
           Willing Hearts not only want to feed but empower their beneficiaries
           further by teaching <br />
           them how to feed themselves
@@ -23,8 +23,8 @@ const TrainingKitchen = () => {
           <h1>
             WHAT IS IT <br /> ABOUT?
           </h1>
-          <div className="ml-28">
-            <p className="mb-14 text-justify w-[692px]">
+          <div className="ml-20">
+            <p className="mb-14 text-justify w-[894px] text-2xl">
               Willing Hearts started this initiative to provide culinary
               education and job training to individuals in need. The training
               kitchen will provide hands-on training in the culinary arts and
@@ -41,7 +41,7 @@ const TrainingKitchen = () => {
                   alt=""
                   className="mx-auto"
                 />
-                <p className="text-center mt-3.5">
+                <p className="text-center mt-3.5 text-xl">
                   Have more confidence <br /> in their cooking abilities
                 </p>
               </li>
@@ -51,7 +51,7 @@ const TrainingKitchen = () => {
                   alt=""
                   className="mx-auto"
                 />
-                <p className="text-center mt-3.5">
+                <p className="text-center mt-3.5 text-xl">
                   See fewer barriers to <br /> making healthy, <br />
                   affordable meals
                 </p>
@@ -62,7 +62,7 @@ const TrainingKitchen = () => {
                   alt=""
                   className="mx-auto"
                 />
-                <p className="text-center mt-3.5">
+                <p className="text-center mt-3.5 text-xl">
                   Be able to prepare <br /> healthier, more budget- <br />
                   friendly meals
                 </p>
@@ -72,14 +72,14 @@ const TrainingKitchen = () => {
         </div>
       </section>
       {/* /////////////////////// HOW WILL IT HELP? /////////////////////////////// */}
-      <section>
+      <section className="pb-24">
         <div className="flex justify-center">
           <h1>
             HOW WILL
             <br /> IT HELP?
           </h1>
-          <div className="ml-28">
-            <p className="mb-14 text-justify w-[692px]">
+          <div className="ml-16">
+            <p className="mb-14 text-justify w-[894px] text-2xl">
               Evidence suggests that teaching cooking skills can help people
               better manage food insecurity by teaching them how to reduce food
               waste, budget and plan meals, and cook healthy meals with
@@ -98,7 +98,7 @@ const TrainingKitchen = () => {
                   alt=""
                   className="mx-auto"
                 />
-                <p className="text-center mt-3.5">
+                <p className="text-center mt-3.5 text-xl">
                   This project aims to <br /> reach at least 1000 <br />
                   people in the first year.
                 </p>
@@ -109,7 +109,7 @@ const TrainingKitchen = () => {
                   alt=""
                   className="mx-auto"
                 />
-                <p className="text-center mt-3.5">
+                <p className="text-center mt-3.5 text-xl">
                   We believe in paying it <br /> forward, each person <br /> we
                   help goes on to <br /> help others in need.
                 </p>
@@ -120,11 +120,49 @@ const TrainingKitchen = () => {
                   alt=""
                   className="mx-auto"
                 />
-                <p className="text-center mt-3.5">
+                <p className="text-center mt-3.5 text-xl">
                   We need to raise <br /> $10,000 to make <br /> this happen.
                 </p>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+      {/* /////////////////////// WHAT WE OFFER /////////////////////////////// */}
+      <section className="bg-white py-24">
+        <div className="flex justify-center">
+          <h1>
+            WHAT WE
+            <br /> OFFER
+          </h1>
+          <div className="ml-28">
+            <div className="mb-14 text-justify w-[894px] ">
+              <p className="text-2xl">
+                The training kitchen will be run by a team of trained staff and
+                volunteers. A detailed budget and financial plan will be
+                established to ensure sustainability of the organisation.
+                Regualr evaluations will be conducted to measure the
+                effectiveness of the training kitchen and make necessary
+                adjustments.
+              </p>
+              <br />
+              <br />
+              <div>
+                <li className="text-2xl">
+                  Hands-on training in the culinary arts, including kitchen
+                  safety, food preparation,{" "}
+                  <span className="text-white">Qll</span> and cooking
+                  techniques.
+                </li>
+                <li className="text-2xl">
+                  Access to basic necessities such as clothing and hygiene
+                  items.
+                </li>
+                <li className="text-2xl">
+                  Referral services to other community resources as needed.
+                </li>
+              </div>
+            </div>
           </div>
         </div>
       </section>
