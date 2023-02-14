@@ -78,7 +78,20 @@ const VolunteerForm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const modifiedDate = props.date.toISOString().split("T")[0];
+    const day = props.date.getDate();
+    const month = props.date.getMonth();
+    const year = props.date.getFullYear();
+    const modifiedDate = `${year}-${month + 1}-${day}`;
+
+    // const newdate = new Date(props.date);
+    // const modifiedDate = newdate.setHours(newdate.getHours() + 8);
+    // .toISOString()
+    // .split("T")[0];
+    console.log(day);
+    console.log(month + 1);
+    console.log(year);
+    console.log(modifiedDate);
+    // console.log(modifiedDate);
 
     const volunteerDeets = {
       date: modifiedDate,
@@ -99,14 +112,14 @@ const VolunteerForm = (props) => {
       occupation: occupation,
     };
 
-    console.log(volunteerDeets);
+    // console.log(volunteerDeets);
 
-    createAppt(volunteerDeets);
+    // createAppt(volunteerDeets);
 
-    navigate("/volunteer/volunteer-confirmation", {
-      date: props.date,
-      timeSlot: props.timeSlot,
-    });
+    // navigate("/volunteer/volunteer-confirmation", {
+    //   date: props.date,
+    //   timeSlot: props.timeSlot,
+    // });
     // .catch(alert("Account already exists! Email or password do not match!"));
   };
 
