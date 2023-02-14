@@ -16,7 +16,7 @@ const VolunteerForm = (props) => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [organisation, setOrgnaisation] = useState("");
   const [occupation, setOccupation] = useState("");
-  const [details, setDetails] = useState([]);
+  // const [details, setDetails] = useState([]);
 
   // Function to handle changes in user input
   function handleChange(inputId, inputVal) {
@@ -47,25 +47,43 @@ const VolunteerForm = (props) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    setDetails({
+    //  await setDetails({
+    //     name: name,
+    //     mobile_number: mobileNumber,
+    //     email: email,
+    //     password: password,
+    //     gender: gender,
+    //     date_of_birth: dateOfBirth,
+    //     organisation: organisation,
+    //     occupation: occupation,
+    //   });
+    // console.log(details);
+    const details = {
       name: name,
-      mobileNumber: mobileNumber,
+      mobile_number: mobileNumber,
       email: email,
       password: password,
-      confirmPassword: confirmPassword,
       gender: gender,
+      date_of_birth: dateOfBirth,
       organisation: organisation,
       occupation: occupation,
-    });
-    console.log(details);
-    // completeSubmit();
-  };
+    };
 
-  const completeSubmit = () => {
-    navigate("/volunteer/volunteer-confirmation", {
-      date: props.date,
-      timeSlot: props.timeSlot,
-    });
+    const res = await fetch(
+      "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(details),
+      }
+    ).then().catch(alert("Wrong"));
+
+    // navigate("/volunteer/volunteer-confirmation", {
+    //   date: props.date,
+    //   timeSlot: props.timeSlot,
+    // });
   };
 
   return (
