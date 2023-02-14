@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BaseInput from "../comp-commons/BaseInput";
 import BaseButton from "../comp-commons/BaseButton";
@@ -16,6 +16,7 @@ const VolunteerForm = (props) => {
   const [dateOfBirth, setDateOfBirth] = useState("");
   const [organisation, setOrgnaisation] = useState("");
   const [occupation, setOccupation] = useState("");
+  const [details, setDetails] = useState([]);
 
   // Function to handle changes in user input
   function handleChange(inputId, inputVal) {
@@ -29,8 +30,10 @@ const VolunteerForm = (props) => {
       setPassword(inputVal);
     } else if (inputId === "confirmPassword") {
       setConfirmPassword(inputVal);
-    } else if (inputId === "gender") {
-      setGender(inputVal);
+    } else if (inputId === "maleGender") {
+      setGender("Male");
+    } else if (inputId === "femaleGender") {
+      setGender("Female");
     } else if (inputId === "dateOfBirth") {
       setDateOfBirth(inputVal);
     } else if (inputId === "organisation") {
@@ -41,14 +44,29 @@ const VolunteerForm = (props) => {
   }
 
   // Function to handle submit
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    setDetails({
+      name: name,
+      mobileNumber: mobileNumber,
+      email: email,
+      password: password,
+      confirmPassword: confirmPassword,
+      gender: gender,
+      organisation: organisation,
+      occupation: occupation,
+    });
+    console.log(details);
+    // completeSubmit();
+  };
+
+  const completeSubmit = () => {
     navigate("/volunteer/volunteer-confirmation", {
       date: props.date,
       timeSlot: props.timeSlot,
     });
-    console.log(props.date);
-  }
+  };
 
   return (
     <div className="w-[930px] mx-auto text-greyscale1">
@@ -101,6 +119,31 @@ const VolunteerForm = (props) => {
             placeholder="Confirm Password*"
             className="mt-9"
           />
+
+          <span>
+            <label>Gender</label>
+            <br />
+            <BaseInput
+              type="radio"
+              id="maleGender"
+              value={gender}
+              handleChange={handleChange}
+              required={false}
+              placeholder="M"
+              className="mt-9"
+            />
+            <label>M</label>
+            <BaseInput
+              type="radio"
+              id="femaleGender"
+              value={gender}
+              handleChange={handleChange}
+              required={true}
+              placeholder="M"
+              className="mt-9"
+            />
+            <label>F</label>
+          </span>
 
           <BaseInput
             type="string"
