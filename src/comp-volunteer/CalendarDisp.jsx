@@ -4,7 +4,7 @@ import Time from "./Time";
 import "react-calendar/dist/Calendar.css";
 import NumOfPax from "./NumOfPax";
 
-const CalendarDisp = () => {
+const CalendarDisp = (props) => {
   const [date, setDate] = useState(new Date());
   const [showTime, setShowTime] = useState(false);
   const [timeSlot, setTimeSlot] = useState("");
@@ -35,7 +35,7 @@ const CalendarDisp = () => {
           Can't find a suitable time slow? Find other ways to contribute here.
         </label>
       </p>
-      <NumOfPax date={date} timeSlot={timeSlot} />
+      <NumOfPax date={date} timeSlot={timeSlot} roles={props.roles} />
     </div>
   );
 };

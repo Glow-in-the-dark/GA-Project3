@@ -7,14 +7,12 @@ import CorpForm from "./CorpVolunteer/CorpForm";
 
 const NumOfPax = (props) => {
   // States
-  const [adult, setAdult] = useState("");
-  const [child, setChild] = useState("");
+  const [adult, setAdult] = useState(0);
+  const [child, setChild] = useState(0);
   const [corp, setCorp] = useState(false);
   const [dispCorpForm, setDispCorpForm] = useState(false);
   const [dispIndividualForm, setDispIndividualForm] = useState(false);
-
-  // console.log(props.date);
-  // console.log(props.showTime);
+  const [qty, setQty] = useState(0);
 
   // Function to handle changes in user input
   function handleChange(inputId, inputVal) {
@@ -37,6 +35,9 @@ const NumOfPax = (props) => {
     } else {
       setDispIndividualForm(true);
     }
+    // parseInt(adult);
+    // parseInt(child);
+    setQty(parseInt(adult) + parseInt(child));
   }
 
   return (
@@ -49,7 +50,7 @@ const NumOfPax = (props) => {
           <br />
           <span>16 years and above</span>
           <BaseInput
-            type="string"
+            type="number"
             id="adult"
             value={adult}
             handleChange={handleChange}
@@ -61,7 +62,7 @@ const NumOfPax = (props) => {
           <br />
           <span>3 - 15 years</span>
           <BaseInput
-            type="string"
+            type="number"
             id="child"
             value={child}
             handleChange={handleChange}
@@ -82,9 +83,21 @@ const NumOfPax = (props) => {
           />
         </form>
       </div>
-      {dispCorpForm && <CorpForm date={props.date} timeSlot={props.timeSlot} />}
+      {dispCorpForm && (
+        <CorpForm
+          date={props.date}
+          timeSlot={props.timeSlot}
+          roles={props.roles}
+          qty={qty}
+        />
+      )}
       {dispIndividualForm && (
-        <VolunteerForm date={props.date} timeSlot={props.timeSlot} />
+        <VolunteerForm
+          date={props.date}
+          timeSlot={props.timeSlot}
+          roles={props.roles}
+          qty={qty}
+        />
       )}
     </div>
   );

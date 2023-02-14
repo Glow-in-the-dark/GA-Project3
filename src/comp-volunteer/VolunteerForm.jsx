@@ -52,7 +52,7 @@ const VolunteerForm = (props) => {
 
     const volunteerDeets = {
       date: modifiedDate,
-      role: props.role,
+      role: props.roles,
       timing: props.timeSlot,
       email: email,
       qty: props.qty,
@@ -79,7 +79,18 @@ const VolunteerForm = (props) => {
         body: JSON.stringify(details),
       }
     )
-      .then()
+      .then(async () => {
+        const res = await fetch(
+          "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
+          {
+            method: "PATCH",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(volunteerDeets),
+          }
+        );
+      })
       .catch(alert("Wrong"));
 
     // navigate("/volunteer/volunteer-confirmation", {

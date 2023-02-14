@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import CalendarDisp from "./CalendarDisp";
 
 const Volunteer = () => {
-  const [role, setRole] = useState("");
+  const [roles, setRoles] = useState("");
 
   const getRole = (e) => {
     if (e.target.id === "soup") {
-      setRole("soupkitchen");
+      setRoles("soupkitchen");
     } else if (e.target.id === "driver") {
-      setRole("driver");
+      setRoles("driver");
     }
   };
   return (
@@ -32,9 +32,8 @@ const Volunteer = () => {
         </button>
       </div>
       <div>
-        <CalendarDisp />;
+        <CalendarDisp roles={roles} />;
       </div>
-      {console.log(role)}
     </>
   );
 };
