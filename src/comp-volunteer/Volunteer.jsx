@@ -4,8 +4,8 @@ import CalendarDisp from "./CalendarDisp";
 const Volunteer = () => {
   const [role, setRole] = useState("");
 
-  const getRole = (inputId) => {
-    if (inputId === soup) {
+  const getRole = (e) => {
+    if (e.target.id === soup) {
       setRole("soupkitchen");
     } else if (inputId === driver) {
       setRole("driver");
@@ -24,10 +24,10 @@ const Volunteer = () => {
         <h1>Select Volunteer Role</h1>
         <label>*Driver Volunteer must have vehicle of their own</label>
         <br />
-        <button id="soup" onClick={getRole}>
+        <button type="button" id="soup" onClick={getRole}>
           Soup Kitchen Volunteer
         </button>
-        <button id="driver" onClick={getRole}>
+        <button type="button" id="driver" onClick={getRole}>
           Driver Volunteer
         </button>
       </div>
