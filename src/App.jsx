@@ -14,29 +14,12 @@ import NewsPage from "./comp-aboutUs/NewsPage";
 import FaqPage from "./comp-aboutUs/FaqPage";
 import LoginPage from "./comp-login/LoginPage";
 import ThankYouPage from "./comp-donate/ThankYouPage";
+import TrainingKitchen from "./comp-kitchen/TrainingKitchen";
 
 function App() {
   return (
     <div>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<Navigate replace to="/homepage" />} />
-        <Route path="/homepage" element={<Homepage />} />
-        <Route path="/about-us" element={<AboutUsPage />} />
-        <Route path="/donate" element={<DonatePage />} />
-        <Route path="/donateForm" element={<DonationForm />} />
-        <Route path="/thankyou" element={<ThankYouPage />} />
-        <Route path="/volunteer" element={<VolunteerMainPage />} />
-        <Route path="/contact-us" element={<ContactUsPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/news" element={<NewsPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/faq" element={<FaqPage />} />
-        <Route
-          path="/contact-us/confirmation-page"
-          element={<ContactFormConfirmationPage />}
-        />
-      </Routes>
+<TrainingKitchen/>
     </div>
   );
 }
