@@ -44,6 +44,36 @@ const VolunteerForm = (props) => {
     }
   }
 
+  const createUser = async (details) => {
+    const res = await fetch(
+      "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(details),
+      }
+    );
+  };
+
+  const createAppt = async (volunteerDeets) => {
+    const res = await fetch(
+      "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(volunteerDeets),
+      }
+    ).catch(
+      alert(
+        "You have an exisiting volunteer assignment at your selected date and time!"
+      )
+    );
+  };
+
   // Function to handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -69,34 +99,15 @@ const VolunteerForm = (props) => {
       occupation: occupation,
     };
 
-    const res = await fetch(
-      "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(details),
-      }
-    )
-      .then(async () => {
-        const res = await fetch(
-          "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
-          {
-            method: "PATCH",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(volunteerDeets),
-          }
-        );
-      })
-      .catch(alert("Wrong"));
+    console.log(volunteerDeets);
 
-    // navigate("/volunteer/volunteer-confirmation", {
-    //   date: props.date,
-    //   timeSlot: props.timeSlot,
-    // });
+    createAppt(volunteerDeets);
+
+    navigate("/volunteer/volunteer-confirmation", {
+      date: props.date,
+      timeSlot: props.timeSlot,
+    });
+    // .catch(alert("Account already exists! Email or password do not match!"));
   };
 
   return (
@@ -215,8 +226,7 @@ const VolunteerForm = (props) => {
           />
         </form>
       </div>
-      {console.log(props.date.toISOString().split("T")[0])}
-      {console.log(props.timeSlot)}
+      {/* {console.log(volunteerDeets)} */}
     </div>
   );
 };
