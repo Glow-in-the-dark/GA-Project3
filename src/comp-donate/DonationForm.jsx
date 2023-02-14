@@ -241,8 +241,6 @@ const DonationForm = () => {
                     id="name"
                     value={particularsName}
                     handleChange={handleChange}
-                    required={true}
-                    disabled={true}
                     placeholder="Name*"
                     className="w-80"
                   />
@@ -251,8 +249,6 @@ const DonationForm = () => {
                     id="nric"
                     value={particularsNRIC}
                     handleChange={handleChange}
-                    required={true}
-                    disabled={true}
                     placeholder="NRIC/FIN Number"
                     className="w-80 ml-24"
                   />
@@ -263,8 +259,6 @@ const DonationForm = () => {
                     id="mobile"
                     value={particularsMobile}
                     handleChange={handleChange}
-                    required={true}
-                    disabled={true}
                     placeholder="Mobile Number*"
                     className="w-80 mt-9"
                   />
@@ -273,8 +267,6 @@ const DonationForm = () => {
                     id="email"
                     value={particularsEmail}
                     handleChange={handleChange}
-                    required={true}
-                    disabled={true}
                     placeholder="Email Address*"
                     className="w-80 ml-24 mt-9"
                   />
@@ -285,8 +277,6 @@ const DonationForm = () => {
                     id="address"
                     value={particularsAddress}
                     handleChange={handleChange}
-                    required={true}
-                    disabled={true}
                     placeholder="Address"
                     className="w-740 mt-9"
                   />
@@ -405,8 +395,6 @@ const DonationForm = () => {
                   id="credit-number"
                   value={creditNumber}
                   handleChange={handleChangeCredit}
-                  required={true}
-                  disabled={true}
                   placeholder="Credit Card Number"
                   className="w-80"
                 />
@@ -415,8 +403,6 @@ const DonationForm = () => {
                   id="credit-expiry"
                   value={creditExpiry}
                   handleChange={handleChangeCredit}
-                  required={true}
-                  disabled={true}
                   placeholder="MM/YY"
                   className="w-24 ml-11"
                 />
@@ -425,8 +411,6 @@ const DonationForm = () => {
                   id="credit-CCV"
                   value={creditCCV}
                   handleChange={handleChangeCredit}
-                  required={true}
-                  disabled={true}
                   placeholder="CCV"
                   className="w-24 ml-11"
                 />
@@ -438,8 +422,6 @@ const DonationForm = () => {
                   id="credit-name"
                   value={creditName}
                   handleChange={handleChangeCredit}
-                  required={true}
-                  disabled={true}
                   placeholder="Name of Cardholder"
                   className="w-641 mt-9"
                 />
@@ -449,6 +431,7 @@ const DonationForm = () => {
               <NavLink to="/thankyou">
                 <BaseButton type="submit" label="Donate" colour="red" />
               </NavLink>
+              <BaseButton type="submit" label="Test-Donate" colour="red" />
             </div>
           </section>
         </div>
