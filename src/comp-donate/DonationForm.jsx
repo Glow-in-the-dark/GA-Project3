@@ -432,6 +432,7 @@ const DonationForm = () => {
               <NavLink to="/thankyou">
                 <BaseButton type="submit" label="Donate" colour="red" />
               </NavLink>
+              <BaseButton type="submit" label="Test" colour="red" />
             </div>
           </section>
         </div>
