@@ -22,7 +22,7 @@ const LoginPage = () => {
     // console.log(data);
 
     try {
-      const response = await fetch("http://127.0.0.1:5002/users/login", {
+      const response = await fetch("http://127.0.0.1:5001/users/login", {
         method: "POST", // *GET, POST, PUT, DELETE, etc.
         mode: "cors", // no-cors, *cors, same-origin
         cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
