@@ -4,7 +4,7 @@ import BaseInput from "../../comp-commons/BaseInput";
 import BaseButton from "../../comp-commons/BaseButton";
 import StaffRegistration from "./StaffRegistration";
 
-const CorpForm = () => {
+const CorpForm = (props) => {
   const navigate = useNavigate();
 
   // States
@@ -115,6 +115,8 @@ const CorpForm = () => {
     createUser(details);
 
     createAppt(volunteerDeets);
+
+    setDispStaffRegistration(true);
 
     // navigate("/volunteer/volunteer-confirmation", {
     //   date: props.date,

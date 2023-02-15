@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import Calendar from "react-calendar";
 
-const time = ["5am - 9am", "9am - 1pm", "1pm - 5pm"];
+const time = ["5am-9am", "9am-1pm", "1pm-5pm"];
 const Times = (props) => {
   const [event, setEvent] = useState(null);
   const [info, setInfo] = useState(false);

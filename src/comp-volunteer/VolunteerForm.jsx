@@ -43,36 +43,83 @@ const VolunteerForm = (props) => {
       setOccupation(inputVal);
     }
   }
-
   const createUser = async (details) => {
-    const res = await fetch(
-      "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(details),
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(details),
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error();
       }
-    );
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+      alert("Account already exists! Email or password do not match!");
+      throw error;
+    }
   };
 
   const createAppt = async (volunteerDeets) => {
-    const res = await fetch(
-      "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(volunteerDeets),
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(volunteerDeets),
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error();
       }
-    ).catch(
+      // console.log(res.data);
+    } catch (error) {
+      // console.log(error);
       alert(
         "You have an exisiting volunteer assignment at your selected date and time!"
-      )
-    );
+      );
+    }
   };
+  // const createUser = async (details) => {
+  //   const res = await fetch(
+  //     "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
+  //     {
+  //       method: "PUT",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(details),
+  //     }
+  //   );
+  // };
+
+  // const createAppt = async (volunteerDeets) => {
+  //   const res = await fetch(
+  //     "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
+  //     {
+  //       method: "PATCH",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(volunteerDeets),
+  //     }
+  //   ).catch(
+  //     alert(
+  //       "You have an exisiting volunteer assignment at your selected date and time!"
+  //     )
+  //   );
+  // };
 
   // Function to handle submit
   const handleSubmit = async (e) => {
@@ -115,10 +162,13 @@ const VolunteerForm = (props) => {
 
     console.log(volunteerDeets);
 
-    createUser(details);
+    try {
+      await createUser(details);
 
-    createAppt(volunteerDeets);
-
+      await createAppt(volunteerDeets);
+    } catch (error) {
+      console.log(error);
+    }
     // navigate("/volunteer/volunteer-confirmation", {
     //   date: props.date,
     //   timeSlot: props.timeSlot,
