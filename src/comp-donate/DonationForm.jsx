@@ -14,7 +14,7 @@ const DonationForm = () => {
   const [particulars, setParticulars] = useState({});
 
   const [anonymous, setAnonymous] = useState(false);
-  const [salutaion, setSalutation] = useState("");
+  const [salutation, setSalutation] = useState("");
   const [particularsName, setParticularsName] = useState("");
   const [particularsNRIC, setParticularsNRIC] = useState("");
   const [particularsMobile, setParticularsMobile] = useState("");
@@ -23,7 +23,7 @@ const DonationForm = () => {
 
   const [data, setData] = useState({
     anonymous: anonymous,
-    salutaion: salutaion,
+    salutaion: salutation,
     persona: personaChoice,
     taxDeduction: taxDeduction,
     particulars: particulars,
@@ -100,7 +100,7 @@ const DonationForm = () => {
   // Function to format CCV input field
   function formatCCV(value) {
     const clearValue = clearNumber(value);
-    return `${clearValue.slice(0,3)}`
+    return `${clearValue.slice(0, 3)}`;
   }
 
   // Function to format credit card expiration date input field
@@ -188,19 +188,49 @@ const DonationForm = () => {
 
             <div>
               <div className="flex mb-7 ml-10">
+                {/* <button>
+                  <input
+                    type="radio"
+                    name="test1"
+                    id="test"
+                    className=" checked:bg-black hidden"
+                  />
+                  <label htmlFor="test" className="px-5 py-2.5">
+                    Hello
+                  </label>
+                </button> */}
+
                 <button
-                  type="text"
-                  className="border border-primary h-10 px-5 rounded-l-lg text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
+                  className=""
                   onClick={() => setPersonaChoice("Individual")}
                 >
-                  Individual
+                  <input
+                    type="radio"
+                    name="persona"
+                    id="individual"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="individual"
+                    className="px-5 py-2.5 border border-primary rounded-l-lg"
+                  >
+                    Individual
+                  </label>
                 </button>
-                <button
-                  type="text"
-                  className="border border-primary h-10 px-5 rounded-r-lg text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
-                  onClick={() => setPersonaChoice("Corporate")}
-                >
-                  Corporate
+
+                <button onClick={() => setPersonaChoice("Corporate")}>
+                  <input
+                    type="radio"
+                    name="persona"
+                    id="corporate"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="corporate"
+                    className="px-5 py-2.5 border border-primary rounded-r-lg"
+                  >
+                    Corporate
+                  </label>
                 </button>
               </div>
               <div className="mb-8 ml-10">
@@ -235,7 +265,7 @@ const DonationForm = () => {
                 />
                 Enter Particulars
               </h4>
-              <div className="mb-8 ml-10">
+              <div className="mb-[1.813rem] ml-10">
                 <input
                   type="checkbox"
                   id="anonymous"
@@ -245,6 +275,86 @@ const DonationForm = () => {
                 <label htmlFor="anonymous">
                   I would like to receive tax relief for this donation
                 </label>
+              </div>
+              <div className="mb-[1.813rem]">
+                <p
+                  className="ml-10 mb-0.5"
+                  style={{ color: "rgb(138,138,138)" }}
+                >
+                  Salutation
+                </p>
+                <button
+                  onClick={() => setSalutation("Mr")}
+                  value={salutation}
+                  className="text-primary"
+                >
+                  <input
+                    type="radio"
+                    name="salutation"
+                    id="mr"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="mr"
+                    className="border border-primary py-0.5 px-2 rounded-l-lg ml-10"
+                  >
+                    Mr
+                  </label>
+                </button>
+                <button
+                  onClick={() => setSalutation("Mrs")}
+                  value={salutation}
+                  className="text-primary"
+                >
+                  <input
+                    type="radio"
+                    name="salutation"
+                    id="mrs"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="mrs"
+                    className="border border-primary py-0.5 px-2"
+                  >
+                    Mrs
+                  </label>
+                </button>
+                <button
+                  onClick={() => setSalutation("Miss")}
+                  value={salutation}
+                  className="text-primary"
+                >
+                  <input
+                    type="radio"
+                    name="salutation"
+                    id="miss"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="miss"
+                    className="border border-primary py-0.5 px-2"
+                  >
+                    Miss
+                  </label>
+                </button>
+                <button
+                  onClick={() => setSalutation("Ms")}
+                  value={salutation}
+                  className="text-primary"
+                >
+                  <input
+                    type="radio"
+                    name="salutation"
+                    id="ms"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="ms"
+                    className="border border-primary py-0.5 px-2 rounded-r-lg"
+                  >
+                    Ms
+                  </label>
+                </button>
               </div>
               <div className="mb-8 ml-10">
                 <div style={{ display: "flex" }}>
@@ -315,68 +425,93 @@ const DonationForm = () => {
             <p className="text-base mb-7 ml-10">
               All transactions are secured and encrypted
             </p>
-            <div>
-              <p className="ml-10 mb-0.5" style={{ color: "rgb(138,138,138)" }}>
-                Salutation
-              </p>
-              <button
-                type="text"
-                className="border border-primary py-0 px-2 rounded-l-lg ml-10 text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
-                value={salutaion}
-                onClick={() => setSalutation("Mr")}
-              >
-                Mr
-              </button>
-              <button
-                type="text"
-                className="border border-primary py-0 px-2 text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
-                value={salutaion}
-                onClick={() => setSalutation("Mrs")}
-              >
-                Mrs
-              </button>
-              <button
-                type="text"
-                className="border border-primary py-0 px-2 text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
-                value={salutaion}
-                onClick={() => setSalutation("Miss")}
-              >
-                Miss
-              </button>
-              <button
-                type="text"
-                className="border border-primary py-0 px-2 rounded-r-lg text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
-                value={salutaion}
-                onClick={() => setSalutation("Ms")}
-              >
-                Ms
-              </button>
-            </div>
             <div className="flex flex-row mb-8 ml-10 mt-8">
-              <div onClick={() => setDonationAmount(10)} className="mr-3.5">
-                <BaseButtonSelect
-                  label="$10"
-                  className="border-primary text-primary"
+              <button
+                onClick={() => setDonationAmount(10)}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-amount"
+                  id="10"
+                  className="checked hidden"
                 />
-              </div>
-              <div onClick={() => setDonationAmount(50)} className="mr-3.5">
-                <BaseButtonSelect
-                  label="$50"
-                  className="border-primary text-primary"
+                <label
+                  htmlFor="10"
+                  className="border border-primary py-2 px-5 rounded-md"
+                >
+                  $10
+                </label>
+              </button>
+              <button
+                onClick={() => setDonationAmount(20)}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-amount"
+                  id="20"
+                  className="checked hidden"
                 />
-              </div>
-              <div onClick={() => setDonationAmount(100)} className="mr-3.5">
-                <BaseButtonSelect
-                  label="$100"
-                  className="border-primary text-primary"
+                <label
+                  htmlFor="20"
+                  className="border border-primary py-2 px-5 rounded-md"
+                >
+                  $20
+                </label>
+              </button>
+              <button
+                onClick={() => setDonationAmount(50)}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-amount"
+                  id="50"
+                  className="checked hidden"
                 />
-              </div>
-              <div onClick={() => setDonationAmount(200)} className="mr-3.5">
-                <BaseButtonSelect
-                  label="$200"
-                  className="border-primary text-primary"
+                <label
+                  htmlFor="50"
+                  className="border border-primary py-2 px-5 rounded-md"
+                >
+                  $50
+                </label>
+              </button>
+              <button
+                onClick={() => setDonationAmount(100)}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-amount"
+                  id="100"
+                  className="checked hidden"
                 />
-              </div>
+                <label
+                  htmlFor="100"
+                  className="border border-primary py-2 px-5 rounded-md"
+                >
+                  $100
+                </label>
+              </button>
+              <button
+                onClick={() => setDonationAmount(200)}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-amount"
+                  id="200"
+                  className="checked hidden"
+                />
+                <label
+                  htmlFor="200"
+                  className="border border-primary py-2 px-5 rounded-md"
+                >
+                  $200
+                </label>
+              </button>
+
               <div className="border border-primary h-10 px-5 py-2 rounded-md text-primary">
                 <label htmlFor="custom-amount">$</label>
                 <input
@@ -390,18 +525,38 @@ const DonationForm = () => {
             </div>
             <div className="flex mb-8 ml-10">
               <button
-                type="text"
-                className="border border-primary h-10 px-5 rounded-l-lg text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
                 onClick={() => setDonationFrequency("Donate Once")}
+                className="text-primary"
               >
-                Donate Once
+                <input
+                  type="radio"
+                  name="donation-frequency"
+                  id="donate-once"
+                  className="checked hidden"
+                />
+                <label
+                  htmlFor="donate-once"
+                  className="border border-primary h-10 px-5 py-2 rounded-l-lg"
+                >
+                  Donate Once
+                </label>
               </button>
               <button
-                type="text"
-                className="border border-primary h-10 px-5 rounded-r-lg text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
                 onClick={() => setDonationFrequency("Donate Monthly")}
+                className="text-primary mr-3.5"
               >
-                Donate Monthly
+                <input
+                  type="radio"
+                  name="donation-frequency"
+                  id="donate-monthly"
+                  className="checked hidden"
+                />
+                <label
+                  htmlFor="donate-monthly"
+                  className="border border-primary h-10 px-5 py-2 rounded-r-lg"
+                >
+                  Donate Monthly
+                </label>
               </button>
             </div>
             <div className="mb-8 ml-10">
@@ -447,11 +602,11 @@ const DonationForm = () => {
               <NavLink to="/thankyou">
                 <BaseButtonSelect type="submit" label="Donate" colour="red" />
               </NavLink>
-              <BaseButtonSelect
+              {/* <BaseButtonSelect
                 type="submit"
                 label="Test-Donate"
                 colour="red"
-              />
+              /> */}
             </div>
           </section>
         </div>

@@ -27,10 +27,6 @@ function DonatePage() {
     changeAmount();
   }, [selection]);
 
-  const displayQRCode = () => {};
-
-  const displayPayNowPrompt = () => {};
-
   return (
     <div className="bg-secondary">
       <div className="text-center bg-secondary">
@@ -264,8 +260,6 @@ function DonatePage() {
         <AccordianWrapper title="FAQ" contentDataset={donateFAQ} />
       </div>
       <Footer />
-
-      
     </div>
   );
 }
