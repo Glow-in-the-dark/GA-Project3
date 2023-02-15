@@ -16,27 +16,33 @@ const Volunteer = () => {
   };
 
   return (
-    <>
-      <div>
-        <h1>SIGN UP AS A VOLUNTEER & MAKE AN IMPACT</h1>
-        <label>
-          You don't have to look far to find someone in need. You can make a
-          real difference in the lives of those in your own community.
-        </label>
+    <div className="bg-secondary text-greyscale1">
+      <div className="w-[1000px] text-center mx-auto">
+        <div className="mb-12">
+          <h1 className="mb-4">
+            SIGN UP AS A VOLUNTEER
+            <br />& MAKE AN IMPACT
+          </h1>
+          <h3>
+            You don't have to look far to find someone in need. You
+            <br /> can make a real difference in the lives of those in your
+            <br /> own community.
+          </h3>
+        </div>
+        <div className="bg-white rounded-md mb-12">
+          <h1>Select Volunteer Role</h1>
+          <label>*Driver Volunteer must have vehicle of their own</label>
+          <br />
+          <button type="button" id="soup" onClick={getRole}>
+            Soup Kitchen Volunteer
+          </button>
+          <button type="button" id="driver" onClick={getRole}>
+            Driver Volunteer
+          </button>
+        </div>
+        <div>{dispCal && <CalendarDisp roles={roles} />}</div>
       </div>
-      <div>
-        <h1>Select Volunteer Role</h1>
-        <label>*Driver Volunteer must have vehicle of their own</label>
-        <br />
-        <button type="button" id="soup" onClick={getRole}>
-          Soup Kitchen Volunteer
-        </button>
-        <button type="button" id="driver" onClick={getRole}>
-          Driver Volunteer
-        </button>
-      </div>
-      <div>{dispCal && <CalendarDisp roles={roles} />}</div>
-    </>
+    </div>
   );
 };
 
