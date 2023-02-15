@@ -10,9 +10,9 @@ import Footer from "../comp-commons/Footer";
 
 const TrainingKitchen = () => {
   return (
-    <div className="bg-secondary px-28">
+    <div className="bg-secondary">
       {/* //////////////////////////// TOP ///////////////////////// */}
-      <div className="text-center">
+      <div className="text-center px-28">
         <h1 className="mb-7">PROJECT: TRAINING KITCHEN</h1>
         <p className="text-xl">
           Willing Hearts not only want to feed but empower their beneficiaries
@@ -26,21 +26,22 @@ const TrainingKitchen = () => {
         </p>
       </div>
       {/* /////////////////////// WHAT IS IT ABOUT? /////////////////////////////// */}
-      <section className="mb-24">
+      <section className="mb-24 px-28">
         <div className="flex justify-center">
           <h1>
             WHAT IS IT <br /> ABOUT?
           </h1>
           <div className="ml-20">
-            <p className="mb-14 text-justify w-[894px] text-2xl">
+            <p className="mb-14 text-justify  text-2xl">
               Willing Hearts started this initiative to provide culinary
-              education and job training to individuals in need. The training
-              kitchen will provide hands-on training in the culinary arts and
-              food service industry, as well as access to job placement
+              education and job training <br /> to individuals in need. The
+              training kitchen will provide hands-on training in the <br />{" "}
+              culinary arts and food service industry, as well as access to job
+              placement <br />
               assistance. The training kitchen is at the Willing Hearts Soup
-              Kitchen in No. 1 Lorong J, Telok Kurau, which is easily accessible
-              by public transportation and in close proximity to other community
-              resources.
+              Kitchen in No. 1 <br /> Lorong J, Telok Kurau, which is easily
+              accessible by public transportation and in <br /> close proximity
+              to other community resources.
             </p>
             <ul className="list-none flex justify-center space-x-28">
               <li>
@@ -80,24 +81,25 @@ const TrainingKitchen = () => {
         </div>
       </section>
       {/* /////////////////////// HOW WILL IT HELP? /////////////////////////////// */}
-      <section className="pb-24">
+      <section className="pb-24 px-28">
         <div className="flex justify-center">
           <h1>
             HOW WILL
             <br /> IT HELP?
           </h1>
           <div className="ml-16">
-            <p className="mb-14 text-justify w-[894px] text-2xl">
+            <p className="mb-14 text-justify text-2xl">
               Evidence suggests that teaching cooking skills can help people
-              better manage food insecurity by teaching them how to reduce food
-              waste, budget and plan meals, and cook healthy meals with
-              inexpensive ingredients. <br /> <br />
+              better manage food <br /> insecurity by teaching them how to
+              reduce food waste, budget and plan meals, and <br /> cook healthy
+              meals with inexpensive ingredients. <br /> <br />
               For low-income individuals, time and finances can be barriers to
-              continuous healthy cooking. The program strives to help people
-              navigate those challenges. The program will also talk about
-              allocating time to fixing up dishes that will carry them
-              throughout the week. The impact of using time wisely to cook
-              hearty, nutritious food will pay off in the long run.
+              continuous healthy <br /> cooking. The program strives to help
+              people navigate those challenges. <br /> The program will also
+              talk about allocating time to fixing up dishes that will carry{" "}
+              <br /> them throughout the week. The impact of using time wisely
+              to cook hearty, <br /> nutritious food will pay off in the long
+              run.
             </p>
             <ul className="list-none flex justify-center space-x-28">
               <li>
@@ -137,37 +139,41 @@ const TrainingKitchen = () => {
         </div>
       </section>
       {/* /////////////////////// WHAT WE OFFER /////////////////////////////// */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-24 px-28">
         <div className="flex justify-center">
           <h1>
             WHAT WE
             <br /> OFFER
           </h1>
           <div className="ml-28">
-            <div className="mb-14 text-justify w-[894px] ">
+            <div className="mb-14 text-justify">
               <p className="text-2xl">
                 The training kitchen will be run by a team of trained staff and
-                volunteers. A detailed budget and financial plan will be
-                established to ensure sustainability of the organisation.
-                Regualr evaluations will be conducted to measure the
+                volunteers. A <br /> detailed budget and financial plan will be
+                established to ensure sustainability <br /> of the organisation.
+                Regualr evaluations will be conducted to measure the <br />
                 effectiveness of the training kitchen and make necessary
                 adjustments.
               </p>
               <br />
               <br />
-              <div>
+              <div className="">
                 <li className="text-2xl">
-                  Hands-on training in the culinary arts, including kitchen
-                  safety, food preparation,{" "}
-                  <span className="text-white">Qll</span> and cooking
-                  techniques.
+                  <p className="relative left-5 bottom-8">
+                    Hands-on training in the culinary arts, including kitchen
+                    safety, food <br /> preparation, and cooking techniques.
+                  </p>
                 </li>
-                <li className="text-2xl">
-                  Access to basic necessities such as clothing and hygiene
-                  items.
+                <li className="text-2xl relative bottom-8">
+                  <p className="relative left-5 bottom-8">
+                    Access to basic necessities such as clothing and hygiene
+                    items.
+                  </p>
                 </li>
-                <li className="text-2xl">
-                  Referral services to other community resources as needed.
+                <li className="text-2xl relative bottom-16">
+                  <p className="relative left-5 bottom-8">
+                    Referral services to other community resources as needed.
+                  </p>
                 </li>
               </div>
             </div>
@@ -226,38 +232,44 @@ const TrainingKitchen = () => {
         </div>
       </section>
       {/* /////////////////////// HOW CAN YOU HELP? /////////////////////////////// */}
-      <section className="bg-secondary py-24">
+      <section className="bg-secondary py-24 px-28">
         <div className="flex justify-center">
           <h1>
             HOW CAN
             <br /> YOU HELP?
           </h1>
           <div className="ml-28">
-            <div className="mb-14 text-justify w-[894px] ">
+            <div className="mb-14 text-justify">
               <p className="text-2xl">
                 We are seeking support from community organisations, businesses,
-                and individuals to help bring this important project to
+                and individuals <br /> to help bring this important project to
                 fruition.
               </p>
               <br />
               <br />
               <ul className="list-none flex justify-center space-x-20">
-                <img
-                  src="./kitchenImages/left-sink.png"
-                  alt=""
-                  className="rounded-2xl"
-                />
-                <img
-                  src="./kitchenImages/right-sink.png"
-                  alt=""
-                  className="rounded-2xl"
-                />
+                <li>
+                  <img
+                    src="./kitchenImages/left-sink.png"
+                    alt=""
+                    className="rounded-2xl"
+                  />
+                </li>
+                <li>
+                  <img
+                    src="./kitchenImages/right-sink.png"
+                    alt=""
+                    className="rounded-2xl"
+                  />
+                </li>
               </ul>
+              <br />
+              <img src="./kitchenImages/progress-bar.png" alt="" />
             </div>
           </div>
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
