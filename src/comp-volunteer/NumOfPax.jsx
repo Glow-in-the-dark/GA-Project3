@@ -30,11 +30,18 @@ const NumOfPax = (props) => {
   // Function to handle submit
   function handleSubmit(e) {
     e.preventDefault();
+    if (props.date === "") {
+      alert("Please select date!");
+    } else if (props.timeSlot === "") {
+      alert("Please select time");
+    }
+
     if (corp) {
       setDispCorpForm(true);
     } else {
       setDispIndividualForm(true);
     }
+
     // parseInt(adult);
     // parseInt(child);
     setQty(parseInt(adult) + parseInt(child));

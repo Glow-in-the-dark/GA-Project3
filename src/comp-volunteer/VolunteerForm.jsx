@@ -87,9 +87,9 @@ const VolunteerForm = (props) => {
     // const modifiedDate = newdate.setHours(newdate.getHours() + 8);
     // .toISOString()
     // .split("T")[0];
-    console.log(day);
-    console.log(month + 1);
-    console.log(year);
+    // console.log(day);
+    // console.log(month + 1);
+    // console.log(year);
     console.log(modifiedDate);
     // console.log(modifiedDate);
 
@@ -99,6 +99,7 @@ const VolunteerForm = (props) => {
       timing: props.timeSlot,
       email: email,
       qty: props.qty,
+      type_of_volunteer: "individual",
     };
 
     const details = {
@@ -112,9 +113,9 @@ const VolunteerForm = (props) => {
       occupation: occupation,
     };
 
-    // console.log(volunteerDeets);
+    console.log(volunteerDeets);
 
-    // createAppt(volunteerDeets);
+    createAppt(volunteerDeets);
 
     // navigate("/volunteer/volunteer-confirmation", {
     //   date: props.date,

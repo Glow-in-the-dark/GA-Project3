@@ -3,14 +3,18 @@ import CalendarDisp from "./CalendarDisp";
 
 const Volunteer = () => {
   const [roles, setRoles] = useState("");
+  const [dispCal, setDispCal] = useState(false);
 
   const getRole = (e) => {
     if (e.target.id === "soup") {
       setRoles("soupkitchen");
+      setDispCal(true);
     } else if (e.target.id === "driver") {
       setRoles("driver");
+      setDispCal(true);
     }
   };
+
   return (
     <>
       <div>
@@ -31,9 +35,7 @@ const Volunteer = () => {
           Driver Volunteer
         </button>
       </div>
-      <div>
-        <CalendarDisp roles={roles} />;
-      </div>
+      <div>{dispCal && <CalendarDisp roles={roles} />}</div>
     </>
   );
 };
