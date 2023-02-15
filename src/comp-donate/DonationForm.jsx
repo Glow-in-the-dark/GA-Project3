@@ -8,12 +8,13 @@ import BaseButtonSelect from "../comp-commons/examplePage/BaseButtonSelect";
 const DonationForm = () => {
   const [taxDeduction, setTaxDeduction] = useState(false);
   const [personaChoice, setPersonaChoice] = useState("persona");
-  const [donationAmount, setDonationAmount] = useState("$");
-  const [donationFrequency, setDonationFrequency] = useState(null);
+  const [donationAmount, setDonationAmount] = useState();
+  const [customAmount, setCustomAmount] = useState("");
+  const [donationFrequency, setDonationFrequency] = useState();
   const [particulars, setParticulars] = useState({});
 
   const [anonymous, setAnonymous] = useState(false);
-  const [salutaion, setSalutation] = useState("");
+  const [salutation, setSalutation] = useState("");
   const [particularsName, setParticularsName] = useState("");
   const [particularsNRIC, setParticularsNRIC] = useState("");
   const [particularsMobile, setParticularsMobile] = useState("");
@@ -22,7 +23,7 @@ const DonationForm = () => {
 
   const [data, setData] = useState({
     anonymous: anonymous,
-    salutaion: salutaion,
+    salutaion: salutation,
     persona: personaChoice,
     taxDeduction: taxDeduction,
     particulars: particulars,
@@ -30,9 +31,9 @@ const DonationForm = () => {
     donationFrequency: donationFrequency,
   });
 
-  const [creditNumber, setCreditNumber] = useState(null);
+  const [creditNumber, setCreditNumber] = useState();
   const [creditExpiry, setCreditExpiry] = useState("");
-  const [creditCCV, setCreditCCV] = useState(null);
+  const [creditCCV, setCreditCCV] = useState();
   const [creditName, setCreditName] = useState("");
 
   const [creditInfo, setCreditInfo] = useState({
@@ -61,7 +62,7 @@ const DonationForm = () => {
       setParticularsNRIC(inputVal);
     }
     if (inputId === "mobile") {
-      setParticularsMobile(inputVal);
+      setParticularsMobile(clearNumber(inputVal));
     }
     if (inputId === "email") {
       setParticularsEmail(inputVal);
@@ -96,6 +97,11 @@ const DonationForm = () => {
     )} ${clearValue.slice(8, 12)} ${clearValue.slice(12, 16)}`;
     return nextValue.trim();
   }
+  // Function to format CCV input field
+  function formatCCV(value) {
+    const clearValue = clearNumber(value);
+    return `${clearValue.slice(0, 3)}`;
+  }
 
   // Function to format credit card expiration date input field
   function formatExpirationDate(value) {
@@ -120,7 +126,7 @@ const DonationForm = () => {
       setCreditExpiry(formatExpirationDate(inputVal));
     }
     if (inputId === "credit-CCV") {
-      setCreditCCV(inputVal);
+      setCreditCCV(formatCCV(inputVal));
     }
     if (inputId === "credit-name") {
       setCreditName(inputVal);
@@ -129,11 +135,14 @@ const DonationForm = () => {
 
   const submitDonationForm = (e) => {
     e.preventDefault();
+    if (donationAmount) {
+      setCustomAmount("");
+    }
     setData({
       persona: personaChoice,
       taxDeduction: taxDeduction,
       particulars: particulars,
-      donationAmount: donationAmount,
+      donationAmount: customAmount ? customAmount : donationAmount,
       donationFrequency: donationFrequency,
     });
     setCreditInfo({
@@ -179,18 +188,50 @@ const DonationForm = () => {
 
             <div>
               <div className="flex mb-7 ml-10">
-                <div onClick={() => setPersonaChoice("Individual")}>
-                  <BaseButtonSelect
-                    label="Individual"
-                    className="border-primary text-primary"
+                {/* <button>
+                  <input
+                    type="radio"
+                    name="test1"
+                    id="test"
+                    className=" checked:bg-black hidden"
                   />
-                </div>
-                <div onClick={() => setPersonaChoice("Corporate")}>
-                  <BaseButtonSelect
-                    label="Corporate"
-                    className="border-primary text-primary"
+                  <label htmlFor="test" className="px-5 py-2.5">
+                    Hello
+                  </label>
+                </button> */}
+
+                <button
+                  className=""
+                  onClick={() => setPersonaChoice("Individual")}
+                >
+                  <input
+                    type="radio"
+                    name="persona"
+                    id="individual"
+                    className="checked hidden"
                   />
-                </div>
+                  <label
+                    htmlFor="individual"
+                    className="px-5 py-2.5 border border-primary rounded-l-lg"
+                  >
+                    Individual
+                  </label>
+                </button>
+
+                <button onClick={() => setPersonaChoice("Corporate")}>
+                  <input
+                    type="radio"
+                    name="persona"
+                    id="corporate"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="corporate"
+                    className="px-5 py-2.5 border border-primary rounded-r-lg"
+                  >
+                    Corporate
+                  </label>
+                </button>
               </div>
               <div className="mb-8 ml-10">
                 <input
@@ -224,7 +265,7 @@ const DonationForm = () => {
                 />
                 Enter Particulars
               </h4>
-              <div className="mb-8 ml-10">
+              <div className="mb-[1.813rem] ml-10">
                 <input
                   type="checkbox"
                   id="anonymous"
@@ -235,6 +276,86 @@ const DonationForm = () => {
                   I would like to receive tax relief for this donation
                 </label>
               </div>
+              <div className="mb-[1.813rem]">
+                <p
+                  className="ml-10 mb-0.5"
+                  style={{ color: "rgb(138,138,138)" }}
+                >
+                  Salutation
+                </p>
+                <button
+                  onClick={() => setSalutation("Mr")}
+                  value={salutation}
+                  className="text-primary"
+                >
+                  <input
+                    type="radio"
+                    name="salutation"
+                    id="mr"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="mr"
+                    className="border border-primary py-0.5 px-2 rounded-l-lg ml-10"
+                  >
+                    Mr
+                  </label>
+                </button>
+                <button
+                  onClick={() => setSalutation("Mrs")}
+                  value={salutation}
+                  className="text-primary"
+                >
+                  <input
+                    type="radio"
+                    name="salutation"
+                    id="mrs"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="mrs"
+                    className="border border-primary py-0.5 px-2"
+                  >
+                    Mrs
+                  </label>
+                </button>
+                <button
+                  onClick={() => setSalutation("Miss")}
+                  value={salutation}
+                  className="text-primary"
+                >
+                  <input
+                    type="radio"
+                    name="salutation"
+                    id="miss"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="miss"
+                    className="border border-primary py-0.5 px-2"
+                  >
+                    Miss
+                  </label>
+                </button>
+                <button
+                  onClick={() => setSalutation("Ms")}
+                  value={salutation}
+                  className="text-primary"
+                >
+                  <input
+                    type="radio"
+                    name="salutation"
+                    id="ms"
+                    className="checked hidden"
+                  />
+                  <label
+                    htmlFor="ms"
+                    className="border border-primary py-0.5 px-2 rounded-r-lg"
+                  >
+                    Ms
+                  </label>
+                </button>
+              </div>
               <div className="mb-8 ml-10">
                 <div style={{ display: "flex" }}>
                   <BaseInput
@@ -243,7 +364,7 @@ const DonationForm = () => {
                     value={particularsName}
                     handleChange={handleChange}
                     placeholder="Name*"
-                    className="w-80"
+                    className="w-[20rem]"
                   />
                   <BaseInput
                     type="string"
@@ -251,7 +372,7 @@ const DonationForm = () => {
                     value={particularsNRIC}
                     handleChange={handleChange}
                     placeholder="NRIC/FIN Number"
-                    className="w-80 ml-24"
+                    className="w-[20rem] ml-24"
                   />
                 </div>
                 <div style={{ display: "flex" }}>
@@ -261,7 +382,7 @@ const DonationForm = () => {
                     value={particularsMobile}
                     handleChange={handleChange}
                     placeholder="Mobile Number*"
-                    className="w-80 mt-9"
+                    className="w-[20rem] mt-9"
                   />
                   <BaseInput
                     type="string"
@@ -269,7 +390,7 @@ const DonationForm = () => {
                     value={particularsEmail}
                     handleChange={handleChange}
                     placeholder="Email Address*"
-                    className="w-80 ml-24 mt-9"
+                    className="w-[20rem] ml-24 mt-9"
                   />
                 </div>
                 <div style={{ display: "flex" }} className="mb-9">
@@ -279,7 +400,7 @@ const DonationForm = () => {
                     value={particularsAddress}
                     handleChange={handleChange}
                     placeholder="Address"
-                    className="w-740 mt-9"
+                    className="w-[46.25rem] mt-9"
                   />
                 </div>
                 <div onClick={submitParticulars}>
@@ -304,90 +425,139 @@ const DonationForm = () => {
             <p className="text-base mb-7 ml-10">
               All transactions are secured and encrypted
             </p>
-            <div>
-              <p className="ml-10 mb-0.5" style={{ color: "rgb(138,138,138)" }}>
-                Salutation
-              </p>
-              <button
-                type="text"
-                className="border border-primary py-0 px-2 rounded-md ml-10 text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
-                value={salutaion}
-                onClick={() => setSalutation("Mr")}
-              >
-                Mr
-              </button>
-              <button
-                type="text"
-                className="border border-primary py-0 px-2 rounded-md text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
-                value={salutaion}
-                onClick={() => setSalutation("Mrs")}
-              >
-                Mrs
-              </button>
-              <button
-                type="text"
-                className="border border-primary py-0 px-2 rounded-md text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
-                value={salutaion}
-                onClick={() => setSalutation("Miss")}
-              >
-                Miss
-              </button>
-              <button
-                type="text"
-                className="border border-primary py-0 px-2 rounded-md text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
-                value={salutaion}
-                onClick={() => setSalutation("Ms")}
-              >
-                Ms
-              </button>
-            </div>
             <div className="flex flex-row mb-8 ml-10 mt-8">
-              <div onClick={() => setDonationAmount(10)} className="mr-3.5">
-                <BaseButtonSelect
-                  label="$10"
-                  className="border-primary text-primary"
+              <button
+                onClick={() => setDonationAmount(10)}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-amount"
+                  id="10"
+                  className="checked hidden"
                 />
-              </div>
-              <div onClick={() => setDonationAmount(50)} className="mr-3.5">
-                <BaseButtonSelect
-                  label="$50"
-                  className="border-primary text-primary"
+                <label
+                  htmlFor="10"
+                  className="border border-primary py-2 px-5 rounded-md"
+                >
+                  $10
+                </label>
+              </button>
+              <button
+                onClick={() => setDonationAmount(20)}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-amount"
+                  id="20"
+                  className="checked hidden"
                 />
-              </div>
-              <div onClick={() => setDonationAmount(100)} className="mr-3.5">
-                <BaseButtonSelect
-                  label="$100"
-                  className="border-primary text-primary"
+                <label
+                  htmlFor="20"
+                  className="border border-primary py-2 px-5 rounded-md"
+                >
+                  $20
+                </label>
+              </button>
+              <button
+                onClick={() => setDonationAmount(50)}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-amount"
+                  id="50"
+                  className="checked hidden"
                 />
-              </div>
-              <div onClick={() => setDonationAmount(200)} className="mr-3.5">
-                <BaseButtonSelect
-                  label="$200"
-                  className="border-primary text-primary"
+                <label
+                  htmlFor="50"
+                  className="border border-primary py-2 px-5 rounded-md"
+                >
+                  $50
+                </label>
+              </button>
+              <button
+                onClick={() => setDonationAmount(100)}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-amount"
+                  id="100"
+                  className="checked hidden"
                 />
-              </div>
-              <div>
+                <label
+                  htmlFor="100"
+                  className="border border-primary py-2 px-5 rounded-md"
+                >
+                  $100
+                </label>
+              </button>
+              <button
+                onClick={() => setDonationAmount(200)}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-amount"
+                  id="200"
+                  className="checked hidden"
+                />
+                <label
+                  htmlFor="200"
+                  className="border border-primary py-2 px-5 rounded-md"
+                >
+                  $200
+                </label>
+              </button>
+
+              <div className="border border-primary h-10 px-5 py-2 rounded-md text-primary">
+                <label htmlFor="custom-amount">$</label>
                 <input
                   type="text"
-                  className="border border-primary h-10 px-5 rounded-md text-primary"
-                  value={donationAmount}
-                  onChange={(e) => setDonationAmount(e.target.value)}
+                  id="custom-amount"
+                  className="focus:outline-none"
+                  value={customAmount}
+                  onChange={(e) => setCustomAmount(e.target.value)}
                 />
               </div>
             </div>
             <div className="flex mb-8 ml-10">
-              <div onClick={() => setDonationFrequency("Donate Once")}>
-                <BaseButtonSelect
-                  label="Donate Once"
-                  className="border-primary text-primary"
+              <button
+                onClick={() => setDonationFrequency("Donate Once")}
+                className="text-primary"
+              >
+                <input
+                  type="radio"
+                  name="donation-frequency"
+                  id="donate-once"
+                  className="checked hidden"
                 />
-              </div>
-              <div onClick={() => setDonationFrequency("Donate Monthly")}>
-                <BaseButtonSelect
-                  label="Donate Monthly"
-                  className="border-primary text-primary"
+                <label
+                  htmlFor="donate-once"
+                  className="border border-primary h-10 px-5 py-2 rounded-l-lg"
+                >
+                  Donate Once
+                </label>
+              </button>
+              <button
+                onClick={() => setDonationFrequency("Donate Monthly")}
+                className="text-primary mr-3.5"
+              >
+                <input
+                  type="radio"
+                  name="donation-frequency"
+                  id="donate-monthly"
+                  className="checked hidden"
                 />
-              </div>
+                <label
+                  htmlFor="donate-monthly"
+                  className="border border-primary h-10 px-5 py-2 rounded-r-lg"
+                >
+                  Donate Monthly
+                </label>
+              </button>
             </div>
             <div className="mb-8 ml-10">
               <div className="flex space-x-5">
@@ -397,7 +567,7 @@ const DonationForm = () => {
                   value={creditNumber}
                   handleChange={handleChangeCredit}
                   placeholder="Credit Card Number"
-                  className="w-80"
+                  className="w-[20rem]"
                 />
                 <BaseInput
                   type="string"
@@ -405,7 +575,7 @@ const DonationForm = () => {
                   value={creditExpiry}
                   handleChange={handleChangeCredit}
                   placeholder="MM/YY"
-                  className="w-24 ml-11"
+                  className="w-[6rem] ml-11"
                 />
                 <BaseInput
                   type="string"
@@ -413,7 +583,7 @@ const DonationForm = () => {
                   value={creditCCV}
                   handleChange={handleChangeCredit}
                   placeholder="CCV"
-                  className="w-24 ml-11"
+                  className="w-[6rem] ml-11"
                 />
               </div>
 
@@ -424,7 +594,7 @@ const DonationForm = () => {
                   value={creditName}
                   handleChange={handleChangeCredit}
                   placeholder="Name of Cardholder"
-                  className="w-641 mt-9"
+                  className="w-[40.063rem] mt-9"
                 />
               </div>
             </div>
@@ -432,7 +602,11 @@ const DonationForm = () => {
               <NavLink to="/thankyou">
                 <BaseButtonSelect type="submit" label="Donate" colour="red" />
               </NavLink>
-              <BaseButtonSelect type="submit" label="Test-Donate" colour="red" />
+              {/* <BaseButtonSelect
+                type="submit"
+                label="Test-Donate"
+                colour="red"
+              /> */}
             </div>
           </section>
         </div>
