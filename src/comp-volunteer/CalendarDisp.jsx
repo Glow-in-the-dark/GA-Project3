@@ -5,14 +5,9 @@ import NumOfPax from "./NumOfPax";
 
 const CalendarDisp = (props) => {
   const [date, setDate] = useState(new Date()); // Selected data via Cal by user
-  const [showTime, setShowTime] = useState(false); // Displays the time slot buttons
   const [timeSlot, setTimeSlot] = useState(""); // Selected time slot by user
   const [slotInfo, setSlotInfo] = useState([]);
   const [filteredSlotInfo, setFilteredSlotInfo] = useState([]);
-
-  const showAppt = async () => {
-    setShowTime(true);
-  };
 
   // Function to GET data from backend
   const getAppt = async (modifiedDate) => {
@@ -86,10 +81,6 @@ const CalendarDisp = (props) => {
       setFilteredSlotInfo(filteredData);
     }
   }, [props.roles]);
-
-  // console.log("slotInfo:", slotInfo);
-  // console.log("filtered slotInfo:", filteredSlotInfo);
-  // console.log(timeSlot);
 
   return (
     <div className="app">
