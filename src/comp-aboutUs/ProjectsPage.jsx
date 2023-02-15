@@ -7,6 +7,8 @@ import Footer from "../comp-commons/Footer";
 
 const ProjectsPage = () => {
   const [projectsToDisplay, setProjectsToDisplay] = useState("ongoing");
+  const [selectOngoing, setSelectOngoing] = useState(false);
+  const [selectPast, setSelectPast] = useState(false);
   const ongoingProjects = projectsDataset.filter((item) => {
     return ["ongoing"].indexOf(item.status) > -1;
   });
@@ -17,11 +19,15 @@ const ProjectsPage = () => {
   // Function to switch to display "ongoing" projects
   function displayOngoingProjects() {
     setProjectsToDisplay("ongoing");
+    setSelectOngoing(true);
+    setSelectPast(false);
   }
 
   // Function to switch to display "past" projects
   function displayPastProjects() {
     setProjectsToDisplay("past");
+    setSelectOngoing(false);
+    setSelectPast(true);
   }
 
   return (
@@ -60,10 +66,18 @@ const ProjectsPage = () => {
       <div className="w-[1200px] mx-auto text-center">
         <h2 className="mb-3">OTHER PROJECTS AND ACTIVITIES</h2>
         <div className="flex flex-row space-x-20 justify-center mb-9">
-          <button className="text-2xl" onClick={displayOngoingProjects}>
+          <button
+            className="text-2xl"
+            onClick={displayOngoingProjects}
+            style={{ color: selectOngoing ? "red" : "black" }}
+          >
             ONGOING
           </button>
-          <button className="text-2xl" onClick={displayPastProjects}>
+          <button
+            className="text-2xl"
+            onClick={displayPastProjects}
+            style={{ color: selectPast ? "red" : "black" }}
+          >
             PAST
           </button>
         </div>

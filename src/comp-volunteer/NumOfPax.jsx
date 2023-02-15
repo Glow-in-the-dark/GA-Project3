@@ -15,11 +15,11 @@ const NumOfPax = (props) => {
   const [qty, setQty] = useState(0);
 
   // Function to handle changes in user input
-  function handleChange(inputId, inputVal) {
-    if (inputId === "adult") {
-      setAdult(inputVal);
-    } else if (inputId === "child") {
-      setChild(inputVal);
+  function handleChange(e) {
+    if (e.target.id === "adult") {
+      setAdult(e.target.value);
+    } else if (e.target.id === "child") {
+      setChild(e.target.value);
     }
   }
 
@@ -45,6 +45,7 @@ const NumOfPax = (props) => {
     // parseInt(adult);
     // parseInt(child);
     setQty(parseInt(adult) + parseInt(child));
+    console.log(qty);
   }
 
   return (
