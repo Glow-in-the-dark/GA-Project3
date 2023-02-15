@@ -8,8 +8,10 @@ import BaseButtonSelect from "../comp-commons/examplePage/BaseButtonSelect";
 const DonationForm = () => {
   const [taxDeduction, setTaxDeduction] = useState(false);
   const [personaChoice, setPersonaChoice] = useState("persona");
-  const [donationAmount, setDonationAmount] = useState("$");
-  const [donationFrequency, setDonationFrequency] = useState(null);
+  const [donationAmount, setDonationAmount] = useState();
+  const [customAmount, setCustomAmount] = useState("$");
+  let customChecker = true;
+  const [donationFrequency, setDonationFrequency] = useState();
   const [particulars, setParticulars] = useState({});
 
   const [anonymous, setAnonymous] = useState(false);
@@ -30,9 +32,9 @@ const DonationForm = () => {
     donationFrequency: donationFrequency,
   });
 
-  const [creditNumber, setCreditNumber] = useState(null);
+  const [creditNumber, setCreditNumber] = useState();
   const [creditExpiry, setCreditExpiry] = useState("");
-  const [creditCCV, setCreditCCV] = useState(null);
+  const [creditCCV, setCreditCCV] = useState();
   const [creditName, setCreditName] = useState("");
 
   const [creditInfo, setCreditInfo] = useState({
@@ -129,11 +131,18 @@ const DonationForm = () => {
 
   const submitDonationForm = (e) => {
     e.preventDefault();
+    if (donationAmount) {
+      setCustomAmount("$");
+      customChecker = false;
+    }
+    if (customAmount !== "$") {
+      customChecker = true;
+    }
     setData({
       persona: personaChoice,
       taxDeduction: taxDeduction,
       particulars: particulars,
-      donationAmount: donationAmount,
+      donationAmount: customChecker ? customAmount : donationAmount,
       donationFrequency: donationFrequency,
     });
     setCreditInfo({
@@ -179,18 +188,20 @@ const DonationForm = () => {
 
             <div>
               <div className="flex mb-7 ml-10">
-                <div onClick={() => setPersonaChoice("Individual")}>
-                  <BaseButtonSelect
-                    label="Individual"
-                    className="border-primary text-primary"
-                  />
-                </div>
-                <div onClick={() => setPersonaChoice("Corporate")}>
-                  <BaseButtonSelect
-                    label="Corporate"
-                    className="border-primary text-primary"
-                  />
-                </div>
+                <button
+                  type="text"
+                  className="border border-primary h-10 px-5 rounded-l-lg text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
+                  onClick={() => setPersonaChoice("Individual")}
+                >
+                  Individual
+                </button>
+                <button
+                  type="text"
+                  className="border border-primary h-10 px-5 rounded-r-lg text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
+                  onClick={() => setPersonaChoice("Corporate")}
+                >
+                  Corporate
+                </button>
               </div>
               <div className="mb-8 ml-10">
                 <input
@@ -370,24 +381,26 @@ const DonationForm = () => {
                 <input
                   type="text"
                   className="border border-primary h-10 px-5 rounded-md text-primary"
-                  value={donationAmount}
-                  onChange={(e) => setDonationAmount(e.target.value)}
+                  value={customAmount}
+                  onChange={(e) => setCustomAmount(e.target.value)}
                 />
               </div>
             </div>
             <div className="flex mb-8 ml-10">
-              <div onClick={() => setDonationFrequency("Donate Once")}>
-                <BaseButtonSelect
-                  label="Donate Once"
-                  className="border-primary text-primary"
-                />
-              </div>
-              <div onClick={() => setDonationFrequency("Donate Monthly")}>
-                <BaseButtonSelect
-                  label="Donate Monthly"
-                  className="border-primary text-primary"
-                />
-              </div>
+              <button
+                type="text"
+                className="border border-primary h-10 px-5 rounded-l-lg text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
+                onClick={() => setDonationFrequency("Donate Once")}
+              >
+                Donate Once
+              </button>
+              <button
+                type="text"
+                className="border border-primary h-10 px-5 rounded-r-lg text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
+                onClick={() => setDonationFrequency("Donate Monthly")}
+              >
+                Donate Monthly
+              </button>
             </div>
             <div className="mb-8 ml-10">
               <div className="flex space-x-5">
