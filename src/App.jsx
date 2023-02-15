@@ -15,11 +15,38 @@ import FaqPage from "./comp-aboutUs/FaqPage";
 import LoginPage from "./comp-login/LoginPage";
 import ThankYouPage from "./comp-donate/ThankYouPage";
 import TrainingKitchen from "./comp-kitchen/TrainingKitchen";
+import VolunteerConfirmPage from "./comp-volunteer/VolunteerConfirmPage";
+import Volunteer from "./comp-volunteer/Volunteer";
 
 function App() {
   return (
     <div>
-<TrainingKitchen/>
+
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Navigate replace to="/homepage" />} />
+        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/about-us" element={<AboutUsPage />} />
+        <Route path="/donate" element={<DonatePage />} />
+        <Route path="/donateForm" element={<DonationForm />} />
+        <Route path="/thankyou" element={<ThankYouPage />} />
+        <Route path="/volunteer" element={<VolunteerMainPage />} />
+        <Route path="/trainingKitchen" element={<TrainingKitchen/>} />
+        <Route path="/contact-us" element={<ContactUsPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/faq" element={<FaqPage />} />
+        <Route
+          path="/contact-us/confirmation-page"
+          element={<ContactFormConfirmationPage />}
+        />
+        <Route
+          path="/volunteer/volunteer-confirmation"
+          element={<VolunteerConfirmPage />}
+        />
+        <Route path="/volunteer/volunteer-form" element={<Volunteer />} />
+      </Routes>
     </div>
   );
 }
