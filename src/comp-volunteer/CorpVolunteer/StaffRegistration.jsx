@@ -19,7 +19,7 @@ const StaffRegistration = ({ open }) => {
   };
 
   return (
-    <>
+    <div className="bg-white rounded-2xl">
       <h1>Registration of staff</h1>
       <label>Download registration template here</label>
       <div className="container">
@@ -39,7 +39,7 @@ const StaffRegistration = ({ open }) => {
       <button onClick={handleSubmit}>Upload File</button>
       {console.log(dispFeature)}
       {dispFeature && <FeatureCompany />}
-    </>
+    </div>
   );
 };
 

@@ -2,6 +2,7 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BaseInput from "../comp-commons/BaseInput";
 import BaseButton from "../comp-commons/BaseButton";
+import Footer from "../comp-commons/Footer";
 
 const VolunteerForm = (props) => {
   const navigate = useNavigate();
@@ -140,106 +141,108 @@ const VolunteerForm = (props) => {
   };
 
   return (
-    <div className="w-[930px] mx-auto text-greyscale1">
-      {/* Form section */}
-      <div className="flex flex-row space-x-14">
-        {/* User input section */}
-        <form className="w-[590px] space-y-9" onSubmit={handleSubmit}>
-          <h1>Enter Particulars</h1>
-          <BaseInput
-            type="string"
-            id="name"
-            value={name}
-            handleChange={handleChange}
-            required={true}
-            placeholder="Name*"
-          />
-          <BaseInput
-            type="string"
-            id="mobileNumber"
-            value={mobileNumber}
-            handleChange={handleChange}
-            required={true}
-            placeholder="MobileNumber*"
-            className="mt-9"
-          />
-          <BaseInput
-            type="email"
-            id="email"
-            value={email}
-            handleChange={handleChange}
-            required={true}
-            placeholder="Email*"
-            className="mt-9"
-          />
-          <BaseInput
-            type="string"
-            id="password"
-            value={password}
-            handleChange={handleChange}
-            required={true}
-            placeholder="Password*"
-            className="mt-9"
-          />
-          <BaseInput
-            type="string"
-            id="confirmPassword"
-            value={confirmPassword}
-            handleChange={handleChange}
-            required={true}
-            placeholder="Confirm Password*"
-            className="mt-9"
-          />
+    <div>
+      <div className="w-[1000px] mx-auto text-greyscale1 bg-white rounded-2xl">
+        {/* Form section */}
+        <div className="flex flex-row space-x-14">
+          {/* User input section */}
+          <form className="w-[590px] space-y-9" onSubmit={handleSubmit}>
+            <h1>Enter Particulars</h1>
+            <BaseInput
+              type="string"
+              id="name"
+              value={name}
+              handleChange={handleChange}
+              required={true}
+              placeholder="Name*"
+            />
+            <BaseInput
+              type="string"
+              id="mobileNumber"
+              value={mobileNumber}
+              handleChange={handleChange}
+              required={true}
+              placeholder="MobileNumber*"
+              className="mt-9"
+            />
+            <BaseInput
+              type="email"
+              id="email"
+              value={email}
+              handleChange={handleChange}
+              required={true}
+              placeholder="Email*"
+              className="mt-9"
+            />
+            <BaseInput
+              type="string"
+              id="password"
+              value={password}
+              handleChange={handleChange}
+              required={true}
+              placeholder="Password*"
+              className="mt-9"
+            />
+            <BaseInput
+              type="string"
+              id="confirmPassword"
+              value={confirmPassword}
+              handleChange={handleChange}
+              required={true}
+              placeholder="Confirm Password*"
+              className="mt-9"
+            />
 
-          <div>
-            <label>Gender</label>
-            <br />
-            <input type="radio" name="genderRadio" id="maleGender" />
-            <label>M</label>
-            <input type="radio" name="genderRadio" id="femaleGender" />
-            <label>F</label>
-          </div>
+            <div>
+              <label>Gender</label>
+              <br />
+              <input type="radio" name="genderRadio" id="maleGender" />
+              <label>M</label>
+              <input type="radio" name="genderRadio" id="femaleGender" />
+              <label>F</label>
+            </div>
 
-          <BaseInput
-            type="date"
-            id="dateOfBirth"
-            value={dateOfBirth}
-            handleChange={handleChange}
-            required={false}
-            placeholder="Date of Birth(DD/MM/YY)"
-            className="mt-9"
-          />
-          <BaseInput
-            type="string"
-            id="organisation"
-            value={organisation}
-            handleChange={handleChange}
-            required={false}
-            placeholder="Organisation"
-            className="mt-9"
-          />
-          <BaseInput
-            type="string"
-            id="occupation"
-            value={occupation}
-            handleChange={handleChange}
-            required={false}
-            placeholder="Occupation"
-            className="mt-9"
-          />
-          <label>
-            By clicking sign up, you aree to Willing Hearts' Privacy Policy and
-            Terms of Use
-          </label>
-          <BaseButton
-            type="submit"
-            label="Sign Up"
-            colour="transparent"
-            className="mt-8"
-          />
-        </form>
+            <BaseInput
+              type="date"
+              id="dateOfBirth"
+              value={dateOfBirth}
+              handleChange={handleChange}
+              required={false}
+              placeholder="Date of Birth(DD/MM/YY)"
+              className="mt-9"
+            />
+            <BaseInput
+              type="string"
+              id="organisation"
+              value={organisation}
+              handleChange={handleChange}
+              required={false}
+              placeholder="Organisation"
+              className="mt-9"
+            />
+            <BaseInput
+              type="string"
+              id="occupation"
+              value={occupation}
+              handleChange={handleChange}
+              required={false}
+              placeholder="Occupation"
+              className="mt-9"
+            />
+            <label>
+              By clicking sign up, you aree to Willing Hearts' Privacy Policy
+              and Terms of Use
+            </label>
+            <BaseButton
+              type="submit"
+              label="Sign Up"
+              colour="transparent"
+              className="mt-8"
+            />
+          </form>
+        </div>
+        {/* {console.log(volunteerDeets)} */}
       </div>
-      {/* {console.log(volunteerDeets)} */}
     </div>
   );
 };

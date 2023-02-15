@@ -139,9 +139,9 @@ const CorpForm = (props) => {
   };
 
   return (
-    <div className="w-[930px] mx-auto text-greyscale1">
+    <div className="w-[1000px] mx-auto text-greyscale1">
       {/* Form section */}
-      <div className="flex flex-row space-x-14">
+      <div className="flex flex-row space-x-14 bg-white mb-12 rounded-2xl">
         {/* User input section */}
         <form className="w-[590px] space-y-9" onSubmit={handleSubmit}>
           <h1>Enter Particulars(Person-In-Charge)</h1>

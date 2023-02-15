@@ -49,9 +49,9 @@ const NumOfPax = (props) => {
   }
 
   return (
-    <div className="w-[930px] mx-auto text-greyscale1">
+    <div className="w-[1000px] mx-auto text-greyscale1 ">
       {/* Form section */}
-      <div className="flex flex-row space-x-14">
+      <section className="flex flex-row space-x-14 bg-white rounded-b-2xl mb-10">
         {/* User input section */}
         <form className="w-[590px] space-y-9" onSubmit={handleSubmit}>
           <span>
@@ -96,27 +96,29 @@ const NumOfPax = (props) => {
           <BaseButton
             type="submit"
             label="Continue"
-            colour="transparent"
+            colour="red"
             className="mt-8"
           />
         </form>
-      </div>
-      {dispCorpForm && (
-        <CorpForm
-          date={props.date}
-          timeSlot={props.timeSlot}
-          roles={props.roles}
-          qty={qty}
-        />
-      )}
-      {dispIndividualForm && (
-        <VolunteerForm
-          date={props.date}
-          timeSlot={props.timeSlot}
-          roles={props.roles}
-          qty={qty}
-        />
-      )}
+      </section>
+      <section className="">
+        {dispCorpForm && (
+          <CorpForm
+            date={props.date}
+            timeSlot={props.timeSlot}
+            roles={props.roles}
+            qty={qty}
+          />
+        )}
+        {dispIndividualForm && (
+          <VolunteerForm
+            date={props.date}
+            timeSlot={props.timeSlot}
+            roles={props.roles}
+            qty={qty}
+          />
+        )}
+      </section>
     </div>
   );
 };

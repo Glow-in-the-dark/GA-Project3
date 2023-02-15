@@ -84,37 +84,39 @@ const CalendarDisp = (props) => {
 
   return (
     <div className="app">
-      <h1 className="header">Select Time Slot</h1>
-      <label>Find a time that works for you</label>
-      <div>
-        <Calendar onChange={setDate} value={date} />
-        <div className="space-x-2">
-          {filteredSlotInfo.map((item) => {
-            return (
-              <button
-                className="border rounded-md p-2"
-                value={item.timing}
-                onClick={handleTimingButtonClick}
-              >
-                {item.timing}
-                <br />
-                {item.remaining_qty} slots available
-              </button>
-            );
-          })}
+      <div className="bg-white rounded-t-2xl">
+        <h1 className="header">Select Time Slot</h1>
+        <label>Find a time that works for you</label>
+        <div>
+          <Calendar onChange={setDate} value={date} />
+          <div className="space-x-2">
+            {filteredSlotInfo.map((item) => {
+              return (
+                <button
+                  className="border rounded-md p-2"
+                  value={item.timing}
+                  onClick={handleTimingButtonClick}
+                >
+                  {item.timing}
+                  <br />
+                  {item.remaining_qty} slots available
+                </button>
+              );
+            })}
+          </div>
         </div>
+
+        <p>
+          <span>Your selected date is:</span>
+          {date.toDateString()}
+        </p>
+
+        <p>
+          <label>
+            Can't find a suitable time slow? Find other ways to contribute here.
+          </label>
+        </p>
       </div>
-
-      <p>
-        <span>Your selected date is:</span>
-        {date.toDateString()}
-      </p>
-
-      <p>
-        <label>
-          Can't find a suitable time slow? Find other ways to contribute here.
-        </label>
-      </p>
       <NumOfPax date={date} timeSlot={timeSlot} roles={props.roles} />
     </div>
   );
