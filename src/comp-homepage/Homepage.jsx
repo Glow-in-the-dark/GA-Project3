@@ -17,11 +17,11 @@ const Homepage = () => {
       {/* section 1 */}
       <section className="text-center flex flex-row space-x-6 justify-center">
         <img
-          src="public/Images/Homepage/Soup_kitchen.png"
+          src="Images/Homepage/Soup_kitchen.png"
           className="rounded-2xl w-[384px] mb-32 ml-5 mr-3"
         />
         <img
-          src="public/Images/Homepage/Offering_help.png"
+          src="Images/Homepage/Offering_help.png"
           className="rounded-2xl w-[279px] h-[422px] mt-36"
         />
         <div className="my-auto">
@@ -46,7 +46,7 @@ const Homepage = () => {
           <div className="flex flex-row space-x-20 mx-auto mb-5">
             <div className="w-[370px]">
               <img
-                src="public/Images/Homepage/Cartoon_Meals1.png"
+                src="Images/Homepage/Cartoon_Meals1.png"
                 className="mx-auto mb-2 mt-6"
               />
               <h1 className="text-2xl mb-4">11,000</h1>
@@ -54,7 +54,7 @@ const Homepage = () => {
             </div>
             <div className="w-[370px]">
               <img
-                src="public/Images/Homepage/Cartoon_Beneficiaries1.png"
+                src="Images/Homepage/Cartoon_Beneficiaries1.png"
                 className="mx-auto mb-2 mt-2"
               />
               <p className="text-2xl mb-4">6,000</p>
@@ -62,7 +62,7 @@ const Homepage = () => {
             </div>
             <div className="w-[370px]">
               <img
-                src="public/Images/Homepage/Cartoon_Locations1.png"
+                src="Images/Homepage/Cartoon_Locations1.png"
                 className="mx-auto  mt-2"
               />
               <p className="text-2xl mb-4">70</p>
@@ -70,7 +70,7 @@ const Homepage = () => {
             </div>
             <div className="w-[370px]">
               <img
-                src="public/Images/Homepage/Cartoon_hearts1.png"
+                src="Images/Homepage/Cartoon_hearts1.png"
                 className="mx-auto "
               />
               <p className="text-2xl mb-4">365</p>
@@ -103,7 +103,7 @@ const Homepage = () => {
           </div>
           <br />
           <img
-            src="public/Images/Homepage/community_volunteer.png"
+            src="Images/Homepage/community_volunteer.png"
             className="rounded-2xl mb-16"
           />
         </section>
@@ -161,13 +161,13 @@ const Homepage = () => {
             }}
           >
             <div>
-              <img src="public/Images/Homepage/GroupLogos.png" />
+              <img src="Images/Homepage/GroupLogos.png" />
             </div>
             <div>
-              <img src="public/Images/Homepage/GroupLogos.png" />
+              <img src="Images/Homepage/GroupLogos.png" />
             </div>
             <div>
-              <img src="public/Images/Homepage/GroupLogos.png" />
+              <img src="Images/Homepage/GroupLogos.png" />
             </div>
           </Carousel>
         </section>
@@ -213,19 +213,19 @@ const Homepage = () => {
             }}
           >
             <div>
-              <img src="public/Images/Homepage/volunteer-carousell.png" />
+              <img src="Images/Homepage/volunteer-carousell.png" />
               <NavLink to="/volunteer" className="relative bottom-32 left-36">
                 <BaseButton label="Volunteer Now" colour="red" />
               </NavLink>
             </div>
             <div>
-              <img src="public/Images/Homepage/volunteer-carousell.png" />
+              <img src="Images/Homepage/volunteer-carousell.png" />
               <NavLink to="/volunteer" className="relative bottom-32 left-36">
                 <BaseButton label="Volunteer Now" colour="red" />
               </NavLink>
             </div>
             <div>
-              <img src="public/Images/Homepage/volunteer-carousell.png" />
+              <img src="Images/Homepage/volunteer-carousell.png" />
               <NavLink to="/volunteer" className="relative bottom-32 left-36">
                 <BaseButton label="Volunteer Now" colour="red" />
               </NavLink>
@@ -251,45 +251,6 @@ const Homepage = () => {
             })}
           </div>
         </section>
-        {/* <section className="w-[1200px] mx-auto text-center">
-          <h1 className="mb-4">OTHER PROJECTS</h1>
-          <div className="flex flex-row space-x-20 mx-auto mb-14">
-            <div className="w-[370px]">
-              <img
-                src="public/Images/Homepage/training_kitchen.png"
-                className="mx-auto mb-6 mt-6"
-              />
-              <p className="text-2xl mb-4">TRAINING KITCHEN</p>
-              <p className="">
-                An initiative to carry out training kitchens open for those who
-                want to learn how to cook for themselves. $780 raised of $10,000
-              </p>
-            </div>
-            <div className="w-[370px]">
-              <img
-                src="public/Images/Homepage/Book.png"
-                className="mx-auto mb-6 mt-2"
-              />
-              <p className="text-2xl mb-4">COMMEMORATIVE BOOK</p>
-              <p className="">
-                Commemorative Book Support Soup Kitchen operations by purchasing
-                the exclusive commemorative cookbook from 11 renowned chefs.
-              </p>
-            </div>
-            <div className="w-[370px]">
-              <img
-                src="public/Images/Homepage/dental.png"
-                className="mx-auto mb-6 mt-2"
-              />
-              <p className="text-2xl mb-4">GREENLIFE DENTAL CLINIC</p>
-              <p className="">
-                Greenlife Dental Clinic The official dental partner of Willing
-                Hearts to take care of the beneficiaries and anyone who needs
-                subsidised dental care.
-              </p>
-            </div>
-          </div>
-        </section> */}
       </div>
 
       {/* Footer */}
