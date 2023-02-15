@@ -51,7 +51,7 @@ const NumOfPax = (props) => {
   return (
     <div className="w-[800px]  mx-auto text-greyscale1 ">
       {/* Form section */}
-      <section className=" bg-white rounded-r-2xl mb-10 px-16 ">
+      <section className=" bg-white rounded-2xl mb-10 px-16 ">
         {/* User input section */}
         <h1 className="text-2xl pt-12 mb-14">Select No. of Pax</h1>
 

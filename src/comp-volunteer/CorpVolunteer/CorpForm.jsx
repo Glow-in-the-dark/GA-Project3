@@ -141,100 +141,111 @@ const CorpForm = (props) => {
   return (
     <div className="w-[1000px] mx-auto text-greyscale1">
       {/* Form section */}
-      <div className="flex flex-row space-x-14 bg-white mb-12 rounded-2xl">
+      <div className="flex flex-row space-x-14 bg-white mb-12 rounded-2xl py-14">
         {/* User input section */}
         <form className="w-[590px] space-y-9" onSubmit={handleSubmit}>
-          <h1>Enter Particulars(Person-In-Charge)</h1>
-          <BaseInput
-            type="string"
-            id="name"
-            value={name}
-            handleChange={handleChange}
-            required={true}
-            placeholder="Name*"
-          />
-          <BaseInput
-            type="string"
-            id="mobileNumber"
-            value={mobileNumber}
-            handleChange={handleChange}
-            required={true}
-            placeholder="MobileNumber*"
-            className="mt-9"
-          />
-          <BaseInput
-            type="email"
-            id="email"
-            value={email}
-            handleChange={handleChange}
-            required={true}
-            placeholder="Email*"
-            className="mt-9"
-          />
-          <BaseInput
-            type="string"
-            id="password"
-            value={password}
-            handleChange={handleChange}
-            required={true}
-            placeholder="Password*"
-            className="mt-9"
-          />
-          <BaseInput
-            type="string"
-            id="confirmPassword"
-            value={confirmPassword}
-            handleChange={handleChange}
-            required={true}
-            placeholder="Confirm Password*"
-            className="mt-9"
-          />
-
-          <div>
-            <label>Gender</label>
-            <br />
-            <input type="radio" name="genderRadio" id="maleGender" />
-            <label>M</label>
-            <input type="radio" name="genderRadio" id="femaleGender" />
-            <label>F</label>
+          <div className="flex px-16">
+            <img
+              src="../../donateImages/number3.png"
+              style={{ display: "inline" }}
+              className="mr-2"
+            />
+            <h1 className="text-2xl">Enter Particulars(Person-In-Charge)</h1>
+          </div>
+          <div className="flex">
+            <div className="px-16">
+              <BaseInput
+                type="string"
+                id="name"
+                value={name}
+                handleChange={handleChange}
+                required={true}
+                placeholder="Name*"
+                className="w-[22.188rem]"
+              />
+              <BaseInput
+                type="string"
+                id="mobileNumber"
+                value={mobileNumber}
+                handleChange={handleChange}
+                required={true}
+                placeholder="MobileNumber*"
+                className="mt-9"
+              />
+              <BaseInput
+                type="email"
+                id="email"
+                value={email}
+                handleChange={handleChange}
+                required={true}
+                placeholder="Email*"
+                className="mt-9"
+              />
+              <BaseInput
+                type="string"
+                id="password"
+                value={password}
+                handleChange={handleChange}
+                required={true}
+                placeholder="Password*"
+                className="mt-9"
+              />
+              <BaseInput
+                type="string"
+                id="confirmPassword"
+                value={confirmPassword}
+                handleChange={handleChange}
+                required={true}
+                placeholder="Confirm Password*"
+                className="mt-9"
+              />
+            </div>
+            <div className="ml-20">
+              <label>Gender</label>
+              <br />
+              <input type="radio" name="genderRadio" id="maleGender" />
+              <label>M</label>
+              <input type="radio" name="genderRadio" id="femaleGender" />
+              <label>F</label>
+              <BaseInput
+                type="date"
+                id="dateOfBirth"
+                value={dateOfBirth}
+                handleChange={handleChange}
+                required={false}
+                placeholder="Date of Birth(DD/MM/YY)"
+                className="mt-9 w-[22.188rem]"
+              />
+              <BaseInput
+                type="string"
+                id="organisation"
+                value={organisation}
+                handleChange={handleChange}
+                required={false}
+                placeholder="Organisation"
+                className="mt-9"
+              />
+              <BaseInput
+                type="string"
+                id="occupation"
+                value={occupation}
+                handleChange={handleChange}
+                required={false}
+                placeholder="Occupation"
+                className="mt-9"
+              />
+            </div>
           </div>
 
-          <BaseInput
-            type="date"
-            id="dateOfBirth"
-            value={dateOfBirth}
-            handleChange={handleChange}
-            required={false}
-            placeholder="Date of Birth(DD/MM/YY)"
-            className="mt-9"
-          />
-          <BaseInput
-            type="string"
-            id="organisation"
-            value={organisation}
-            handleChange={handleChange}
-            required={false}
-            placeholder="Organisation"
-            className="mt-9"
-          />
-          <BaseInput
-            type="string"
-            id="occupation"
-            value={occupation}
-            handleChange={handleChange}
-            required={false}
-            placeholder="Occupation"
-            className="mt-9"
-          />
-          <label>
+          <p className="pl-16">
             By clicking sign up, you aree to Willing Hearts' Privacy Policy and
             Terms of Use
-          </label>
+          </p>
           <BaseButton
             type="submit"
-            label="Next"
-            colour="transparent"
-            className="mt-8"
+            label="Continue"
+            colour="red"
+            className="mt-8 ml-16 relative bottom-11"
           />
         </form>
       </div>

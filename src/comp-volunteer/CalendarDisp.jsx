@@ -84,7 +84,7 @@ const CalendarDisp = (props) => {
 
   return (
     <div className="">
-      <div className="flex">
+      <div className="h-[]">
         <section className=" bg-white rounded-l-2xl pt-12 px-16 pb-14">
           <div className="flex ">
             <img
