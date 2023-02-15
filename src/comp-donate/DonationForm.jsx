@@ -3,6 +3,7 @@ import BaseButton from "../comp-commons/BaseButton";
 import BaseInput from "../comp-commons/BaseInput";
 import Footer from "../comp-commons/Footer";
 import { NavLink } from "react-router-dom";
+import BaseButtonSelect from "../comp-commons/examplePage/BaseButtonSelect";
 
 const DonationForm = () => {
   const [taxDeduction, setTaxDeduction] = useState(false);
@@ -179,13 +180,13 @@ const DonationForm = () => {
             <div>
               <div className="flex mb-7 ml-10">
                 <div onClick={() => setPersonaChoice("Individual")}>
-                  <BaseButton
+                  <BaseButtonSelect
                     label="Individual"
                     className="border-primary text-primary"
                   />
                 </div>
                 <div onClick={() => setPersonaChoice("Corporate")}>
-                  <BaseButton
+                  <BaseButtonSelect
                     label="Corporate"
                     className="border-primary text-primary"
                   />
@@ -204,7 +205,7 @@ const DonationForm = () => {
               </div>
 
               <div className="ml-10">
-                <BaseButton label="Continue" colour="red" />
+                <BaseButtonSelect label="Continue" colour="red" />
               </div>
             </div>
           </section>
@@ -282,7 +283,7 @@ const DonationForm = () => {
                   />
                 </div>
                 <div onClick={submitParticulars}>
-                  <BaseButton label="Continue" colour="red" />
+                  <BaseButtonSelect label="Continue" colour="red" />
                 </div>
               </div>
             </section>
@@ -342,25 +343,25 @@ const DonationForm = () => {
             </div>
             <div className="flex flex-row mb-8 ml-10 mt-8">
               <div onClick={() => setDonationAmount(10)} className="mr-3.5">
-                <BaseButton
+                <BaseButtonSelect
                   label="$10"
                   className="border-primary text-primary"
                 />
               </div>
               <div onClick={() => setDonationAmount(50)} className="mr-3.5">
-                <BaseButton
+                <BaseButtonSelect
                   label="$50"
                   className="border-primary text-primary"
                 />
               </div>
               <div onClick={() => setDonationAmount(100)} className="mr-3.5">
-                <BaseButton
+                <BaseButtonSelect
                   label="$100"
                   className="border-primary text-primary"
                 />
               </div>
               <div onClick={() => setDonationAmount(200)} className="mr-3.5">
-                <BaseButton
+                <BaseButtonSelect
                   label="$200"
                   className="border-primary text-primary"
                 />
@@ -376,13 +377,13 @@ const DonationForm = () => {
             </div>
             <div className="flex mb-8 ml-10">
               <div onClick={() => setDonationFrequency("Donate Once")}>
-                <BaseButton
+                <BaseButtonSelect
                   label="Donate Once"
                   className="border-primary text-primary"
                 />
               </div>
               <div onClick={() => setDonationFrequency("Donate Monthly")}>
-                <BaseButton
+                <BaseButtonSelect
                   label="Donate Monthly"
                   className="border-primary text-primary"
                 />
@@ -429,9 +430,9 @@ const DonationForm = () => {
             </div>
             <div className="mb-8 ml-10">
               <NavLink to="/thankyou">
-                <BaseButton type="submit" label="Donate" colour="red" />
+                <BaseButtonSelect type="submit" label="Donate" colour="red" />
               </NavLink>
-              <BaseButton type="submit" label="Test-Donate" colour="red" />
+              <BaseButtonSelect type="submit" label="Test-Donate" colour="red" />
             </div>
           </section>
         </div>
