@@ -59,6 +59,7 @@ const LoginPage = () => {
         // console.log(refreshToken);
         // localStorage.setItem("accessTk", accessToken);
         // localStorage.setItem("refreshTk", refreshToken);
+        alert(`you are logged in with the access token ${accessToken}`);
       });
     } else {
       console.log(`Error, password is < ${pwMinimalLength} characters`);
