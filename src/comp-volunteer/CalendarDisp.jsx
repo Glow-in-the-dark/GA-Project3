@@ -83,41 +83,51 @@ const CalendarDisp = (props) => {
   }, [props.roles]);
 
   return (
-    <div className="app">
-      <div className="bg-white rounded-t-2xl">
-        <h1 className="header">Select Time Slot</h1>
-        <label>Find a time that works for you</label>
-        <div>
-          <Calendar onChange={setDate} value={date} />
-          <div className="space-x-2">
-            {filteredSlotInfo.map((item) => {
-              return (
-                <button
-                  className="border rounded-md p-2"
-                  value={item.timing}
-                  onClick={handleTimingButtonClick}
-                >
-                  {item.timing}
-                  <br />
-                  {item.remaining_qty} slots available
-                </button>
-              );
-            })}
+    <div className="">
+      <div className="flex">
+        <section className=" bg-white rounded-l-2xl pt-12 px-16 pb-14">
+          <div className="flex ">
+            <img
+              src="../../donateImages/number2.png"
+              style={{ display: "inline" }}
+              className="mr-2"
+            />
+            <h1 className="text-2xl">Select Time Slot</h1>
           </div>
-        </div>
-
-        <p>
+          <div className="flex">
+            <p className="ml-9 text-base mb-6">
+              Find a time that works for you
+            </p>
+          </div>
+          <div className="">
+            <Calendar onChange={setDate} value={date} />
+            <div className="space-x-3.5 flex mt-5">
+              {filteredSlotInfo.map((item) => {
+                return (
+                  <button
+                    className="border rounded-md"
+                    value={item.timing}
+                    onClick={handleTimingButtonClick}
+                  >
+                    {item.timing}
+                    <br />
+                    {item.remaining_qty} slots available
+                  </button>
+                );
+              })}
+            </div>
+            <p className="flex mt-1">
+              Can't find a suitable time slow? Find other ways to contribute
+              here.
+            </p>
+          </div>
+          {/* <p>
           <span>Your selected date is:</span>
           {date.toDateString()}
-        </p>
-
-        <p>
-          <label>
-            Can't find a suitable time slow? Find other ways to contribute here.
-          </label>
-        </p>
+        </p> */}
+        </section>
+        <NumOfPax date={date} timeSlot={timeSlot} roles={props.roles} />
       </div>
-      <NumOfPax date={date} timeSlot={timeSlot} roles={props.roles} />
     </div>
   );
 };

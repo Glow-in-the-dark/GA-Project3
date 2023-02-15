@@ -20,8 +20,9 @@ const Volunteer = () => {
 
   return (
     <div className="bg-secondary text-greyscale1">
-      <div className="w-[1000px] text-center mx-auto">
-        <div className="mb-12">
+      
+      <div className="w-[1000px] mx-auto">
+        <div className="mb-12 text-center">
           <h1 className="mb-4">
             SIGN UP AS A VOLUNTEER
             <br />& MAKE AN IMPACT
