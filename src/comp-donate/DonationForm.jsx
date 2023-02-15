@@ -310,7 +310,7 @@ const DonationForm = () => {
               </p>
               <button
                 type="text"
-                className="border border-primary py-0 px-2 rounded-md ml-10 text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
+                className="border border-primary py-0 px-2 rounded-l-lg ml-10 text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
                 value={salutaion}
                 onClick={() => setSalutation("Mr")}
               >
@@ -318,7 +318,7 @@ const DonationForm = () => {
               </button>
               <button
                 type="text"
-                className="border border-primary py-0 px-2 rounded-md text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
+                className="border border-primary py-0 px-2 text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
                 value={salutaion}
                 onClick={() => setSalutation("Mrs")}
               >
@@ -326,7 +326,7 @@ const DonationForm = () => {
               </button>
               <button
                 type="text"
-                className="border border-primary py-0 px-2 rounded-md text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
+                className="border border-primary py-0 px-2 text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
                 value={salutaion}
                 onClick={() => setSalutation("Miss")}
               >
@@ -334,7 +334,7 @@ const DonationForm = () => {
               </button>
               <button
                 type="text"
-                className="border border-primary py-0 px-2 rounded-md text-primary hover:bg-[#DB2721A8] hover:border-[#DB2721A8] drop-shadow-md"
+                className="border border-primary py-0 px-2 rounded-r-lg text-primary active:bg-[#DB2721A8] active:border-[#DB2721A8] focus:bg focus:bg-primary focus:text-white drop-shadow-md"
                 value={salutaion}
                 onClick={() => setSalutation("Ms")}
               >
@@ -432,7 +432,11 @@ const DonationForm = () => {
               <NavLink to="/thankyou">
                 <BaseButtonSelect type="submit" label="Donate" colour="red" />
               </NavLink>
-              <BaseButtonSelect type="submit" label="Test-Donate" colour="red" />
+              <BaseButtonSelect
+                type="submit"
+                label="Test-Donate"
+                colour="red"
+              />
             </div>
           </section>
         </div>
