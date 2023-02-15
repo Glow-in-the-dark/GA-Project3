@@ -263,6 +263,8 @@ const TrainingKitchen = () => {
                   />
                 </li>
               </ul>
+              <br />
+              <img src="./kitchenImages/progress-bar.png" alt="" />
             </div>
           </div>
         </div>
