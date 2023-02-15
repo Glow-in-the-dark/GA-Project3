@@ -7,7 +7,7 @@ import { Carousel } from "react-responsive-carousel";
 import BaseButton from "../comp-commons/BaseButton";
 import AccordianWrapper from "../comp-commons/AccordianWrapper";
 import Footer from "../comp-commons/Footer";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import otherProjectsDataset from "./datasets/otherProjsDataset";
 import OtherProjsCard from "./Components/OtherProjsCard";
 
@@ -214,21 +214,21 @@ const Homepage = () => {
           >
             <div>
               <img src="public/Images/Homepage/volunteer-carousell.png" />
-            </div>
-            <div>
-              {/* <div className="flex">
-                <img
-                  className="object-scale-down h-98 w-96 rounded-lg overflow-hidden"
-                  src="public/Images/Homepage/uniBoy.png"
-                />
-                <div>
-                  "VOLUNTEERING AT WILLING HEARTS WAS AN INCREADIBLY FUFILLING
-                  EXPERIENCE"
-                </div>
-              </div> */}
+              <NavLink to="/volunteer" className="relative bottom-32 left-36">
+                <BaseButton label="Volunteer Now" colour="red" />
+              </NavLink>
             </div>
             <div>
               <img src="public/Images/Homepage/volunteer-carousell.png" />
+              <NavLink to="/volunteer" className="relative bottom-32 left-36">
+                <BaseButton label="Volunteer Now" colour="red" />
+              </NavLink>
+            </div>
+            <div>
+              <img src="public/Images/Homepage/volunteer-carousell.png" />
+              <NavLink to="/volunteer" className="relative bottom-32 left-36">
+                <BaseButton label="Volunteer Now" colour="red" />
+              </NavLink>
             </div>
           </Carousel>
         </section>
