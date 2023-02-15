@@ -191,33 +191,17 @@ const VolunteerForm = (props) => {
             className="mt-9"
           />
 
-          <span>
+          <div>
             <label>Gender</label>
             <br />
-            <BaseInput
-              type="radio"
-              id="maleGender"
-              value={gender}
-              handleChange={handleChange}
-              required={false}
-              placeholder="M"
-              className="mt-9"
-            />
+            <input type="radio" name="genderRadio" id="maleGender" />
             <label>M</label>
-            <BaseInput
-              type="radio"
-              id="femaleGender"
-              value={gender}
-              handleChange={handleChange}
-              required={true}
-              placeholder="M"
-              className="mt-9"
-            />
+            <input type="radio" name="genderRadio" id="femaleGender" />
             <label>F</label>
-          </span>
+          </div>
 
           <BaseInput
-            type="string"
+            type="date"
             id="dateOfBirth"
             value={dateOfBirth}
             handleChange={handleChange}

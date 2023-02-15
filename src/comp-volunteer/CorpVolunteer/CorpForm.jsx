@@ -31,6 +31,10 @@ const CorpForm = (props) => {
       setPassword(inputVal);
     } else if (inputId === "confirmPassword") {
       setConfirmPassword(inputVal);
+    } else if (inputId === "maleGender") {
+      setGender("Male");
+    } else if (inputId === "femaleGender") {
+      setGender("Female");
     } else if (inputId === "gender") {
       setGender(inputVal);
     } else if (inputId === "dateOfBirth") {
@@ -43,33 +47,52 @@ const CorpForm = (props) => {
   }
 
   const createUser = async (details) => {
-    const res = await fetch(
-      "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(details),
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(details),
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error();
       }
-    );
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+      alert("Account already exists! Email or password do not match!");
+      throw error;
+    }
   };
 
   const createAppt = async (volunteerDeets) => {
-    const res = await fetch(
-      "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
-      {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(volunteerDeets),
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(volunteerDeets),
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error();
       }
-    ).catch(
+      // console.log(res.data);
+    } catch (error) {
+      // console.log(error);
       alert(
         "You have an exisiting volunteer assignment at your selected date and time!"
-      )
-    );
+      );
+    }
   };
   // Function to handle submit
   const handleSubmit = async (e) => {
@@ -80,15 +103,7 @@ const CorpForm = (props) => {
     const year = props.date.getFullYear();
     const modifiedDate = `${year}-${month + 1}-${day}`;
 
-    // const newdate = new Date(props.date);
-    // const modifiedDate = newdate.setHours(newdate.getHours() + 8);
-    // .toISOString()
-    // .split("T")[0];
-    // console.log(day);
-    // console.log(month + 1);
-    // console.log(year);
     console.log(modifiedDate);
-    // console.log(modifiedDate);
 
     const volunteerDeets = {
       date: modifiedDate,
@@ -112,17 +127,15 @@ const CorpForm = (props) => {
 
     console.log(volunteerDeets);
 
-    createUser(details);
+    try {
+      await createUser(details);
 
-    createAppt(volunteerDeets);
+      await createAppt(volunteerDeets);
+    } catch (error) {
+      console.log(error);
+    }
 
     setDispStaffRegistration(true);
-
-    // navigate("/volunteer/volunteer-confirmation", {
-    //   date: props.date,
-    //   timeSlot: props.timeSlot,
-    // });
-    // .catch(alert("Account already exists! Email or password do not match!"));
   };
 
   return (
@@ -177,8 +190,17 @@ const CorpForm = (props) => {
             className="mt-9"
           />
 
+          <div>
+            <label>Gender</label>
+            <br />
+            <input type="radio" name="genderRadio" id="maleGender" />
+            <label>M</label>
+            <input type="radio" name="genderRadio" id="femaleGender" />
+            <label>F</label>
+          </div>
+
           <BaseInput
-            type="string"
+            type="date"
             id="dateOfBirth"
             value={dateOfBirth}
             handleChange={handleChange}

@@ -53,29 +53,39 @@ const NumOfPax = (props) => {
       <div className="flex flex-row space-x-14">
         {/* User input section */}
         <form className="w-[590px] space-y-9" onSubmit={handleSubmit}>
-          <span>Adult</span>
+          <span>
+            Adult
+            <br />
+            16 years and above
+          </span>
           <br />
-          <span>16 years and above</span>
-          <BaseInput
+          <input
+            id="adult"
+            type="number"
+            placeholder="0"
+            min="0"
+            onChange={handleChange}
+          />
+          {/* <BaseInput
             type="number"
             id="adult"
             value={adult}
             handleChange={handleChange}
             required={true}
             placeholder="0"
-          />
+          /> */}
           <br />
-          <span>Children</span>
+          <span>
+            Children
+            <br />3 - 15 years
+          </span>
           <br />
-          <span>3 - 15 years</span>
-          <BaseInput
-            type="number"
+          <input
             id="child"
-            value={child}
-            handleChange={handleChange}
-            required={true}
-            placeholder="0*"
-            className="mt-9"
+            type="number"
+            placeholder="0"
+            min="0"
+            onChange={handleChange}
           />
           <label>
             <input type={"checkbox"} id="corp" onChange={handleChecked} />
