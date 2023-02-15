@@ -9,6 +9,7 @@ import { Carousel } from "react-responsive-carousel";
 import AccordianWrapper from "../comp-commons/AccordianWrapper";
 import donateFAQ from "./datasets/donateFAQ";
 import Footer from "../comp-commons/Footer";
+import { NavLink } from "react-router-dom";
 
 function DonatePage() {
   const [beneficiaries, setBeneficiaries] = useState(330); // need to use useEffect to change beneficiaries value each time option changes
@@ -79,8 +80,8 @@ function DonatePage() {
         >
           <h1 className="text-3xl mb-1.5">READY TO MAKE A DONATION?</h1>
           <p className="mb-10 text-xl">We offer 4 payment methods</p>
-          <div className={`mx-auto ${styles.container}`}>
-            <li
+          <div className={`mx-auto ${styles.container} space-x-1.5`}>
+            {/* <li
               className={`${styles.card} ${styles.QRCode}`}
               onMouseEnter={displayQRCode}
               onMouseLeave={displayPayNowPrompt}
@@ -93,15 +94,44 @@ function DonatePage() {
               <div className="mb-7 mt-3">
                 <BaseButton label="Donate" colour="red" />
               </div>
+            </li> */}
+
+            <li className={styles.flipCard}>
+              <div className={styles.flipCardInner}>
+                <div className={styles.flipCardFront}>
+                  <img
+                    src="./donateImages/QRCodeCover.png"
+                    className="mx-20 mt-10 mb-4"
+                  />
+                  <p className="">PayNow QR</p>
+                  <div className="mb-7 mt-3">
+                    <BaseButton label="Donate" colour="red" />
+                  </div>
+                </div>
+                <div className={styles.flipCardBack}>
+                  <img
+                    src="./donateImages/QRCode-content.png"
+                    className="mt-10 mb-4"
+                    width="100px"
+                    style={{ marginLeft: "75px", marginRight: "75px" }}
+                  />
+                  <p>Willing Hearts CLG Ltd.</p>
+                  <p>UEN: 202228129C</p>
+                  <p>*Ineligible for tax relief</p>
+                </div>
+              </div>
             </li>
-            <li className={styles.card}>
+
+            <li className={`${styles.card} rounded-2xl`}>
               <img src="./donateImages/creditcard.png" className="mx-16 mt-7" />
               <p className="">Credit/Debit Card</p>
               <div className="mb-7 mt-3">
-                <BaseButton label="Donate" colour="red" />
+                <NavLink to="/donateForm">
+                  <BaseButton label="Donate" colour="red" />
+                </NavLink>
               </div>
             </li>
-            <li className={styles.card} id={styles.givingSG}>
+            <li className={`${styles.card} rounded-2xl`}>
               <img
                 src="./donateImages/givingSG.png"
                 className="mx-12 mt-20 mb-10"
@@ -117,13 +147,37 @@ function DonatePage() {
                 </div>
               </a>
             </li>
-            <li className={styles.card}>
+
+            <li className={styles.flipCard}>
+              <div className={styles.flipCardInner}>
+                <div className={styles.flipCardFront}>
+                  <img
+                    src="./donateImages/cash.png"
+                    className="mx-20 mt-10 mb-3"
+                  />
+                  <p>Cash/Cheque</p>
+                  <div className="mb-7 mt-3">
+                    <BaseButton label="Donate" colour="red" />
+                  </div>
+                </div>
+                <div className={styles.flipCardBack}>
+                  <p className="mt-14">
+                    Please make cheque <br /> payable to <br />
+                    "Willing Hearts" <br /> with your Name, NRIC & Contact No.
+                    to <br />
+                    1 Lorong J Telok Kurau <br /> Singapore 425792
+                  </p>
+                </div>
+              </div>
+            </li>
+
+            {/* <li className={styles.card}>
               <img src="./donateImages/cash.png" className="mx-20 mt-10 mb-3" />
               <p>Cash/Cheque</p>
               <div className="mb-7 mt-3">
                 <BaseButton label="Donate" colour="red" />
               </div>
-            </li>
+            </li> */}
           </div>
         </div>
 
@@ -205,52 +259,13 @@ function DonatePage() {
             </Carousel>
           </section>
         </div>
-
-        {/* <div class="py-4">
-        <div class="shadow-lg group container  rounded-md bg-white  max-w-sm flex justify-center items-center  mx-auto content-div">
-          <div>
-            <div class="w-full image-cover rounded-t-md">
-              <div class="p-2 m-4 w-16 h-16 text-center bg-gray-700 rounded-full text-white float-right fd-cl group-hover:opacity-0">
-                <span class="text-base tracking-wide  font-bold border-b border-white font-sans">
-                  {" "}
-                  12
-                </span>
-                <span class="text-xs tracking-wide font-bold uppercase block font-sans">
-                  April
-                </span>
-              </div>
-            </div>
-            <div class="py-8 px-4 bg-white  rounded-b-md fd-cl group-hover:opacity-0">
-              <span class="block text-lg text-gray-800 font-bold tracking-wide">
-                Book a flight
-              </span>
-              <span class="block text-gray-600 text-sm">
-                Vivamus ac ligula sit amet erat luctus laoreet ac quis ligula.
-                Donec bibendum faucibus purus eget cursus. Proin enim ante,
-                scelerisque vel sem sit amet, ultrices mollis risus. Praesent
-                justo felis, ullamcorper a cursus sed, condimentum at dui.
-              </span>
-            </div>
-          </div>
-          <div class="absolute opacity-0 fd-sh group-hover:opacity-100">
-            <span class="text-3xl font-bold text-white tracking-wider leading-relaxed font-sans">
-              Paris city of light
-            </span>
-            <div class="pt-8 text-center">
-              <button class="text-center rounded-lg p-4 bg-white  text-gray-700 font-bold text-lg">
-                Learn more
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> */}
       </div>
-
       <div className="mb-20">
         <AccordianWrapper title="FAQ" contentDataset={donateFAQ} />
       </div>
-
       <Footer />
+
+      
     </div>
   );
 }
