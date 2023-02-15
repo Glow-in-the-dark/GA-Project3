@@ -237,7 +237,9 @@ const VolunteerMainPage = () => {
               Click <span className="underline">here</span> to download the log
               sheet.
             </h3>
-            <BaseButton label="Volunteer Now" colour="red" />
+            <Link to="/volunteer/volunteer-form">
+              <BaseButton label="Volunteer Now" colour="red" />
+            </Link>
           </div>
         </section>
       </div>

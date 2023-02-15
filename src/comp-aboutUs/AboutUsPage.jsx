@@ -60,10 +60,7 @@ const AboutUsPage = () => {
 
       {/* Section 3: Mission & Vision */}
       <div className="w-[1000px] mx-auto my-24">
-        <img
-          src="public/Images/AboutUsPage/mr-tony-tay-video.png"
-          className="mb-10"
-        />
+        <img src="Images/AboutUsPage/mr-tony-tay-video.png" className="mb-10" />
         <div className="flex flex-row space-x-20">
           <div className="w-[535px]">
             <h1 className="mb-6">MISSION</h1>
