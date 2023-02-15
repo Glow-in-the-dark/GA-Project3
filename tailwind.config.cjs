@@ -2,12 +2,10 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {
+      sans: ["Nunito Sans", "sans-serif"],
+    },
     extend: {
-      fontFamily: {
-        book: ["NsLight", "sans-serif"],
-        roman: ["NsSemiBold", "sans-serif"],
-        medium: ["NsRegular", "sans-serif"],
-      },
       colors: {
         primary: "#DB2721",
         secondary: "#FFF1EF",
@@ -18,9 +16,8 @@ module.exports = {
       },
       width: {
         740: "740px",
-        641: "641px"
-
-      }
+        641: "641px",
+      },
     },
   },
   plugins: [require("daisyui")],
