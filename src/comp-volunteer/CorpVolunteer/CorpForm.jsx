@@ -4,7 +4,7 @@ import BaseInput from "../../comp-commons/BaseInput";
 import BaseButton from "../../comp-commons/BaseButton";
 import StaffRegistration from "./StaffRegistration";
 
-const CorpForm = () => {
+const CorpForm = (props) => {
   const navigate = useNavigate();
 
   // States
@@ -31,6 +31,10 @@ const CorpForm = () => {
       setPassword(inputVal);
     } else if (inputId === "confirmPassword") {
       setConfirmPassword(inputVal);
+    } else if (inputId === "maleGender") {
+      setGender("Male");
+    } else if (inputId === "femaleGender") {
+      setGender("Female");
     } else if (inputId === "gender") {
       setGender(inputVal);
     } else if (inputId === "dateOfBirth") {
@@ -42,12 +46,97 @@ const CorpForm = () => {
     }
   }
 
+  const createUser = async (details) => {
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(details),
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error();
+      }
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+      alert("Account already exists! Email or password do not match!");
+      throw error;
+    }
+  };
+
+  const createAppt = async (volunteerDeets) => {
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(volunteerDeets),
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error();
+      }
+      // console.log(res.data);
+    } catch (error) {
+      // console.log(error);
+      alert(
+        "You have an exisiting volunteer assignment at your selected date and time!"
+      );
+    }
+  };
   // Function to handle submit
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // navigate("/volunteer/volunteer-confirmation");
+
+    const day = props.date.getDate();
+    const month = props.date.getMonth();
+    const year = props.date.getFullYear();
+    const modifiedDate = `${year}-${month + 1}-${day}`;
+
+    console.log(modifiedDate);
+
+    const volunteerDeets = {
+      date: modifiedDate,
+      role: props.roles,
+      timing: props.timeSlot,
+      email: email,
+      qty: props.qty,
+      type_of_volunteer: "Corp",
+    };
+
+    const details = {
+      name: name,
+      mobile_number: mobileNumber,
+      email: email,
+      password: password,
+      gender: gender,
+      date_of_birth: dateOfBirth,
+      organisation: organisation,
+      occupation: occupation,
+    };
+
+    console.log(volunteerDeets);
+
+    try {
+      await createUser(details);
+
+      await createAppt(volunteerDeets);
+    } catch (error) {
+      console.log(error);
+    }
+
     setDispStaffRegistration(true);
-  }
+  };
 
   return (
     <div className="w-[930px] mx-auto text-greyscale1">
@@ -101,8 +190,17 @@ const CorpForm = () => {
             className="mt-9"
           />
 
+          <div>
+            <label>Gender</label>
+            <br />
+            <input type="radio" name="genderRadio" id="maleGender" />
+            <label>M</label>
+            <input type="radio" name="genderRadio" id="femaleGender" />
+            <label>F</label>
+          </div>
+
           <BaseInput
-            type="string"
+            type="date"
             id="dateOfBirth"
             value={dateOfBirth}
             handleChange={handleChange}

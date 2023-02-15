@@ -2,15 +2,19 @@ import React, { useState } from "react";
 import CalendarDisp from "./CalendarDisp";
 
 const Volunteer = () => {
-  const [role, setRole] = useState("");
+  const [roles, setRoles] = useState("");
+  const [dispCal, setDispCal] = useState(false);
 
   const getRole = (e) => {
     if (e.target.id === "soup") {
-      setRole("soupkitchen");
+      setRoles("soupkitchen");
+      setDispCal(true);
     } else if (e.target.id === "driver") {
-      setRole("driver");
+      setRoles("driver");
+      setDispCal(true);
     }
   };
+
   return (
     <>
       <div>
@@ -31,10 +35,7 @@ const Volunteer = () => {
           Driver Volunteer
         </button>
       </div>
-      <div>
-        <CalendarDisp />;
-      </div>
-      {console.log(role)}
+      <div>{dispCal && <CalendarDisp roles={roles} />}</div>
     </>
   );
 };

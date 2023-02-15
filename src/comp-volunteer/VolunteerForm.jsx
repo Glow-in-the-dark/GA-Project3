@@ -43,19 +43,73 @@ const VolunteerForm = (props) => {
       setOccupation(inputVal);
     }
   }
+  const createUser = async (details) => {
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(details),
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error();
+      }
+      console.log(res.data);
+    } catch (error) {
+      console.log(error);
+      alert("Account already exists! Email or password do not match!");
+      throw error;
+    }
+  };
+
+  const createAppt = async (volunteerDeets) => {
+    try {
+      const res = await fetch(
+        "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(volunteerDeets),
+        }
+      );
+
+      if (!res.ok) {
+        throw new Error();
+      }
+      // console.log(res.data);
+    } catch (error) {
+      // console.log(error);
+      alert(
+        "You have an exisiting volunteer assignment at your selected date and time!"
+      );
+    }
+  };
 
   // Function to handle submit
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const modifiedDate = props.date.toISOString().split("T")[0];
+    const day = props.date.getDate();
+    const month = props.date.getMonth();
+    const year = props.date.getFullYear();
+    const modifiedDate = `${year}-${month + 1}-${day}`;
+
+    console.log(modifiedDate);
 
     const volunteerDeets = {
       date: modifiedDate,
-      role: props.role,
+      role: props.roles,
       timing: props.timeSlot,
       email: email,
       qty: props.qty,
+      type_of_volunteer: "individual",
     };
 
     const details = {
@@ -69,23 +123,20 @@ const VolunteerForm = (props) => {
       occupation: occupation,
     };
 
-    const res = await fetch(
-      "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
-      {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(details),
-      }
-    )
-      .then()
-      .catch(alert("Wrong"));
+    console.log(volunteerDeets);
 
+    try {
+      await createUser(details);
+
+      await createAppt(volunteerDeets);
+    } catch (error) {
+      console.log(error);
+    }
     // navigate("/volunteer/volunteer-confirmation", {
     //   date: props.date,
     //   timeSlot: props.timeSlot,
     // });
+    // .catch(alert("Account already exists! Email or password do not match!"));
   };
 
   return (
@@ -140,33 +191,17 @@ const VolunteerForm = (props) => {
             className="mt-9"
           />
 
-          <span>
+          <div>
             <label>Gender</label>
             <br />
-            <BaseInput
-              type="radio"
-              id="maleGender"
-              value={gender}
-              handleChange={handleChange}
-              required={false}
-              placeholder="M"
-              className="mt-9"
-            />
+            <input type="radio" name="genderRadio" id="maleGender" />
             <label>M</label>
-            <BaseInput
-              type="radio"
-              id="femaleGender"
-              value={gender}
-              handleChange={handleChange}
-              required={true}
-              placeholder="M"
-              className="mt-9"
-            />
+            <input type="radio" name="genderRadio" id="femaleGender" />
             <label>F</label>
-          </span>
+          </div>
 
           <BaseInput
-            type="string"
+            type="date"
             id="dateOfBirth"
             value={dateOfBirth}
             handleChange={handleChange}
@@ -204,8 +239,7 @@ const VolunteerForm = (props) => {
           />
         </form>
       </div>
-      {console.log(props.date.toISOString().split("T")[0])}
-      {console.log(props.timeSlot)}
+      {/* {console.log(volunteerDeets)} */}
     </div>
   );
 };

@@ -13,6 +13,7 @@ const BaseInput = ({
 }) => {
   function handleInputChange(e) {
     handleChange(e.target.id, e.target.value);
+    console.log(e.target.value, typeof e.target.value);
   }
   return (
     <label>
