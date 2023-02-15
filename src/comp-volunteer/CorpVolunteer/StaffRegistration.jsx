@@ -20,8 +20,16 @@ const StaffRegistration = ({ open }) => {
 
   return (
     <div className="bg-white rounded-2xl">
-      <h1>Registration of staff</h1>
-      <label>Download registration template here</label>
+      <div className="flex px-16">
+        <img
+          src="../../donateImages/number3.png"
+          style={{ display: "inline" }}
+          className="mr-2"
+        />
+        <h1 className="text-2xl">Registration of staff</h1>
+      </div>
+      <p className="px-16 ml-10">Download registration template here</p>
+
       <div className="container">
         <div {...getRootProps({ className: "dropzone" })}>
           <input {...getInputProps()} />
@@ -35,6 +43,9 @@ const StaffRegistration = ({ open }) => {
         <aside>
           <ul>{files}</ul>
         </aside>
+      </div>
+      <div onClick={handleSubmit}>
+        <BaseButton label="Upload File"/>
       </div>
       <button onClick={handleSubmit}>Upload File</button>
       {console.log(dispFeature)}

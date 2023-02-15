@@ -146,7 +146,7 @@ const CorpForm = (props) => {
         <form className="w-[590px] space-y-9" onSubmit={handleSubmit}>
           <div className="flex px-16">
             <img
-              src="../../donateImages/number3.png"
+              src="../../donateImages/number4.png"
               style={{ display: "inline" }}
               className="mr-2"
             />
