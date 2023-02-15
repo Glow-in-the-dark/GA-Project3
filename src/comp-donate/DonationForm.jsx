@@ -9,8 +9,7 @@ const DonationForm = () => {
   const [taxDeduction, setTaxDeduction] = useState(false);
   const [personaChoice, setPersonaChoice] = useState("persona");
   const [donationAmount, setDonationAmount] = useState();
-  const [customAmount, setCustomAmount] = useState("$");
-  let customChecker = true;
+  const [customAmount, setCustomAmount] = useState("");
   const [donationFrequency, setDonationFrequency] = useState();
   const [particulars, setParticulars] = useState({});
 
@@ -98,6 +97,11 @@ const DonationForm = () => {
     )} ${clearValue.slice(8, 12)} ${clearValue.slice(12, 16)}`;
     return nextValue.trim();
   }
+  // Function to format CCV input field
+  function formatCCV(value) {
+    const clearValue = clearNumber(value);
+    return `${clearValue.slice(0,3)}`
+  }
 
   // Function to format credit card expiration date input field
   function formatExpirationDate(value) {
@@ -122,7 +126,7 @@ const DonationForm = () => {
       setCreditExpiry(formatExpirationDate(inputVal));
     }
     if (inputId === "credit-CCV") {
-      setCreditCCV(inputVal);
+      setCreditCCV(formatCCV(inputVal));
     }
     if (inputId === "credit-name") {
       setCreditName(inputVal);
@@ -132,17 +136,13 @@ const DonationForm = () => {
   const submitDonationForm = (e) => {
     e.preventDefault();
     if (donationAmount) {
-      setCustomAmount("$");
-      customChecker = false;
-    }
-    if (customAmount !== "$") {
-      customChecker = true;
+      setCustomAmount("");
     }
     setData({
       persona: personaChoice,
       taxDeduction: taxDeduction,
       particulars: particulars,
-      donationAmount: customChecker ? customAmount : donationAmount,
+      donationAmount: customAmount ? customAmount : donationAmount,
       donationFrequency: donationFrequency,
     });
     setCreditInfo({
@@ -377,10 +377,12 @@ const DonationForm = () => {
                   className="border-primary text-primary"
                 />
               </div>
-              <div>
+              <div className="border border-primary h-10 px-5 py-2 rounded-md text-primary">
+                <label htmlFor="custom-amount">$</label>
                 <input
                   type="text"
-                  className="border border-primary h-10 px-5 rounded-md text-primary"
+                  id="custom-amount"
+                  className="focus:outline-none"
                   value={customAmount}
                   onChange={(e) => setCustomAmount(e.target.value)}
                 />
