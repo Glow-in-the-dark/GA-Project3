@@ -54,9 +54,24 @@ const CalendarDisp = (props) => {
   // Calls POST request when date changes
   useEffect(() => {
     const day = date.getDate();
-    const month = date.getMonth();
+    const month = date.getMonth() + 1;
     const year = date.getFullYear();
-    const modifiedDate = `${year}-0${month + 1}-0${day}`;
+    let modifiedDate = "";
+
+    if (month < 10) {
+      if (day < 10) {
+        modifiedDate = `${year}-0${month}-0${day}`;
+      } else {
+        modifiedDate = `${year}-0${month}-${day}`;
+      }
+    } else {
+      if (day < 10) {
+        modifiedDate = `${year}-${month}-0${day}`;
+      } else {
+        modifiedDate = `${year}-${month}-${day}`;
+      }
+    }
+    console.log(modifiedDate);
 
     getAppt(modifiedDate);
   }, [date]);
@@ -72,9 +87,9 @@ const CalendarDisp = (props) => {
     }
   }, [props.roles]);
 
-  console.log("slotInfo:", slotInfo);
-  console.log("filtered slotInfo:", filteredSlotInfo);
-  console.log(timeSlot);
+  // console.log("slotInfo:", slotInfo);
+  // console.log("filtered slotInfo:", filteredSlotInfo);
+  // console.log(timeSlot);
 
   return (
     <div className="app">

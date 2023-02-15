@@ -91,35 +91,6 @@ const VolunteerForm = (props) => {
       );
     }
   };
-  // const createUser = async (details) => {
-  //   const res = await fetch(
-  //     "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
-  //     {
-  //       method: "PUT",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(details),
-  //     }
-  //   );
-  // };
-
-  // const createAppt = async (volunteerDeets) => {
-  //   const res = await fetch(
-  //     "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
-  //     {
-  //       method: "PATCH",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //       body: JSON.stringify(volunteerDeets),
-  //     }
-  //   ).catch(
-  //     alert(
-  //       "You have an exisiting volunteer assignment at your selected date and time!"
-  //     )
-  //   );
-  // };
 
   // Function to handle submit
   const handleSubmit = async (e) => {
@@ -130,15 +101,7 @@ const VolunteerForm = (props) => {
     const year = props.date.getFullYear();
     const modifiedDate = `${year}-${month + 1}-${day}`;
 
-    // const newdate = new Date(props.date);
-    // const modifiedDate = newdate.setHours(newdate.getHours() + 8);
-    // .toISOString()
-    // .split("T")[0];
-    // console.log(day);
-    // console.log(month + 1);
-    // console.log(year);
     console.log(modifiedDate);
-    // console.log(modifiedDate);
 
     const volunteerDeets = {
       date: modifiedDate,
