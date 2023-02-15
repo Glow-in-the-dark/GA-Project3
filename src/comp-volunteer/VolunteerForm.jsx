@@ -115,6 +115,8 @@ const VolunteerForm = (props) => {
 
     console.log(volunteerDeets);
 
+    createUser(details);
+
     createAppt(volunteerDeets);
 
     // navigate("/volunteer/volunteer-confirmation", {

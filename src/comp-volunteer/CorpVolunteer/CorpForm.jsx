@@ -96,7 +96,7 @@ const CorpForm = () => {
       timing: props.timeSlot,
       email: email,
       qty: props.qty,
-      type_of_volunteer: "individual",
+      type_of_volunteer: "Corp",
     };
 
     const details = {
@@ -111,6 +111,8 @@ const CorpForm = () => {
     };
 
     console.log(volunteerDeets);
+
+    createUser(details);
 
     createAppt(volunteerDeets);
 
