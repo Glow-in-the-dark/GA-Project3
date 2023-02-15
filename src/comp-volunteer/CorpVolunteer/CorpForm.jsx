@@ -42,12 +42,84 @@ const CorpForm = () => {
     }
   }
 
+  const createUser = async (details) => {
+    const res = await fetch(
+      "http://127.0.0.1:5001/users/create-new-user-or-sign-in",
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(details),
+      }
+    );
+  };
+
+  const createAppt = async (volunteerDeets) => {
+    const res = await fetch(
+      "http://127.0.0.1:5001/volunteer-slots/new-sign-up",
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(volunteerDeets),
+      }
+    ).catch(
+      alert(
+        "You have an exisiting volunteer assignment at your selected date and time!"
+      )
+    );
+  };
   // Function to handle submit
-  function handleSubmit(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // navigate("/volunteer/volunteer-confirmation");
-    setDispStaffRegistration(true);
-  }
+
+    const day = props.date.getDate();
+    const month = props.date.getMonth();
+    const year = props.date.getFullYear();
+    const modifiedDate = `${year}-${month + 1}-${day}`;
+
+    // const newdate = new Date(props.date);
+    // const modifiedDate = newdate.setHours(newdate.getHours() + 8);
+    // .toISOString()
+    // .split("T")[0];
+    // console.log(day);
+    // console.log(month + 1);
+    // console.log(year);
+    console.log(modifiedDate);
+    // console.log(modifiedDate);
+
+    const volunteerDeets = {
+      date: modifiedDate,
+      role: props.roles,
+      timing: props.timeSlot,
+      email: email,
+      qty: props.qty,
+      type_of_volunteer: "individual",
+    };
+
+    const details = {
+      name: name,
+      mobile_number: mobileNumber,
+      email: email,
+      password: password,
+      gender: gender,
+      date_of_birth: dateOfBirth,
+      organisation: organisation,
+      occupation: occupation,
+    };
+
+    console.log(volunteerDeets);
+
+    createAppt(volunteerDeets);
+
+    // navigate("/volunteer/volunteer-confirmation", {
+    //   date: props.date,
+    //   timeSlot: props.timeSlot,
+    // });
+    // .catch(alert("Account already exists! Email or password do not match!"));
+  };
 
   return (
     <div className="w-[930px] mx-auto text-greyscale1">
