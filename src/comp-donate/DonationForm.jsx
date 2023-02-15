@@ -62,7 +62,7 @@ const DonationForm = () => {
       setParticularsNRIC(inputVal);
     }
     if (inputId === "mobile") {
-      setParticularsMobile(inputVal);
+      setParticularsMobile(clearNumber(inputVal));
     }
     if (inputId === "email") {
       setParticularsEmail(inputVal);
