@@ -13,7 +13,7 @@ import OtherProjsCard from "./Components/OtherProjsCard";
 
 const Homepage = () => {
   return (
-    <div className="bg-secondary text-greyscale1 pt-24">
+    <div className="bg-secondary text-greyscale1 pt-8">
       {/* section 1 */}
       <section className="text-center flex flex-row space-x-6 justify-center">
         <img
@@ -47,33 +47,33 @@ const Homepage = () => {
             <div className="w-[370px]">
               <img
                 src="Images/Homepage/Cartoon_Meals1.png"
-                className="mx-auto mb-2 mt-6"
+                className="mx-auto  mt-6"
               />
-              <h1 className="text-2xl mb-4">11,000</h1>
+              <h1 className="text-3xl mb-4 font-bold">11,000</h1>
               <p className="">Meals A Day</p>
             </div>
             <div className="w-[370px]">
               <img
                 src="Images/Homepage/Cartoon_beneficiaries1.png"
-                className="mx-auto mb-2 mt-2"
+                className="mx-auto mt-2"
               />
-              <p className="text-2xl mb-4">6,000</p>
+              <p className="text-3xl mb-4 font-bold">6,000</p>
               <p className="">Beneficiaries</p>
             </div>
             <div className="w-[370px]">
               <img
                 src="Images/Homepage/Cartoon_Locations1.png"
-                className="mx-auto  mt-2"
+                className="mx-auto mb-3 mt-2"
               />
-              <p className="text-2xl mb-4">70</p>
+              <p className="text-3xl mb-4 font-bold">70</p>
               <p className="">Locations Islandwide</p>
             </div>
             <div className="w-[370px]">
               <img
                 src="Images/Homepage/Cartoon_hearts1.png"
-                className="mx-auto "
+                className="mx-auto mb-3"
               />
-              <p className="text-2xl mb-4">365</p>
+              <p className="text-3xl mb-4 font-bold">365</p>
               <p className="">Days, We Are Open!</p>
             </div>
           </div>
