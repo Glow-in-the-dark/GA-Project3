@@ -29,3 +29,8 @@
   width: 60%;
   margin: auto;
 }
+
+input[type="radio"]:checked + label {
+  @apply bg-primary;
+  @apply text-white;
+}

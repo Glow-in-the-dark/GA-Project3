@@ -232,7 +232,7 @@ const CorpForm = (props) => {
           </label>
           <BaseButton
             type="submit"
-            label="Sign Up"
+            label="Next"
             colour="transparent"
             className="mt-8"
           />
