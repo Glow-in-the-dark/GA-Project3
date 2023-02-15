@@ -54,7 +54,7 @@ const Homepage = () => {
             </div>
             <div className="w-[370px]">
               <img
-                src="Images/Homepage/Cartoon_Beneficiaries1.png"
+                src="Images/Homepage/Cartoon_beneficiaries1.png"
                 className="mx-auto mb-2 mt-2"
               />
               <p className="text-2xl mb-4">6,000</p>
