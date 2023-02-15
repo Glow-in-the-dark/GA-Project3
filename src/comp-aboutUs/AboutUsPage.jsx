@@ -62,7 +62,7 @@ const AboutUsPage = () => {
       <div className="w-[1000px] mx-auto my-24">
         <img src="Images/AboutUsPage/mr-tony-tay-video.png" className="mb-10" />
         <div className="flex flex-row space-x-20">
-          <div className="w-[535px]">
+          <div className="w-[600px]">
             <h1 className="mb-6">MISSION</h1>
             <h3 className="text-justify">
               To provide daily meals and other support services to the
@@ -72,7 +72,7 @@ const AboutUsPage = () => {
               of our society.
             </h3>
           </div>
-          <div className="w-[375px]">
+          <div className="w-[313px]">
             <h1 className="mb-6">VISION</h1>
             <h3 className="text-justify">
               Improving the lives of the underpriviledged and marginalised by

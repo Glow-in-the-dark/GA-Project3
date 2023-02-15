@@ -24,10 +24,10 @@ const FeatureCompany = () => {
           </label>
           <BaseInput
             type="string"
-            id="child"
+            id="feature"
             value={featureName}
             handleChange={handleChange}
-            required={true}
+            required={false}
             placeholder="Your email address"
             className="mt-9"
           />
