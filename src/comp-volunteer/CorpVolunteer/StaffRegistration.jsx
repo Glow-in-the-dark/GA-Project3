@@ -40,7 +40,14 @@ const StaffRegistration = ({ open }) => {
             className="mt-8"
           /> */}
           <div className="box-border w-[49.5rem] h-[20.125rem] p-4 border-4 mx-auto rounded-md bg-neutral-400 my-6">
-            <p className="text-center py-32 text-white">Drop your file here</p>
+            <div className="py-28">
+              <img
+                src="../../donateImages/upload-arrow.png"
+                alt=""
+                className="mx-auto"
+              />
+              <p className="text-center text-white">Drop your file here</p>
+            </div>
           </div>
         </div>
         <aside>
