@@ -19,27 +19,48 @@ const StaffRegistration = ({ open }) => {
   };
 
   return (
-    <>
-      <h1>Registration of staff</h1>
-      <label>Download registration template here</label>
+    <div className="bg-white rounded-2xl py-10">
+      <div className="flex px-16">
+        <img
+          src="../../donateImages/number3.png"
+          style={{ display: "inline" }}
+          className="mr-2"
+        />
+        <h1 className="text-2xl">Registration of staff</h1>
+      </div>
+      <p className="px-16 ml-10">Download registration template here</p>
+
       <div className="container">
         <div {...getRootProps({ className: "dropzone" })}>
           <input {...getInputProps()} />
-          <p>Drop your file here</p>
+          {/* <p>Drop your file here</p>
           <BaseButton
             type="button"
             label="Click to select files"
             className="mt-8"
-          />
+          /> */}
+          <div className="box-border w-[49.5rem] h-[20.125rem] p-4 border-4 mx-auto rounded-md bg-neutral-400 my-6">
+            <div className="py-28">
+              <img
+                src="../../donateImages/upload-arrow.png"
+                alt=""
+                className="mx-auto"
+              />
+              <p className="text-center text-white">Drop your file here</p>
+            </div>
+          </div>
         </div>
         <aside>
           <ul>{files}</ul>
         </aside>
       </div>
-      <button onClick={handleSubmit}>Upload File</button>
+      <div onClick={handleSubmit} className="px-16 ml-10">
+        <BaseButton label="Upload Files" colour="red" />
+      </div>
+
       {console.log(dispFeature)}
       {dispFeature && <FeatureCompany />}
-    </>
+    </div>
   );
 };
 

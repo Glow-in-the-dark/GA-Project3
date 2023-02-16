@@ -49,24 +49,47 @@ const NumOfPax = (props) => {
   }
 
   return (
-    <div className="w-[930px] mx-auto text-greyscale1">
+    <div className="w-[800px]  mx-auto text-greyscale1 ">
       {/* Form section */}
-      <div className="flex flex-row space-x-14">
+      <section className=" bg-white rounded-2xl mb-10 px-16 ">
         {/* User input section */}
-        <form className="w-[590px] space-y-9" onSubmit={handleSubmit}>
-          <span>
-            Adult
-            <br />
-            16 years and above
-          </span>
-          <br />
-          <input
-            id="adult"
-            type="number"
-            placeholder="0"
-            min="0"
-            onChange={handleChange}
-          />
+        <h1 className="text-2xl pt-12 mb-14">Select No. of Pax</h1>
+
+        <form className="" onSubmit={handleSubmit}>
+          <div className="flex mb-6">
+            <div className="border border-solid border-primary rounded">
+              <p className="w-[168px]">
+                Adult
+                <br />
+                16 years and above
+              </p>
+            </div>
+            <input
+              id="adult"
+              type="number"
+              placeholder="0"
+              min="0"
+              onChange={handleChange}
+              className="ml-6"
+            />
+          </div>
+          <div className="flex mb-7">
+            <div className="border border-solid border-primary rounded">
+              <p className="w-[168px]">
+                Children
+                <br />3 - 15 years
+              </p>
+            </div>
+            <input
+              id="child"
+              type="number"
+              placeholder="0"
+              min="0"
+              onChange={handleChange}
+              className="ml-6"
+            />
+          </div>
+
           {/* <BaseInput
             type="number"
             id="adult"
@@ -76,47 +99,43 @@ const NumOfPax = (props) => {
             placeholder="0"
           /> */}
           <br />
-          <span>
-            Children
-            <br />3 - 15 years
-          </span>
-          <br />
-          <input
-            id="child"
-            type="number"
-            placeholder="0"
-            min="0"
-            onChange={handleChange}
-          />
           <label>
             <input type={"checkbox"} id="corp" onChange={handleChecked} />
-            Tick here if you wish to volunteer as a corporate
+            Tick here if you wish to volunteer as a <br /> corporate
           </label>
-
-          <BaseButton
-            type="submit"
-            label="Continue"
-            colour="transparent"
-            className="mt-8"
-          />
+          <div className="">
+            <BaseButton
+              type="submit"
+              label="Continue"
+              colour="red"
+              className="mt-6"
+            />
+            <br />
+            <br />
+            <br />
+            <br />
+            <h1 className="mt-2 invisible">hello</h1>
+          </div>
         </form>
-      </div>
-      {dispCorpForm && (
-        <CorpForm
-          date={props.date}
-          timeSlot={props.timeSlot}
-          roles={props.roles}
-          qty={qty}
-        />
-      )}
-      {dispIndividualForm && (
-        <VolunteerForm
-          date={props.date}
-          timeSlot={props.timeSlot}
-          roles={props.roles}
-          qty={qty}
-        />
-      )}
+      </section>
+      <section className="">
+        {dispCorpForm && (
+          <CorpForm
+            date={props.date}
+            timeSlot={props.timeSlot}
+            roles={props.roles}
+            qty={qty}
+          />
+        )}
+        {dispIndividualForm && (
+          <VolunteerForm
+            date={props.date}
+            timeSlot={props.timeSlot}
+            roles={props.roles}
+            qty={qty}
+          />
+        )}
+      </section>
     </div>
   );
 };
