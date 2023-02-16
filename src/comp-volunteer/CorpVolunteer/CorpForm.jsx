@@ -203,10 +203,38 @@ const CorpForm = (props) => {
             <div className="ml-20">
               <label>Gender</label>
               <br />
-              <input type="radio" name="genderRadio" id="maleGender" />
+              <button>
+                <input
+                  type="radio"
+                  name="genderRadio"
+                  id="maleGender"
+                  className="checked hidden"
+                />
+                <label
+                  htmlFor="maleGender"
+                  className="border border-primary py-0.5 px-2 rounded-l-lg"
+                >
+                  M
+                </label>
+              </button>
+              <button>
+                <input
+                  type="radio"
+                  name="genderRadio"
+                  id="femaleGender"
+                  className="checked hidden"
+                />
+                <label
+                  htmlFor="femaleGender"
+                  className="border border-primary py-0.5 px-2 rounded-r-lg"
+                >
+                  F
+                </label>
+              </button>
+              {/* <input type="radio" name="genderRadio" id="maleGender" />
               <label>M</label>
               <input type="radio" name="genderRadio" id="femaleGender" />
-              <label>F</label>
+              <label>F</label> */}
               <BaseInput
                 type="date"
                 id="dateOfBirth"

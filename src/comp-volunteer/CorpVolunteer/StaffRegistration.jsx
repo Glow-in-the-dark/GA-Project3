@@ -19,7 +19,7 @@ const StaffRegistration = ({ open }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl">
+    <div className="bg-white rounded-2xl py-10">
       <div className="flex px-16">
         <img
           src="../../donateImages/number3.png"
@@ -33,21 +33,24 @@ const StaffRegistration = ({ open }) => {
       <div className="container">
         <div {...getRootProps({ className: "dropzone" })}>
           <input {...getInputProps()} />
-          <p>Drop your file here</p>
+          {/* <p>Drop your file here</p>
           <BaseButton
             type="button"
             label="Click to select files"
             className="mt-8"
-          />
+          /> */}
+          <div className="box-border w-[49.5rem] h-[20.125rem] p-4 border-4 mx-auto rounded-md bg-neutral-400 my-6">
+            <p className="text-center py-32 text-white">Drop your file here</p>
+          </div>
         </div>
         <aside>
           <ul>{files}</ul>
         </aside>
       </div>
-      <div onClick={handleSubmit}>
-        <BaseButton label="Upload File"/>
+      <div onClick={handleSubmit} className="px-16 ml-10">
+        <BaseButton label="Upload Files" colour="red" />
       </div>
-      <button onClick={handleSubmit}>Upload File</button>
+
       {console.log(dispFeature)}
       {dispFeature && <FeatureCompany />}
     </div>
