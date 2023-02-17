@@ -6,7 +6,7 @@ This repository is for the frontend. You may find the backend repository [HERE](
 
 <kbd>![Homepage ](/public/Images/ReadMe/Homepage.png) </kbd>
 <kbd>![Donation ](/public/Images/ReadMe/Donation.png) </kbd>
-<kbd>![Accordian ](public/Images/ReadMe/Accordian.png) </kbd>
+<kbd>![Accordian ](/public/Images/ReadMe/Accordian.png) </kbd>
 
 ## Technologies Used
 
@@ -23,7 +23,7 @@ This repository is for the frontend. You may find the backend repository [HERE](
 
 ## Hierarchy
 
-<kbd>![Hierarchy screenshot](/GA-Project3-Frontend/public/Images/ReadMe/Hierarchy.png)</kbd>
+<kbd>![Hierarchy screenshot](/public/Images/ReadMe/Hierarchy.png)</kbd>
 
 ## User Stories
 
