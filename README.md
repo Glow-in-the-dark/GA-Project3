@@ -4,9 +4,9 @@ Willing Hearts is a charity, wholly run by volunteers, apart from a handful of s
 
 This repository is for the frontend. You may find the backend repository [HERE](https://github.com/Glow-in-the-dark/GA-Project3-Backend).
 
-<kbd>![Homepage ](/GA-Project3-Frontend/public/Images/ReadMe/Homepage) </kbd>
-<kbd>![Donation ](/GA-Project3-Frontend/public/Images/ReadMe/Donation) </kbd>
-<kbd>![Accordian ](/GA-Project3-Frontend/public/Images/ReadMe/Accordian) </kbd>
+<kbd>![Homepage ](/GA-Project3-Frontend/public/Images/ReadMe/Homepage.png) </kbd>
+<kbd>![Donation ](/GA-Project3-Frontend/public/Images/ReadMe/Donation.png) </kbd>
+<kbd>![Accordian ](/GA-Project3-Frontend/public/Images/ReadMe/Accordian.png) </kbd>
 
 ## Technologies Used
 
