@@ -23,7 +23,7 @@ This repository is for the frontend. You may find the backend repository [HERE](
 
 ## Hierarchy
 
-<kbd>![Hierarchy screenshot](/GA-Project3-Frontend/public/Images/ReadMe/Hierarchy)</kbd>
+<kbd>![Hierarchy screenshot](/GA-Project3-Frontend/public/Images/ReadMe/Hierarchy.png)</kbd>
 
 ## User Stories
 
