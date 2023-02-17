@@ -4,7 +4,7 @@ const otherProjectsDataset = [
     image: "Images/Homepage/training_kitchen.png",
     projectName: "TRAINING KITCHEN",
     projectContent:
-      "An initiative to carry out training kitchens open for those who want to learn how to cook for themselves. $780 raised of $10,000",
+      "An initiative to carry out training kitchens open for those who want to learn how to cook for themselves.",
   },
   {
     id: 2,
